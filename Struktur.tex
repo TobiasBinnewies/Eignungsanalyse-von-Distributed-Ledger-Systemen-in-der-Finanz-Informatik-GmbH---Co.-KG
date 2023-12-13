@@ -1,0 +1,228 @@
+\documentclass[12pt, a4paper]{article}
+
+%==================================================
+%wichtige Packages
+%==================================================
+
+\usepackage[T1]{fontenc}                %Richtige Darstellung Sonderzeichen
+\usepackage[utf8]{inputenc}             %Richtige Darstellung Umlaute
+\usepackage[ngerman]{babel}             %Sprache: Deutsch
+\usepackage{helvet}                     %Schriftart: Helvetica
+\usepackage[onehalfspacing]{setspace}   %Zeilenabstand: 1,5
+\usepackage{import}                     %Import Datein
+\usepackage{subfiles}                   %Unterkapitel
+\usepackage{paralist}
+\usepackage[hyphens]{url}               %Zeilenumbruch in URL
+\usepackage[hidelinks]{hyperref}        %hidelinks versteckt den roten Kasten
+\usepackage[driver=pdftex]{geometry}    %Seitenränder
+\usepackage[bottom]{footmisc}           %Fußnote Strich unten
+\usepackage{graphicx}                   %Für Bilder
+\usepackage{longtable}                  %Abkürzungsverzeichnis
+\usepackage{tocloft}                    %Anhangsverzeichnis
+\usepackage{titlesec}                   %Anhangsverzeichnis
+\usepackage{titletoc}                   %Anhangsverzeichnis
+\usepackage{etoolbox}                   %Anhangsverzeichnis
+
+
+
+
+%==================================================
+%Einstellung Seitenränder
+%==================================================
+\geometry{
+        left=4cm,
+        right=2cm,
+        top=2cm,
+        bottom=2cm
+    }
+%==================================================
+
+%Variable zum speichern der Seite
+\newcounter{savepage}
+
+
+
+\begin{document}
+
+    \newcounter{romanSection} % Inhaltsverzeichnis, etc, Mit Anhang
+    \newcounter{romanPage}    % Inhaltsverzeichnis, etc, ohne Anhang
+
+
+    %==================================================
+    %Deckblatt + Sperrvermerk
+    %==================================================
+
+    {\pagestyle{empty}
+
+    \input{Deckblatt.tex}
+
+    }
+    \newpage
+
+    % {\pagestyle{empty}
+
+    % \input{Sperrvermerk.tex}
+
+    % }
+    % \newpage
+
+
+    %==================================================
+    %Inhaltlsverzeichnis
+    %==================================================
+    
+    {   
+        %Kapitel und Seitennummerierung wird auf Römisch 1 gesetzt
+        \setcounter{page}{1}
+        \renewcommand{\thesection}{\Roman{section}}
+            \pagenumbering{Roman}
+
+    %Übershrift: Inhaltsverzeichnis
+    \section{Inhaltsverzeichnis}        
+
+    %Befehl, damit Inhaltsverzeichnis nicht doppelt da steht 
+    \renewcommand{\contentsname}{}
+
+    %Befehle zur Strukturierung des Inhaltsverzeichnisses (Anordnung)
+    \setlength\cftbeforesecskip{3pt}
+    \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+    %Inhaltsverzeichnis wird erzeugt
+    \tableofcontents 
+
+    \newpage
+
+
+    %==================================================
+    %Abkürzungsverzeichnis
+    %==================================================
+    
+    \input{Abkürzungsverzeichnis.tex}    
+
+    \newpage
+    
+
+    %==================================================
+    %Abbildungsverzeichnis
+    %==================================================
+
+    %Überschrift: Abbildungsverzeichnis
+    \section{Abbildungsverzeichnis}
+
+    %Befehl, damit Abbildungsverzeichnis nicht doppelt da steht 
+    \renewcommand{\listfigurename}{}
+
+    %Abbildungsverzeichnis wird erzeugt
+    \listoffigures                      
+
+    }
+
+    % KapitelNummerierung merken
+    \setcounter{romanSection}{\thesection}
+    \setcounter{romanPage}{\arabic{page}}
+
+    \newpage
+
+    
+    %==================================================
+    %Inhaltliches
+    %==================================================
+
+    {
+        % KapitelNummerierung auf 0 setzen und mit arabischen Zahlen belegen
+        \setcounter{section}{0}
+        \setcounter{page}{1}
+            \pagenumbering{arabic}
+
+    %Hier steht der Inalt
+
+    %Beispiel: \input{Grundlagen eines Netzwerks.tex}
+    \input{Einleitung.tex}
+    
+    \newpage
+
+    % \input{Grundlagen Netzwerk.tex}
+
+    % \input{Grundlagen UI.tex}
+
+    % \input{Grundlagen Frameworks.tex}
+
+    % \input{Methodik.tex}
+
+    % \input{Anwendung.tex}
+
+    % \input{Mängel.tex}
+
+    % \input{DV.tex}
+
+    % \input{neuFR.tex}
+
+    % \input{Ausblick.tex}
+
+    % \input{Fazit.tex}
+
+    % \newpage
+
+    %==================================================
+    %Quellen
+    %==================================================
+
+    \input{Quellen.tex}
+
+    \par}
+
+    \newpage
+
+
+    %==================================================
+    %Anhangsverzeichnis 
+    %==================================================
+
+    %Seitennummerierung mit römischen Zahlen
+    \pagenumbering{Roman}
+    %letzte römische Seite wird gespeichert und hier weitergeführt
+    \setcounter{page}{\numexpr\value{romanPage}+1}
+
+    \appendix
+    % Kapitelnummerierung fortsetzen IV, ...
+    \setcounter{section}{\theromanSection}
+    \renewcommand{\thesection}{\Roman{section}}
+
+    \parindent0mm
+
+    \section{Anhangsverzeichnis}
+
+    \newcommand{\listappendicesname}{Anhangsverzeichnis}
+    \renewcommand{\listappendicesname}{}
+    \newlistof{appendices}{apc}{\listappendicesname}
+
+
+    \newcommand{\appendices}[1]{\addcontentsline{apc}{appendices}{#1}}
+    \newcommand{\newappendix}[1]{\section*{#1}\appendices{#1}}
+
+    \listofappendices
+
+    \newpage
+
+
+    %==================================================
+    %Anhang
+    %==================================================
+    \section{Anhang}
+    \titleformat*{\section}{\fontsize{12}{14}\selectfont\bfseries} % Schriftgröße und Zeilenabstand ändern
+    {
+        \setcounter{page}{1}
+        \setcounter{tocdepth}{1}
+            \renewcommand{\thepage}{A\arabic{page}}
+            \renewcommand\thesubsection{Anhang \arabic{subsection}:}
+
+        
+
+        \input{Anhang.tex}
+       
+
+    \par}
+
+    
+
+\end{document}

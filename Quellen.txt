@@ -1,0 +1,5 @@
+W1 https://www.ledger.com/academy/glossary/distributed-ledger
+W2 https://www.investopedia.com/terms/d/distributed-ledgers.asp
+W3 https://btv-bank.de/wissen/distributed-ledger-technologie/
+W4 https://ethereum.org/en/developers/docs/smart-contracts/
+W5 https://www.datawallet.com/crypto/evm-chains

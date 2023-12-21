@@ -1,0 +1,36 @@
+\noindent
+
+\subsection{Use Case Zahlungsverkehr}
+
+\subsubsection{Zahlungsverkehr}
+
+% NOTES Zahlungsverkehr:
+% - Je nach Aufbau kann nur der Kontoinhaber selbst eine Transaktion vornehmen
+% - Transaktionen können nicht rückgängig gemacht werden --> Rückbuchung durch erneute Transaktion
+% - Transaktionen können nicht verändert werden --> Keine Manipulation möglich
+% - AuditLog ist automatisch durch Technologie vorhanden
+% - Durch Smart Contracts können bestimmte Finanzprodukte (z.B. Sparverträge, Kredite, ...) oder auch Multisign (per Multisign Contracts) abgebildet werden und so automatisiert werden
+
+% Probleme:
+% - Transaktionen sind öffentlich einsehbar --> Keine Privatsphäre (außer evtl. durch HD-Wallets)
+% - Euro keine Kryptowährung --> Umwandlung in Token (Layer2) notwendig
+% - Weiterentwicklung bei bspw. neuen Anforderungen schwierig --> Durch Proxys möglich
+
+% REVIEW QUELLEN!
+Ein Use Case dieser Technologie in Bereich einer Bank wäre der Zahlungsverkehr. So wird die Blockchain als Datenbank für die Konten der Kunden verwendet.
+Eine Blockchain erfüllt automatisch durch ihren Aufbau einige Anforderungen an den Zahlungsverkehr, die in herkömlichen Systemen beachtet und umgesetzt werden müssen. So können Transaktionen - also in diesem Fall Einträge in diese Datenbank - nicht rückgängig, nicht verändert und so nicht manipuliert werden. Es gäbe dennoch die Möglichkeit - je nach konkreter Implementierung - bestimmte Sicherheitsmechanismen einzubauen, um bspw. gegen Geldwäsche oder fehlerhaft Buchungen vorzugehen. % TODO Ausführlicher & Besipiele / konkrete Idee der Implementierung
+Außerdem ist ein AuditLog automatisch vorhanden, da alle Transaktionen in der Blockchain gespeichert werden.
+Aufbauend darauf können Smart Contracts verwendet werden, um bestimmte Finanzprodukte (z.B. Sparverträge, Kredite, ...) oder auch Multisign (per Multisign Contracts) abzubilden und so zu automatisieren. % TODO Ausführlicher & Besipiele / konkrete Idee der Implementierung
+%...
+Um den Kontostand eines Kunden widerzuspiegeln, gäbe es mehrere Möglichkeiten:
+% REVIEW andere Begriffe für Layer 1 und Layer 2 Währung (ERC20 Token, ...)
+\begin{itemize}
+    \item Wert als Layer 1 Währung (z.B. ETH) wechseln
+    \item Wert als bestehende Layer 2 Währung (z.B. Stablecoin) wechseln
+    \item Wert als eigene Layer 2 Währung wechseln
+\end{itemize}
+Das Problem bei einer Layer 1 Währung ist, dass diese nicht den Euro darstellt. So müsste der Wert immer in eine andere Währung umgerechnet werden, was zu zusätzlichen Kosten führt. Außerdem ist der Wert einer Layer 1 Währung sehr volatil, was zu Problemen führen kann, wenn der Wert des Kontos nicht mit dem Wert der Layer 1 Währung übereinstimmt.
+Eine Layer 2 Währung, die den Euro darstellt, wäre ein Stablecoin. Dieser ist an den Euro gekoppelt und hat somit immer den gleichen Wert. 
+Das Problem daran - sowie auch bei der Layer 1 Währung - ist, dass diese einen tatsächlichen Wert haben, und so die Bank dieses Geld nicht für eigene Geschäfte verwenden kann.
+So währe eine eigene Layer 2 Währung sinnvoll, um den Wert eines Kontos darzustellen, ohne dass dieser einen tatsächlichen Wert hat. So kann die Bank diesen Wert für eigene Geschäfte verwenden, ohne dass der Kunde dadurch einen Verlust erleidet. Außerdem kann so gewährleistet werden, dass nur Kunden der Bank diesen Token verwenden können, da die Bank die einzige ist, die diesen Token ausgibt.
+\bigbreak

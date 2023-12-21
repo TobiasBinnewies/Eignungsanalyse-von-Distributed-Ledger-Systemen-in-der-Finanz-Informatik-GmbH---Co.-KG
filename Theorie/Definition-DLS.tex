@@ -4,26 +4,17 @@
 \label{sec:definition-dls}
 
 \subsubsection{Definitionen}
-Ein Distributed Ledger ist eine Datenbank, die im Konsens geteilt und über ein Netzwerk synchronisiert wird, das sich über mehrere Standorte, Institutionen oder Länder erstreckt.\footnote{
-    Hierzu und im Folgenden %Q W1, W2
-} Es ermöglicht, dass Transaktionen und Aufzeichnungen öffentlich und überprüfbar sind, und da es dezentralisiert ist, gibt es keinen einzelnen Ausfallpunkt. Jeder Teilnehmer im Netzwerk hat Zugang zu den Aufzeichnungen, die über dieses Netzwerk geteilt werden, und kann eine identische Kopie der Daten haben. Änderungen oder Ergänzungen am DL werden nahezu in Echtzeit in allen Kopien widergespiegelt, was die Transparenz und Sicherheit erhöht.
+Ein Distributed Ledger ist eine Datenbank, die im Konsens geteilt und über ein Netzwerk synchronisiert wird, das sich über mehrere Standorte, Institutionen oder Länder erstreckt.\footcite[Vgl. hierzu und im Folgenden][]{w1,w2} Es ermöglicht, dass Transaktionen und Aufzeichnungen öffentlich und überprüfbar sind, und da es dezentralisiert ist, gibt es keinen einzelnen Ausfallpunkt. Jeder Teilnehmer im Netzwerk hat Zugang zu den Aufzeichnungen, die über dieses Netzwerk geteilt werden, und kann eine identische Kopie der Daten haben. Änderungen oder Ergänzungen am DL werden nahezu in Echtzeit in allen Kopien widergespiegelt, was die Transparenz und Sicherheit erhöht.
 \bigbreak
 \noindent
-Ein Distributed Ledger System ist ein System, das einen Distributed Ledger verwendet, um Transaktionen zwischen Teilnehmern zu verwalten. Am häufigsten wird die Blockchain-Technologie als DL verwendet.\footnote{
-    %Q W3
-}
+Ein Distributed Ledger System ist ein System, das einen Distributed Ledger verwendet, um Transaktionen zwischen Teilnehmern zu verwalten. Am häufigsten wird die Blockchain-Technologie als DL verwendet.\footcite[Vgl.][]{w3}
 \bigbreak
 \noindent
 % REVIEW evtl. ausführlicher
-Eine Blockchain ist eine spezielle Form eines Distributed Ledgers, die aus einer Kette von Blöcken besteht, die jeweils einen Hash des vorherigen Blocks enthalten.
-\footnote{
-    Hierzu und im Folgenden %Q Q3 S16
-} So wird gewährleistet, dass die Blöcke - und so auch die darin beinhalteten Daten - nach ihrem Eintrag nicht verändert werden können, ohne alle nachfolgenden Blöcke abzuändern.
+Eine Blockchain ist eine spezielle Form eines Distributed Ledgers, die aus einer Kette von Blöcken besteht, die jeweils einen Hash des vorherigen Blocks enthalten.\footcite[Vgl. hierzu und im Folgenden][16]{q3} So wird gewährleistet, dass die Blöcke - und so auch die darin beinhalteten Daten - nach ihrem Eintrag nicht verändert werden können, ohne alle nachfolgenden Blöcke abzuändern.
 
 \subsubsection{Allgemeines}
-Ein DLS kann viele Anwendungsmöglichkeiten haben. Am wohl bekanntesten ist die Verwendung als Kryptowährung, wie bspw. Bitcoin.\footnote{
-    Hierzu und im Folgenden %Q Q4 S1
-} Hierbei werden Transaktionen zwischen den Teilnehmern des Netzwerks durchgeführt, die in einem Distributed Ledger festgehalten werden. So können Transaktionen durchgeführt werden, ohne dass eine zentrale Instanz diese überprüfen muss, da die Korrektheit von allen Teilnehmern des Netzwerks überprüft wird.
+Ein DLS kann viele Anwendungsmöglichkeiten haben. Am wohl bekanntesten ist die Verwendung als Kryptowährung, wie bspw. Bitcoin.\footcite[Vgl. hierzu und im Folgenden][1]{q4} Hierbei werden Transaktionen zwischen den Teilnehmern des Netzwerks durchgeführt, die in einem Distributed Ledger festgehalten werden. So können Transaktionen durchgeführt werden, ohne dass eine zentrale Instanz diese überprüfen muss, da die Korrektheit von allen Teilnehmern des Netzwerks überprüft wird.
 \bigbreak
 \noindent
 Plattformen wie Ethereum heben dieses Konzept auf eine neue Ebene, indem sie es ermöglichen, Smart Contracts zu erstellen.
@@ -31,12 +22,9 @@ Plattformen wie Ethereum heben dieses Konzept auf eine neue Ebene, indem sie es 
 \subsubsection{Smart Contracts}
 \label{sec:definition-smart-contracts}
 
-Smart Contracts (im Sinne von Ethereum) sind Programme, die auf der Ethereum-Blockchain ausgeführt werden.\footnote{
-    Hierzu und im Folgenden %Q W4
-} Sie bestehen aus einer Sammlung von Code (ihre Funktionen) und Daten (ihr Zustand), die an einer bestimmten Adresse auf der Ethereum-Blockchain (oder einer anderen EVM-kompatiblen-Chain\footnote{
-    %Q W5 
+Smart Contracts (im Sinne von Ethereum) sind Programme, die auf der Ethereum-Blockchain ausgeführt werden.\footcite[Vgl. hierzu und im Folgenden][]{w4} Sie bestehen aus einer Sammlung von Code (ihre Funktionen) und Daten (ihr Zustand), die an einer bestimmten Adresse auf der Ethereum-Blockchain (oder einer anderen EVM-kompatiblen-Chain\footcite[Vgl.][]{w5}
     %REVIEW hier noch etwas zu EVM schreiben?
-}) residieren. Smart Contracts sind eine Art von Ethereum-Konto, was bedeutet, dass sie ein Guthaben haben und Ziel von Transaktionen sein können. Sie werden jedoch nicht von einem Benutzer kontrolliert, sondern sind im Netzwerk bereitgestellt und laufen wie programmiert. Benutzerkonten können dann mit einem Smart Contract interagieren, indem sie Transaktionen einreichen, die eine auf dem Smart Contract definierte Funktion ausführen. 
+ residieren. Smart Contracts sind eine Art von Ethereum-Konto, was bedeutet, dass sie ein Guthaben haben und Ziel von Transaktionen sein können. Sie werden jedoch nicht von einem Benutzer kontrolliert, sondern sind im Netzwerk bereitgestellt und laufen wie programmiert. Benutzerkonten können dann mit einem Smart Contract interagieren, indem sie Transaktionen einreichen, die eine auf dem Smart Contract definierte Funktion ausführen. 
 Smart Contracts können Regeln definieren, wie ein regulärer Vertrag, und diese automatisch durch den Code durchsetzen. Standardmäßig können Smart Contracts nicht gelöscht werden, und Interaktionen mit ihnen sind irreversibel.
 
 % NOTES Layer 1 Währung vs Layer 2 Währung

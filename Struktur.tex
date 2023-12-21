@@ -22,7 +22,42 @@
 \usepackage{titlesec}                   %Anhangsverzeichnis
 \usepackage{titletoc}                   %Anhangsverzeichnis
 \usepackage{etoolbox}                   %Anhangsverzeichnis
+\usepackage{csquotes}
+\usepackage[style=authoryear, urldate=long]{biblatex}                   %Literaturverzeichnis
 
+%==================================================
+%Literaturverzeichnis
+%==================================================
+\addbibresource{Quellen.bib}
+
+\DeclareDelimFormat{multinamedelim}{\addcomma\space}
+\DeclareDelimFormat{finalnamedelim}{\addcomma\space}
+\DeclareFieldFormat{title}{#1}
+\DeclareFieldFormat{url}{\url{#1}}
+\DefineBibliographyStrings{german}{%
+  andothers = {et\addabbrvspace al\adddot},
+}
+\DeclareFieldFormat{extrayear}{{\mknumalph{#1}}}
+
+% Fußnotenformat
+\renewbibmacro{cite}{\printtext[bibhyperref]{\printnames{labelname} (\iffieldundef{year}{o. J.}{\printfield{year}}\printfield{extrayear})}}
+
+% Formatierung des Literaturverzeichnisses
+% Website
+\DeclareBibliographyDriver{online}{%
+  \textbf{\printnames{author} (\iffieldundef{year}{o. J.}{\printfield{year}}\printfield{extrayear}):}\newline%
+  \textnormal{\printfield{title}}, \printfield{url}, \printfield{note}.\bigbreak}
+
+% Paper
+\DeclareBibliographyDriver{booklet}{%
+  \textbf{\printnames{author} (\iffieldundef{year}{o. J.}{\printfield{year}}\printfield{extrayear}):}\newline%
+  \textnormal{\printfield{title}}.\bigbreak}
+
+% Buch
+\DeclareBibliographyDriver{book}{%
+    \textbf{\printnames{author} (\iffieldundef{year}{o. J.}{\printfield{year}}\printfield{extrayear}):}\newline%
+    \textnormal{\printfield{title}}, \iffieldundef{edition}{o. A.}{\printfield{edition}}, \printlist{publisher}\iflistundef{location}{}{, \printlist{location}}.\bigbreak}     
+%==================================================
 
 
 
@@ -172,9 +207,10 @@
     %Quellen
     %==================================================
 
-    \input{Quellen.tex}
-
-    \par}
+    \defbibheading{bibnumbered}[Quellenverzeichnis]{
+        \section{#1}
+    }
+    \printbibliography[heading=bibnumbered]
 
     \newpage
 

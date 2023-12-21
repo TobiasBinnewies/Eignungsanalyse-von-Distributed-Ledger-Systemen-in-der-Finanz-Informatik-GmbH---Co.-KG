@@ -10,5 +10,11 @@
 *.synctex.gz
 *.toc
 
+# BibLaTeX
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+
 # Mac OS X
 .DS_Store

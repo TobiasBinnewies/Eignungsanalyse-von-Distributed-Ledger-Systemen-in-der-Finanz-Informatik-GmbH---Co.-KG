@@ -37,25 +37,25 @@
 \DefineBibliographyStrings{german}{%
   andothers = {et\addabbrvspace al\adddot},
 }
-\DeclareFieldFormat{extrayear}{{\mknumalph{#1}}}
+\DeclareFieldFormat{extradate}{{\mknumalph{#1}}}
 
 % Fußnotenformat
-\renewbibmacro{cite}{\printtext[bibhyperref]{\printnames{labelname} (\iffieldundef{year}{o. J.}{\printfield{year}}\printfield{extrayear})}}
+\renewbibmacro{cite}{\printtext[bibhyperref]{\printnames{labelname} (\iffieldundef{year}{o. J.}{\printfield{year}}\printfield{extradate})}}
 
 % Formatierung des Literaturverzeichnisses
 % Website
 \DeclareBibliographyDriver{online}{%
-  \textbf{\printnames{author} (\iffieldundef{year}{o. J.}{\printfield{year}}\printfield{extrayear}):}\newline%
+  \textbf{\printnames{author} (\iffieldundef{year}{o. J.}{\printfield{year}}\printfield{extradate}):}\newline%
   \textnormal{\printfield{title}}, \printfield{url}, \printfield{note}.\bigbreak}
 
 % Paper
 \DeclareBibliographyDriver{booklet}{%
-  \textbf{\printnames{author} (\iffieldundef{year}{o. J.}{\printfield{year}}\printfield{extrayear}):}\newline%
+  \textbf{\printnames{author} (\iffieldundef{year}{o. J.}{\printfield{year}}\printfield{extradate}):}\newline%
   \textnormal{\printfield{title}}.\bigbreak}
 
 % Buch
 \DeclareBibliographyDriver{book}{%
-    \textbf{\printnames{author} (\iffieldundef{year}{o. J.}{\printfield{year}}\printfield{extrayear}):}\newline%
+    \textbf{\printnames{author} (\iffieldundef{year}{o. J.}{\printfield{year}}\printfield{extradate}):}\newline%
     \textnormal{\printfield{title}}, \iffieldundef{edition}{o. A.}{\printfield{edition}}, \printlist{publisher}\iflistundef{location}{}{, \printlist{location}}.\bigbreak}     
 %==================================================
 

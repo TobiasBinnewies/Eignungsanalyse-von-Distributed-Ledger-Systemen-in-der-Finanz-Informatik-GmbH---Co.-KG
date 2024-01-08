@@ -15,7 +15,7 @@
 \usepackage[hyphens]{url}               %Zeilenumbruch in URL
 \usepackage[hidelinks]{hyperref}        %hidelinks versteckt den roten Kasten
 \usepackage[driver=pdftex]{geometry}    %Seitenränder
-\usepackage[bottom]{footmisc}           %Fußnote Strich unten
+\usepackage[hang]{footmisc}             %Fußnote Strich unten
 \usepackage{graphicx}                   %Für Bilder
 \usepackage{longtable}                  %Abkürzungsverzeichnis
 \usepackage{tocloft}                    %Anhangsverzeichnis
@@ -55,8 +55,8 @@
 
 % Buch
 \DeclareBibliographyDriver{book}{%
-    \textbf{\printnames{author} (\iffieldundef{year}{o. J.}{\printfield{year}}\printfield{extradate}):}\newline%
-    \textnormal{\printfield{title}}, \iffieldundef{edition}{o. A.}{\printfield{edition}}, \printlist{publisher}\iflistundef{location}{}{, \printlist{location}}.\bigbreak}     
+  \textbf{\printnames{author} (\iffieldundef{year}{o. J.}{\printfield{year}}\printfield{extradate}):}\newline%
+  \textnormal{\printfield{title}}, \iffieldundef{edition}{o. A.}{\printfield{edition}}, \printlist{publisher}\iflistundef{location}{}{, \printlist{location}}.\bigbreak}     
 %==================================================
 
 

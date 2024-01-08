@@ -11,8 +11,7 @@ Jeder Teilnehmer im Netzwerk hat Zugang zu den Aufzeichnungen, die über dieses 
 \bigbreak
 \noindent
 Ein Distributed Ledger System ist ein System, das einen Distributed Ledger verwendet, um Transaktionen zwischen Teilnehmern zu verwalten. Am häufigsten wird die Blockchain-Technologie als DL verwendet.\footcite[Vgl.][]{w3}
-% \bigbreak
-% \noindent
+
 \subsubsection{Blockchain}
 \label{sec:definition-blockchain}
 % REVIEW evtl. ausführlicher
@@ -53,8 +52,50 @@ Sie werden jedoch nicht von einem Benutzer kontrolliert, sondern sind im Netzwer
 Benutzerkonten können dann mit einem Smart Contract interagieren, indem sie Transaktionen einreichen, die eine auf dem Smart Contract definierte Funktion ausführen. 
 Außerdem können Regeln / Bedingungen definiert werden, nach den Code automatisch durchgeführt wird.
 Standardmäßig können Smart Contracts nicht gelöscht werden, und Interaktionen mit ihnen sind irreversibel.
+% TODO Smart Contracts benötigen Gas
 
-% REVIEW Gas erklären?
+% TODO Nodes erklären
+\subsubsection{Nodes}
+\label{sec:definition-nodes}
+Teilnehmer des Netzwerks, die über die gesamte Blockchain verfügen und die Transaktionen und Blöcke validieren werden Nodes genannt.\footcites[Vgl. hierzu und im Folgenden][]{w12}[]{w13} 
+Diese Nodes formen das dezentralisierte Netzwerk, das die Blockchain betreibt.
+Diese sind es auch, die den Code der Smart Contracts und die Transaktionen ausführen.
+Außerdem validieren sie die Transaktionen und Blöcke, die von anderen Nodes erstellt wurden, und erstellen neue Blöcke, die sie dann an das Netzwerk senden.
+Dazu verwenden sie einen Konsensalgorithmus, der bestimmt, welche Blöcke gültig sind (s. \ref{sec:definition-konsensalgorithmus}). 
+Sowohl für das Ausführen der Smart Contracts als auch für das Validieren der Blöcke erhalten die Nodes eine Belohnung in Form von ETH (oder einer anderen Kryptowährung, je nach Chain), diese Belohnung wird Gas genannt.
+
+% TODO Gas erklären
+\subsubsection{Gas Fee}
+\label{sec:definition-gas-fee}
+
+\subsubsection{Konsensalgorithmus}
+\label{sec:definition-konsensalgorithmus}
+Um sicherzustellen, dass bestehende Blöcke nicht verändert werden können und der Inhalt neuer Blöcke valide ist, wird ein Konsensalgorithmus verwendet.\footcite[Vgl.][S. 2 f\adddot]{q4}
+Die bekanntesten Algorithmen sind:
+\begin{itemize}
+    \item \textbf{Proof of Work (PoW):}
+    Miner (Nodes) konkurrieren miteinerander, um ein mathematisches Problem zu lösen.\footcite[Vgl. hierzu und im Folgenden][3]{q4}
+    Dem ersten, dem dies gelingt, erhält die Blockbelohnung und kann den nächsten Block erstellen.
+    Um einen Block zu erstellen wird also Zeit benötigt, ein Angreifer müsste also eine höheren Rechenleistung als die Hälfte des Netzwerks besitzen, um die Blockchain zu manipulieren.
+
+    \item \textbf{Proof of Stake (PoS):}
+    Es wird zufällig eine Node ausgewählt, die den nächsten Block erstellen darf und so die Belohnung erhält.\footcite[Vgl. hierzu und im Folgenden][2]{q7}
+    Es muss vorab eine Sicherheitsleistung (Stake) hinterlegt werden, die verloren geht, wenn die Node versucht, die Blockchain zu manipulieren. 
+    Je höher der Stake, desto höher die Wahrscheinlichkeit, dass die Node ausgewählt wird.
+    So wird verhindert, dass ein Angreifer die Blockchain manipuliert, da er mehr als die Hälfte des Stakes besitzen müsste, um die Blockchain zu manipulieren.
+
+    \item \textbf{Proof of Authority (PoA):}
+    Es wird eine Liste von Nodes festgelegt, die die Blockchain validieren dürfen.\footcite[Vgl. hierzu und im Folgenden][]{w14}
+    Dieser Algorithmus wird häufig bei privaten Chains verwendet, da den Nodes vertraut werden muss.
+    So kann die Blockchain nicht manipuliert werden, ohne dass eine der Nodes dies zulässt.
+    Dieser Algorithmus ist sehr schnell, da keine Rechenleistung benötigt wird oder eine Auswahl getroffen werden muss, um einen Block zu erstellen.
+    
+\end{itemize}
+
+% TODO Unterscheid zwischen Account- und Transactions-basierten Chains erklären
+% --> Account-based Problem: Keine HD-Wallets einfach möglich, so weniger Anonymität
+\subsubsection{Account-based vs. UTXO-based Chains}
+\label{sec:definition-account-based-vs-utxo-based-chains}
 
 \subsubsection{ERC20 Token}
 \label{sec:definition-erc20-token}
@@ -64,4 +105,18 @@ Ein Token kann dabei eine beliebige Repräsentation eines Vermögenswertes sein.
 In diesem Smart Contract wird die Anzahl der Token gespeichert, die eine bestimme Adresse (also Benutzer-Wallet oder Smart Contract) besitzt.
 Außerdem werden Funktionen definiert, um u. a. Token von einer Adresse zu einer anderen zu versenden, die Anzahl der Token einer Adresse abzufragen und anderen Adressen die Erlaubnis zu erteilen, Token von der eigenen Adresse zu versenden.\footcites[Vgl.][]{w8}[]{w7}
 
-% NOTES Proxys?
+% TODO Layer 2 Solutions erklären
+\subsubsection{Layer 2 Lösungen}
+\label{sec:definition-layer-2-solutions}
+
+% TODO EIP-712 / EIP-2612 / Relaying / Meta Transactions erklären
+\subsubsection{Transaction Relayers}
+\label{sec:definition-transaction-relayers}
+
+% REVIEW Sicherheitsrisiken wie Reentrancy / Oracle / etc. Attack? - i.V.m. Audit 
+\subsubsection{Sicherheitsrisiken}
+\label{sec:definition-sicherheitsrisiken}
+
+% REVIEW Proxys?
+\subsubsection{Proxies}
+\label{sec:definition-proxies}

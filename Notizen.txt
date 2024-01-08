@@ -14,18 +14,10 @@ Gliederung:
     - Eignungaanalyse
     - Ausblick
 
-Fragen:
-- Was ist der Unterschied zwischen einer Blockchain und einem Distributed Ledger?
-- Antwort: Distributed Ledger ist die Technologie, die Blockchain ist eine Implementierung davon
-
-- Was ist der Unterschied zwischen einer privaten und einer öffentlichen Blockchain?
-- Antwort: Bei einer privaten Blockchain ist die Teilnehmerzahl beschränkt, bei einer öffentlichen Blockchain kann jeder Teilnehmer werden
-
-- Was ist der Unterschied zwischen einer Blockchain und einem Smart Contract?
-- Antwort: Ein Smart Contract ist ein Programm, das auf einer Blockchain ausgeführt wird
-
 Fragen an Dozent:
 - Soll erst Theorie komplett (erst Allgemeines, dann Use Case, dann evtl. Probleme und ggf die Lösung)?
 - Konkrete Implementierungsideen aufzeigen?
 - Bestimmte Architekturen (bspw. Proxys) erklären o. reicht Verweis? --> Bei bspw. HD-Wallets Verweis auf alte Facharbeit?
 - Quellen bei Use Case Zahlungsverkehr kaum vorhanden --> Eigentlich auch eigene Idee, daher nicht schlimm?
+
+- Wie genau Theorie (hier) und Praxis / Implementierung (BA) abtrennen?

@@ -1,5 +1,54 @@
 \noindent
 
-\subsection{Öffentliches vs. privates Netzwerk}
+\subsection{Öffentliche vs. private Chain}
 \label{sec:oeffentlich-vs-privates-netzwerk}
+
+% NOTES Öffentliches vs. privates Netzwerk:
+% PRivates:
+% - Nur für bestimmte Teilnehmer (in dem Falle dann nur FI)
+% - wirds wirklich nur von einer Authority verwendet können die Daten geändert werden
+% - "eigene" Regeln (bspw. kein Gas)
+
+% Öffentliches:
+% - Anonymität schwierig zu gewährleisten
+% - Transaktionskosten
+% - Daten können nicht geändert werden
+
+Bei der Verwendung einer Blockchain gibt es die Möglichkeit, einer öffentlichen Chain „beizutreten“ oder dafür eine private Chain zu betreiben.\footcite[Vgl.][]{w10}
+Eine öffentliche Chain ist für alle Teilnehmer offen und kann von jedem verwendet werden.\footcite[Vgl. hierzu und im Folgenden][]{w11}
+Eine privatee Chain hingegen ist nur für ausgewählte Teilnehmer zugänglich und wird i.d.R. von einer oder mehreren Organisationen / Unternehmen betrieben.
+Die Auswahl der Art der Chain kann an den Punkten Sicherheit / Unveränderlichkeit, Leistung, Kosten, Berechtigungen und Datenschutz / Anonymität erfolgen:
+\begin{itemize}
+    \item \textbf{Sicherheit / Unveränderlichkeit:} 
+    % REVIEW Folgendes eher in Definition oder späterer Analyse?
+    Die Sicherheit und Unveränderlichkeit einer Blockchain wird durch ihren Konsensalgorithmus bestimmt. 
+    Eine öffentliche Chain wird durch die Interaktion von Tausenden unabhängigen Nodes gesichert, die von Einzelpersonen und Organisationen auf der ganzen Welt betrieben werden. 
+    Private Chains haben typischerweise eine kleine Anzahl von Nodes, die von einer oder wenigen Organisationen kontrolliert werden. 
+    Diese Nodes können streng kontrolliert werden, aber nur wenige müssen kompromittiert werden, um die Chain umzuschreiben oder betrügerische Transaktionen durchzuführen.
+
+    \item \textbf{Leistung:} 
+    Bei privaten Chains können Hochleistungsnodes mit besondererer Hardware sowie ein anderer Konsensalgorithmus verwendet werden, um einen höheren Tansaktionsdurchsatz auf der Basisschicht (Layer 1) erreichen.
+    Bei einer öffentlichen Chain kann ein hoher Durchsatz mit Hilfe von Layer 2 Skalierungslösungen erreicht werden.
+
+    \item  \textbf{Kosten:}
+    Die Kosten für den Betrieb einer privaten Chain spiegeln sich hauptsächlich in der Arbeit wider, die Chain einzurichten und zu verwalten, und den Servern zu betreiben, auf denen sie läuft. 
+    Während es keine Kosten gibt, um sich mit dem Ethereum Mainnet zu verbinden, muss die Gas Fee (s. \ref{sec:definition-gas-fee}) für jede Transaktion in Ether bezahlt werden.
+    Abhilfe können Transaction Relayers (s. \ref{sec:definition-transaction-relayers}) sein, sodass ein Endkunde diese Gebühr nicht selbst tragen muss.
+
+    Einige Analysen haben gezeigt, dass die Gesamtkosten für den Betrieb einer Anwendung auf einer öffentlichen Chain niedriger sein können als beim Betrieb einer privaten Chain.\footcite[Vgl.][14]{q6}
+    % REVIEW Die Quelle genauer erläutern?
+
+    \item \textbf{Berechtigungen:}
+    Bei privaten Chains können nur autorisierte Teilnehmer Nodes einrichten und Transaktionen durchführen.
+    Bei öffentlichen Chains kann jeder Node einrichten und Transaktionen durchführen.
+    So kann ebenfalls jeder auf jeden Contract zugreifen, also dessen gespeicherte Daten auslesen und Funktionen aufrufen.
+    Daher müssen erstellte Contracts so implementiert werden, dass sie nur von den gewünschten Teilnehmern verwendet werden können (s. \ref{sec:definition-sicherheitsrisiken}).
+
+    \item \textbf{Datenschutz / Anonymität:}
+    Der Zugang zu Daten, die auf privaten Chains festgehalten wurden, kann frei vom Betreiber kontrolliert werden. 
+    Alle Daten, die auf einer öffentlichen Chain geschrieben wurden, sind für jeden einsehbar, so dass sensible Informationen off-chain gespeichert und übertragen  oder verschlüsselt werden sollten. 
+    Es bestehen Designpattern, die dies erleichtern, sowie Layer 2 Lösungen, die Daten abgetrennt und von Layer 1 fernhalten können (s. \ref{sec:definition-layer-2-solutions}).
+
+    Ebenso sind alle Transaktionen auf einer öffentlichen Chain öffentlich einsehbar, sodass die Anonymität der Teilnehmer nicht gewährleistet werden kann (s. \ref{sec:definition-account-based-vs-utxo-based-chains}).
+\end{itemize}
 

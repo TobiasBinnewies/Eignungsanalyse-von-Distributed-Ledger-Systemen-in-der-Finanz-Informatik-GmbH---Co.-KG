@@ -13,6 +13,18 @@
 % - Anonymität schwierig zu gewährleisten
 % - Transaktionskosten
 % - Daten können nicht geändert werden
+\begin{flushleft}
+    
+    \textcolor{red}{NOTES Öffentliches vs. privates Netzwerk:\break
+    PRivates:\break
+    - Nur für bestimmte Teilnehmer (in dem Falle dann nur FI)\break
+    - wirds wirklich nur von einer Authority verwendet können die Daten geändert werden\break
+    - „eigene” Regeln (bspw. kein Gas)\break
+    Öffentliches:\break
+    - Anonymität schwierig zu gewährleisten\break
+    - Transaktionskosten\break
+    - Daten können nicht geändert werden\break}
+\end{flushleft}
 
 Bei der Verwendung einer Blockchain gibt es die Möglichkeit, einer öffentlichen Chain „beizutreten“ oder dafür eine private Chain zu betreiben.\footcite[Vgl.][]{w10}
 Eine öffentliche Chain ist für alle Teilnehmer offen und kann von jedem verwendet werden.\footcite[Vgl. hierzu und im Folgenden][]{w11}
@@ -20,7 +32,7 @@ Eine privatee Chain hingegen ist nur für ausgewählte Teilnehmer zugänglich un
 Die Auswahl der Art der Chain kann an den Punkten Sicherheit / Unveränderlichkeit, Leistung, Kosten, Berechtigungen und Datenschutz / Anonymität erfolgen:
 \begin{itemize}
     \item \textbf{Sicherheit / Unveränderlichkeit:} 
-    % REVIEW Folgendes eher in Definition oder späterer Analyse?
+    \textcolor{red}{REVIEW Folgendes eher in Definition oder späterer Analyse?}
     Die Sicherheit und Unveränderlichkeit einer Blockchain wird durch ihren Konsensalgorithmus bestimmt. 
     Eine öffentliche Chain wird durch die Interaktion von Tausenden unabhängigen Nodes gesichert, die von Einzelpersonen und Organisationen auf der ganzen Welt betrieben werden. 
     Private Chains haben typischerweise eine kleine Anzahl von Nodes, die von einer oder wenigen Organisationen kontrolliert werden. 
@@ -36,7 +48,7 @@ Die Auswahl der Art der Chain kann an den Punkten Sicherheit / Unveränderlichke
     Abhilfe können Transaction Relayers (s. \ref{sec:definition-transaction-relayers}) sein, sodass ein Endkunde diese Gebühr nicht selbst tragen muss.
 
     Einige Analysen haben gezeigt, dass die Gesamtkosten für den Betrieb einer Anwendung auf einer öffentlichen Chain niedriger sein können als beim Betrieb einer privaten Chain.\footcite[Vgl.][14]{q6}
-    % REVIEW Die Quelle genauer erläutern?
+    \textcolor{red}{ REVIEW Die Quelle genauer erläutern?}
 
     \item \textbf{Berechtigungen:}
     Bei privaten Chains können nur autorisierte Teilnehmer Nodes einrichten und Transaktionen durchführen.

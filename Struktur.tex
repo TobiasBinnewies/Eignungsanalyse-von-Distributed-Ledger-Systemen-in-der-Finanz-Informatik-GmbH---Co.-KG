@@ -23,7 +23,7 @@
 \usepackage{titletoc}                   %Anhangsverzeichnis
 \usepackage{etoolbox}                   %Anhangsverzeichnis
 \usepackage{csquotes}
-\usepackage[style=authoryear, urldate=long]{biblatex}                   %Literaturverzeichnis
+\usepackage[style=authoryear, urldate=long, maxbibnames=99, giveninits=true]{biblatex}                   %Literaturverzeichnis
 
 %==================================================
 %Literaturverzeichnis
@@ -38,6 +38,12 @@
   andothers = {et\addabbrvspace al\adddot},
 }
 \DeclareFieldFormat{extradate}{{\mknumalph{#1}}}
+\DeclareNameAlias{sortname}{family-given}
+
+\AtBeginBibliography{%
+  \renewcommand*{\multinamedelim}{\addspace\slash\addspace}%
+  \renewcommand*{\finalnamedelim}{\addspace\slash\addspace}%
+}
 
 % Fußnotenformat
 \renewbibmacro{cite}{\printtext[bibhyperref]{\printnames{labelname} (\iffieldundef{year}{o. J.}{\printfield{year}}\printfield{extradate})}}

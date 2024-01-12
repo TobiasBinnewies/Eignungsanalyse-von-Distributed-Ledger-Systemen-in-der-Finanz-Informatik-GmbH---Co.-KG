@@ -3,120 +3,46 @@
 \subsection{Distributed Ledger System}
 \label{sec:definition-dls}
 
-\subsubsection{Distributed Ledger}
-\label{sec:definition-distributed-ledger}
-Ein Distributed Ledger ist eine Datenbank, die im Konsens geteilt und über ein Netzwerk synchronisiert wird, das sich über mehrere Standorte, Institutionen oder Länder erstreckt.\footcite[Vgl. hierzu und im Folgenden][]{w1,w2} 
-Es ermöglicht, dass Transaktionen und Aufzeichnungen öffentlich und überprüfbar sind, und da es dezentralisiert ist, gibt es keinen einzelnen Ausfallpunkt. 
-Jeder Teilnehmer im Netzwerk hat Zugang zu den Aufzeichnungen, die über dieses Netzwerk geteilt werden, und kann eine identische Kopie der Daten haben. Änderungen oder Ergänzungen am DL werden nahezu in Echtzeit in allen Kopien widergespiegelt, was die Transparenz und Sicherheit erhöht.
-\bigbreak
-\noindent
-Ein Distributed Ledger System ist ein System, das einen Distributed Ledger verwendet, um Transaktionen zwischen Teilnehmern zu verwalten. Am häufigsten wird die Blockchain-Technologie als DL verwendet.\footcite[Vgl.][]{w3}
+\input{Theorie/Definitionen/Distributed-Ledger.tex}
 
-\subsubsection{Blockchain}
-\label{sec:definition-blockchain}
-% REVIEW evtl. ausführlicher
-Eine Blockchain ist eine spezielle Form eines Distributed Ledgers, die aus einer Kette von Blöcken besteht, die jeweils die zu speichernden Daten enthalten.\footcite[Vgl.][16]{q3} 
-Ein Block besteht aus einem Header und einem Body.\footcites[Vgl. hierzu und im Folgenden][S. 161 ff\adddot]{q5}[]{w9}
-\bigbreak
-\noindent
-Der Header enthält u. a. den Hash des vorherigen Blocks, einen Zeitstempel und die Nummer des Blocks.
-Außerdem enthält der Header einen Hash des Bodys.
-So wird gewährleistet, dass die Blöcke - und so auch die darin beinhalteten Daten - nach ihrem Eintrag nicht verändert werden können, ohne alle nachfolgenden Blöcke abzuändern. 
-(So wird von „Block-Confirmation” gesprochen, wenn eine bestimmte Anzahl von Blöcken nach diesem Block hinzugefügt wurden - je mehr desto sicherer -, da er erst dann als „unveränderlich” gilt.\footcites[Vgl.][191]{q5})
-\bigbreak
-\noindent
-Der Body enthält die eigentlichen Daten, die gespeichert werden sollen. Im Falle einer Kryptowährung sind dies bspw. die Transaktionen, die in diesem Block gespeichert werden.
+\input{Theorie/Definitionen/Blockchain.tex}
 
-\subsubsection{Kryptowährung}
-\label{sec:definition-kryptowaehrung}
-Ein DLS kann viele Anwendungsmöglichkeiten haben. Am wohl bekanntesten ist die Verwendung als Kryptowährung, wie bspw. Bitcoin.\footcite[Vgl. hierzu und im Folgenden][1]{q4} 
-Hierbei werden die Transaktionen zwischen den Teilnehmern des Netzwerks durchgeführt, die in einer Blockchain festgehalten werden. 
-So können Transaktionen Peer-to-Peer durchgeführt werden, also ohne dass eine zentrale Instanz diese überprüfen muss, da die Korrektheit der Transaktionen von allen Teilnehmern geprüft werden.
-\bigbreak
-\noindent
-Bestimmste Chains - wie EVM-Chains - heben dieses Konzept auf eine neue Ebene, indem sie es ermöglichen, Smart Contracts zu erstellen.
+\input{Theorie/Definitionen/Kryptowährung.tex}
 
-\subsubsection{Ethereum Virtual Maschine Chain}
-\label{sec:definition-evm-chain}
-Eine EVM-Chain ist eine Blockchain-Netzwerk, das die Ethereum Virtual Machine (EVM) verwendet, um Smart Contracts auszuführen.\footcite[Vgl. hierzu und im Folgenden][]{w5}
-Ethereum selbst ist eine EVM-Chain, die die Kryptowährung Ether (ETH) verwendet. Allerdings gibt es noch weitere Chains, die ebenfalls kompatibel mit der EVM sind, wie bspw. Binance Smart Chain (BSC) oder Polygon (MATIC)\footcite[Vgl.][]{w6}.
-So kann für jede dieser Chains der gleiche Code - sowie Tools für dessen Entwicklung - verwendet werden, um Smart Contracts zu erstellen, die dann auf der jeweiligen Chain ausgeführt werden.
+\input{Theorie/Definitionen/EVM-Chain.tex}
 
-\subsubsection{Smart Contracts}
-\label{sec:definition-smart-contracts}
+\input{Theorie/Definitionen/Smart-Contracts.tex}
 
-Smart Contracts (im Sinne von Ethereum) sind Programme, die auf der Ethereum-Blockchain ausgeführt werden.\footcite[Vgl. hierzu und im Folgenden][]{w4} 
-Sie bestehen aus einer Sammlung von Code (ihre Funktionen) und Daten (ihr Zustand), die - ebenso wie ein Benutzer-Wallet - an einer bestimmten Adresse auf der Ethereum-Blockchain (oder einer anderen EVM-Chain - S. \ref{sec:definition-evm-chain}) residieren.
-Smart Contracts sind eine Art von Ethereum-Konto, was bedeutet, dass sie ein Guthaben haben und Ziel von Transaktionen sein können. 
-Sie werden jedoch nicht von einem Benutzer kontrolliert, sondern sind im Netzwerk bereitgestellt und laufen wie programmiert. 
-Benutzerkonten können dann mit einem Smart Contract interagieren, indem sie Transaktionen einreichen, die eine auf dem Smart Contract definierte Funktion ausführen. 
-Außerdem können Regeln / Bedingungen definiert werden, nach den Code automatisch durchgeführt wird.
-Standardmäßig können Smart Contracts nicht gelöscht werden, und Interaktionen mit ihnen sind irreversibel.
-% TODO Smart Contracts benötigen Gas
+\input{Theorie/Definitionen/Nodes.tex}
 
-% TODO Nodes erklären
-\subsubsection{Nodes}
-\label{sec:definition-nodes}
-Teilnehmer des Netzwerks, die über die gesamte Blockchain verfügen und die Transaktionen und Blöcke validieren werden Nodes genannt.\footcites[Vgl. hierzu und im Folgenden][]{w12}[]{w13} 
-Diese Nodes formen das dezentralisierte Netzwerk, das die Blockchain betreibt.
-Diese sind es auch, die den Code der Smart Contracts und die Transaktionen ausführen.
-Außerdem validieren sie die Transaktionen und Blöcke, die von anderen Nodes erstellt wurden, und erstellen neue Blöcke, die sie dann an das Netzwerk senden.
-Dazu verwenden sie einen Konsensalgorithmus, der bestimmt, welche Blöcke gültig sind (s. \ref{sec:definition-konsensalgorithmus}). 
-Sowohl für das Ausführen der Smart Contracts als auch für das Validieren der Blöcke erhalten die Nodes eine Belohnung in Form von ETH (oder einer anderen Kryptowährung, je nach Chain), diese Belohnung wird Gas genannt.
+\input{Theorie/Definitionen/Gas-Fee.tex}
 
-% TODO Gas erklären
-\subsubsection{Gas Fee}
-\label{sec:definition-gas-fee}
+\input{Theorie/Definitionen/Konsensalgorithmus.tex}
 
-\subsubsection{Konsensalgorithmus}
-\label{sec:definition-konsensalgorithmus}
-Um sicherzustellen, dass bestehende Blöcke nicht verändert werden können und der Inhalt neuer Blöcke valide ist, wird ein Konsensalgorithmus verwendet.\footcite[Vgl.][S. 2 f\adddot]{q4}
-Die bekanntesten Algorithmen sind:
-\begin{itemize}
-    \item \textbf{Proof of Work (PoW):}
-    Miner (Nodes) konkurrieren miteinerander, um ein mathematisches Problem zu lösen.\footcite[Vgl. hierzu und im Folgenden][3]{q4}
-    Dem ersten, dem dies gelingt, erhält die Blockbelohnung und kann den nächsten Block erstellen.
-    Um einen Block zu erstellen wird also Zeit benötigt, ein Angreifer müsste also eine höheren Rechenleistung als die Hälfte des Netzwerks besitzen, um die Blockchain zu manipulieren.
+\input{Theorie/Definitionen/Account-vs-UTXO.tex}
 
-    \item \textbf{Proof of Stake (PoS):}
-    Es wird zufällig eine Node ausgewählt, die den nächsten Block erstellen darf und so die Belohnung erhält.\footcite[Vgl. hierzu und im Folgenden][2]{q7}
-    Es muss vorab eine Sicherheitsleistung (Stake) hinterlegt werden, die verloren geht, wenn die Node versucht, die Blockchain zu manipulieren. 
-    Je höher der Stake, desto höher die Wahrscheinlichkeit, dass die Node ausgewählt wird.
-    So wird verhindert, dass ein Angreifer die Blockchain manipuliert, da er mehr als die Hälfte des Stakes besitzen müsste, um die Blockchain zu manipulieren.
+\input{Theorie/Definitionen/ERC20-Token.tex}
 
-    \item \textbf{Proof of Authority (PoA):}
-    Es wird eine Liste von Nodes festgelegt, die die Blockchain validieren dürfen.\footcite[Vgl. hierzu und im Folgenden][]{w14}
-    Dieser Algorithmus wird häufig bei privaten Chains verwendet, da den Nodes vertraut werden muss.
-    So kann die Blockchain nicht manipuliert werden, ohne dass eine der Nodes dies zulässt.
-    Dieser Algorithmus ist sehr schnell, da keine Rechenleistung benötigt wird oder eine Auswahl getroffen werden muss, um einen Block zu erstellen.
-    
-\end{itemize}
+\input{Theorie/Definitionen/Layer2-Solution.tex}
 
-% TODO Unterscheid zwischen Account- und Transactions-basierten Chains erklären
-% --> Account-based Problem: Keine HD-Wallets einfach möglich, so weniger Anonymität
-\subsubsection{Account-based vs. UTXO-based Chains}
-\label{sec:definition-account-based-vs-utxo-based-chains}
+\input{Theorie/Definitionen/Transaction-Relayers.tex}
 
-\subsubsection{ERC20 Token}
-\label{sec:definition-erc20-token}
-Es gibt diverse Standarts für Smart Contracts, die bestimmte Funktionen und Eigenschaften definieren.
-Einer dieser Standarts ist der ERC20 Token Standard, der die Schnittstellen eines Smart Contracts definiert, der als Token verwendet werden soll.\footcite[Vgl. hierzu und im Folgenden][]{w7}
-Ein Token kann dabei eine beliebige Repräsentation eines Vermögenswertes sein.
-In diesem Smart Contract wird die Anzahl der Token gespeichert, die eine bestimme Adresse (also Benutzer-Wallet oder Smart Contract) besitzt.
-Außerdem werden Funktionen definiert, um u. a. Token von einer Adresse zu einer anderen zu versenden, die Anzahl der Token einer Adresse abzufragen und anderen Adressen die Erlaubnis zu erteilen, Token von der eigenen Adresse zu versenden.\footcites[Vgl.][]{w8}[]{w7}
+\input{Theorie/Definitionen/Sicherheitsrisiken.tex}
 
-% TODO Layer 2 Solutions erklären
-\subsubsection{Layer 2 Lösungen}
-\label{sec:definition-layer-2-solutions}
+\input{Theorie/Definitionen/Proxys.tex}
 
-% TODO EIP-712 / EIP-2612 / Relaying / Meta Transactions erklären
-\subsubsection{Transaction Relayers}
-\label{sec:definition-transaction-relayers}
 
-% REVIEW Sicherheitsrisiken wie Reentrancy / Oracle / etc. Attack? - i.V.m. Audit 
-\subsubsection{Sicherheitsrisiken}
-\label{sec:definition-sicherheitsrisiken}
 
-% REVIEW Proxys?
-\subsubsection{Proxies}
-\label{sec:definition-proxies}
+
+
+
+
+
+
+
+
+
+
+
+
+

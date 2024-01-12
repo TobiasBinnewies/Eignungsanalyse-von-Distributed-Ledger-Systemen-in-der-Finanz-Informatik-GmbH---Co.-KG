@@ -1,0 +1,23 @@
+\subsubsection{Konsensalgorithmus}
+\label{sec:definition-konsensalgorithmus}
+Um sicherzustellen, dass bestehende Blöcke nicht verändert werden können und der Inhalt neuer Blöcke valide ist, wird ein Konsensalgorithmus verwendet.\footcite[Vgl.][S. 2 f\adddot]{q4}
+Die bekanntesten Algorithmen sind:
+\begin{itemize}
+    \item \textbf{Proof of Work (PoW):}
+    Miner (Nodes) konkurrieren miteinerander, um ein mathematisches Problem zu lösen.\footcite[Vgl. hierzu und im Folgenden][3]{q4}
+    Dem ersten, dem dies gelingt, erhält die Blockbelohnung und kann den nächsten Block erstellen.
+    Um einen Block zu erstellen wird also Zeit benötigt, ein Angreifer müsste also eine höheren Rechenleistung als die Hälfte des Netzwerks besitzen, um die Blockchain zu manipulieren.
+
+    \item \textbf{Proof of Stake (PoS):}
+    Es wird zufällig eine Node ausgewählt, die den nächsten Block erstellen darf und so die Belohnung erhält.\footcite[Vgl. hierzu und im Folgenden][2]{q7}
+    Es muss vorab eine Sicherheitsleistung (Stake) hinterlegt werden, die verloren geht, wenn die Node versucht, die Blockchain zu manipulieren. 
+    Je höher der Stake, desto höher die Wahrscheinlichkeit, dass die Node ausgewählt wird.
+    So wird verhindert, dass ein Angreifer die Blockchain manipuliert, da er mehr als die Hälfte des Stakes besitzen müsste, um die Blockchain zu manipulieren.
+
+    \item \textbf{Proof of Authority (PoA):}
+    Es wird eine Liste von Nodes festgelegt, die die Blockchain validieren dürfen.\footcite[Vgl. hierzu und im Folgenden][]{w14}
+    Dieser Algorithmus wird häufig bei privaten Chains verwendet, da den Nodes vertraut werden muss.
+    So kann die Blockchain nicht manipuliert werden, ohne dass eine der Nodes dies zulässt.
+    Dieser Algorithmus ist sehr schnell, da keine Rechenleistung benötigt wird oder eine Auswahl getroffen werden muss, um einen Block zu erstellen.
+    
+\end{itemize}

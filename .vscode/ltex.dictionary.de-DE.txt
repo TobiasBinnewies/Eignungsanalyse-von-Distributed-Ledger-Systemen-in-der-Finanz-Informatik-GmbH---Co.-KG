@@ -7,3 +7,5 @@ Contracts
 Mainnet
 Nodes
 Chain
+Account-based
+UTXO-based

@@ -1,4 +1,15 @@
 % TODO Unterscheid zwischen Account- und Transactions-basierten Chains erklären
 % --> Account-based Problem: Keine HD-Wallets einfach möglich, so weniger Anonymität
-\subsubsection{Account-based vs. UTXO-based Chains}
-\label{sec:definition-account-based-vs-utxo-based-chains}
+\subsubsection{Account-based vs. UTXO-based Chain}
+\label{sec:definition-account-based-vs-utxo-based-chain}
+\noindent
+Bei einer UTXO-based Chain (bspw. Bitcoin) werden die Anzahl an Coins pro offener Transaktion gespeichert.\footcite[Vgl. hierzu, im Folgenden und weiterführend][S. 182 ff\adddot]{q5}
+Eine Adresse besitzt also genauso viele Coins wie die Summe der offenen Transaktionen, die an diese Adresse gesendet wurden.
+Eine Transaktion kann mehrere Ein- und Ausgänge haben, wobei die Summe gleich sein muss.
+So können auch zwei offene Transaktionen unterschiedlicher Adressen zusammengefasst und einem Empfänger zugesendet werden.
+\bigbreak
+\noindent
+Bei einer Account-based Chain (bspw. EVM-Chains) werden die Anzahl an Coins pro Account / Adresse gespeichert.\footcite[Vgl. hierzu und im Folgenden][]{w16} 
+So wird bei einer Transaktion die Anzahl an Coins von einem Account auf einen anderen Account übertragen, sprich die Anzahl an Coins wird von einem Account abgezogen und dem anderen Account hinzugefügt.
+Die Art von Chain wird vor allem bei Smart Contract fokussierten Blockchains verwendet.
+Im in diesem Modell Coins mehrerer Adressen zusammenzufassen, sind mehrere Transaktionen notwendig.

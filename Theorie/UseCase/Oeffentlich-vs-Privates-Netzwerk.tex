@@ -3,16 +3,18 @@
 \subsection{Öffentliche vs. private Chain}
 \label{sec:oeffentlich-vs-privates-netzwerk}
 
-% NOTES Öffentliches vs. privates Netzwerk:
-% PRivates:
-% - Nur für bestimmte Teilnehmer (in dem Falle dann nur FI)
-% - wirds wirklich nur von einer Authority verwendet können die Daten geändert werden
-% - "eigene" Regeln (bspw. kein Gas)
-
-% Öffentliches:
-% - Anonymität schwierig zu gewährleisten
-% - Transaktionskosten
-% - Daten können nicht geändert werden
+\todoin[color=NOTES]{
+    Öffentliches vs. privates Netzwerk: \break
+    PRivates: \break
+    - Nur für bestimmte Teilnehmer (in dem Falle dann nur FI) \break
+    - wirds wirklich nur von einer Authority verwendet können die Daten geändert werden \break
+    - "eigene" Regeln (bspw. kein Gas) \break
+    \break
+    Öffentliches: \break
+    - Anonymität schwierig zu gewährleisten \break
+    - Transaktionskosten \break
+    - Daten können nicht geändert werden \break
+}
 
 Bei der Verwendung einer Blockchain gibt es die Möglichkeit, einer öffentlichen Chain „beizutreten“ oder dafür eine private Chain zu betreiben.\footcite[Vgl.][]{w10}
 Eine öffentliche Chain ist für alle Teilnehmer offen und kann von jedem verwendet werden.\footcite[Vgl. hierzu und im Folgenden][]{w11}
@@ -20,7 +22,7 @@ Eine privatee Chain hingegen ist nur für ausgewählte Teilnehmer zugänglich un
 Die Auswahl der Art der Chain kann an den Punkten Sicherheit / Unveränderlichkeit, Leistung, Kosten, Berechtigungen und Datenschutz / Anonymität erfolgen:
 \begin{itemize}
     \item \textbf{Sicherheit / Unveränderlichkeit:} 
-    % REVIEW Folgendes eher in Definition oder späterer Analyse?
+    \todo[color=REVIEW]{Folgendes eher in Definition oder späterer Analyse?}
     Die Sicherheit und Unveränderlichkeit einer Blockchain wird durch ihren Konsensalgorithmus bestimmt. 
     Eine öffentliche Chain wird durch die Interaktion von Tausenden unabhängigen Nodes gesichert, die von Einzelpersonen und Organisationen auf der ganzen Welt betrieben werden. 
     Private Chains haben typischerweise eine kleine Anzahl von Nodes, die von einer oder wenigen Organisationen kontrolliert werden. 
@@ -36,7 +38,7 @@ Die Auswahl der Art der Chain kann an den Punkten Sicherheit / Unveränderlichke
     Abhilfe können Transaction Relayers (s. \ref{sec:definition-transaction-relayers}) sein, sodass ein Endkunde diese Gebühr nicht selbst tragen muss.
 
     Einige Analysen haben gezeigt, dass die Gesamtkosten für den Betrieb einer Anwendung auf einer öffentlichen Chain niedriger sein können als beim Betrieb einer privaten Chain.\footcite[Vgl.][14]{q6}
-    % REVIEW Die Quelle genauer erläutern?
+    \todo[color=REVIEW]{Die Quelle genauer erläutern?}
 
     \item \textbf{Berechtigungen:}
     Bei privaten Chains können nur autorisierte Teilnehmer Nodes einrichten und Transaktionen durchführen.
@@ -52,5 +54,7 @@ Die Auswahl der Art der Chain kann an den Punkten Sicherheit / Unveränderlichke
     Ebenso sind alle Transaktionen auf einer öffentlichen Chain öffentlich einsehbar, sodass die Anonymität der Teilnehmer nicht gewährleistet werden kann (s. \ref{sec:definition-account-based-vs-utxo-based-chains}).
 \end{itemize}
 
-% TODO Fazit / Empfehlung welche Chain verwendet werden soll
-% --> Öffentlich, da sonst nicht dezentral
+\todoin[color=TODO]{
+Fazit / Empfehlung welche Chain verwendet werden soll \break
+--> Öffentlich, da sonst nicht dezentral \break
+}

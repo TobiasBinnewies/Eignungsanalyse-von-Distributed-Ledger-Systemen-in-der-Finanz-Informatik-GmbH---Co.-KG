@@ -4,27 +4,31 @@
 
 % \subsubsection{Zahlungsverkehr}
 
-% NOTES Zahlungsverkehr:
-% - Je nach Aufbau kann nur der Kontoinhaber selbst eine Transaktion vornehmen
-% - Transaktionen können nicht rückgängig gemacht werden --> Rückbuchung durch erneute Transaktion
-% - Transaktionen können nicht verändert werden --> Keine Manipulation möglich
-% - AuditLog ist automatisch durch Technologie vorhanden
-% - Durch Smart Contracts können bestimmte Finanzprodukte (z.B. Sparverträge, Kredite, ...) oder auch Multisign (per Multisign Contracts) abgebildet werden und so automatisiert werden
-% Großrechnerabschaffung
+\todoin[color=NOTES]{
+Zahlungsverkehr: \break
+- Je nach Aufbau kann nur der Kontoinhaber selbst eine Transaktion vornehmen \break
+- Transaktionen können nicht rückgängig gemacht werden --> Rückbuchung durch erneute Transaktion \break
+- Transaktionen können nicht verändert werden --> Keine Manipulation möglich \break
+- AuditLog ist automatisch durch Technologie vorhanden \break
+- Durch Smart Contracts können bestimmte Finanzprodukte (z.B. Sparverträge, Kredite, ...) oder auch Multisign (per Multisign Contracts) abgebildet werden und so automatisiert werden \break
+Großrechnerabschaffung \break
+\break
+Probleme: \break
+- Transaktionen sind öffentlich einsehbar --> Keine Privatsphäre (außer evtl. durch HD-Wallets) \break
+- Euro keine Kryptowährung --> Umwandlung in Token (Layer2) notwendig \break
+- Weiterentwicklung bei bspw. neuen Anforderungen schwierig --> Durch Proxys möglich \break
+}
 
-% Probleme:
-% - Transaktionen sind öffentlich einsehbar --> Keine Privatsphäre (außer evtl. durch HD-Wallets)
-% - Euro keine Kryptowährung --> Umwandlung in Token (Layer2) notwendig
-% - Weiterentwicklung bei bspw. neuen Anforderungen schwierig --> Durch Proxys möglich
-
-% REVIEW QUELLEN!
+\todo[color=REVIEW]{
+    QUELLEN!?
+}
 Ein Use Case dieser Technologie in Bereich einer Bank wäre der Zahlungsverkehr. 
 So wird die Blockchain als Datenbank für die Konten der Kunden verwendet.
 Eine Blockchain erfüllt automatisch durch ihren Aufbau einige Anforderungen an den Zahlungsverkehr, die in herkömlichen Systemen beachtet und umgesetzt werden müssen. 
 So können Transaktionen - also in diesem Fall Einträge in diese Datenbank - nicht rückgängig, nicht verändert und so nicht manipuliert werden. 
-Es gäbe dennoch die Möglichkeit - je nach konkreter Implementierung - bestimmte Sicherheitsmechanismen einzubauen, um bspw. gegen Geldwäsche oder fehlerhaft Buchungen vorzugehen. % TODO Ausführlicher & Besipiele / konkrete Idee der Implementierung
+Es gäbe dennoch die Möglichkeit - je nach konkreter Implementierung - bestimmte Sicherheitsmechanismen einzubauen, um bspw. gegen Geldwäsche oder fehlerhaft Buchungen vorzugehen. \todo[color=TODO]{Ausführlicher \& Besipiele / konkrete Idee der Implementierung}
 Außerdem ist ein AuditLog automatisch vorhanden, da alle Transaktionen in der Blockchain gespeichert werden.
-Aufbauend darauf können Smart Contracts verwendet werden, um bestimmte Finanzprodukte (z.B. Sparverträge, Kredite, ...) oder auch Multisign (per Multisign Contracts) abzubilden und so zu automatisieren. % TODO Ausführlicher & Besipiele / konkrete Idee der Implementierung
+Aufbauend darauf können Smart Contracts verwendet werden, um bestimmte Finanzprodukte (z.B. Sparverträge, Kredite, ...) oder auch Multisign (per Multisign Contracts) abzubilden und so zu automatisieren. \todo[color=TODO]{Ausführlicher \& Besipiele / konkrete Idee der Implementierung}
 %...
 \input{Theorie/UseCase/Datenspeicherung.tex}
 

@@ -28,6 +28,7 @@
   urldate=long, 
   maxbibnames=99
 ]{biblatex}                             %Literaturverzeichnis
+\usepackage{todonotes}                  %Todos
 
 %==================================================
 %Literaturverzeichnis
@@ -88,6 +89,24 @@
         top=2cm,
         bottom=2cm
     }
+%==================================================
+
+%==================================================
+% Todos
+%==================================================
+\newcommand\todoin[2][]{\todo[inline, caption={2do}, #1]{
+ \begin{minipage}{\textwidth-4pt}#2\end{minipage}}}
+
+% Todos to left side
+\reversemarginpar
+
+% Todos Width
+\setlength{\marginparwidth}{3.5cm}
+
+% Todos Color
+\definecolor{NOTES}{HTML}{00ffff}
+\definecolor{REVIEW}{HTML}{d400ff}
+\definecolor{TODO}{HTML}{90EE90}
 %==================================================
 
 %Variable zum speichern der Seite

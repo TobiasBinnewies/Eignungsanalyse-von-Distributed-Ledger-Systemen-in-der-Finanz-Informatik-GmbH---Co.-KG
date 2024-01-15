@@ -15,7 +15,7 @@
 *.blg
 *.bcf
 *.run.xml
-Struktur-blx.bib
+*blx*
 
 # Mac OS X
 .DS_Store

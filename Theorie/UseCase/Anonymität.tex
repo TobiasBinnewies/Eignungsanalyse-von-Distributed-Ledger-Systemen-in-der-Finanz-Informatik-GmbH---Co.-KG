@@ -13,8 +13,14 @@ Diese Art von Wallet sind der heutige Standart für UTXO-based Chains.
 Allerdings können HD-Wallets nicht für Account-based Chains verwendet werden, da diese keine Keys verwenden, sondern die Anzahl an Coins pro Account speichern.
 
 \subsubsection{UTXO-based Token}
-\todo[color=TODO]{
-    Idee mit UTXO-based Token auf Account-based Chain einfügen (bzgw. HD-Wallet fähigen Token) \break
-    --> UTXO vermutlich besser, weil weniger Chain Einträge / Auslesungen notwendig sind \break
+\todo[color=REVIEW]{
+Evtl. noch abwegen ziwschien UTXO und Account based wo mehrere Adressen zusammengefasst werden können    
+\break
+--> UTXO vermutlich besser, weil weniger Chain Einträge / Auslesungen notwendig sind \break
 }
-Aufbauend auf der Idee einen neuen Token zu kreieren (s. \ref{datenspeicherung:neuer-token}) ... \todo[color=TODO]{Weiterschreiben}
+Aufbauend auf der Idee einen neuen Token zu kreieren (s. \ref{datenspeicherung:neuer-token}) könnte dieser auch als UTXO-basierter Token implementiert werden.
+So werden nicht wie üblich bei einem ERC20 Token der Coinstand pro Adresse gespeichert, sondern die offenden Transaktionen pro Adresse.
+Bei einem Transfer können dann beliebig viele offene Transaktionen als In- und Output verwendet werden.
+Dabei könnte die Methode so implementiert werden, dass der Contract selbst die Transaktionen zusammensucht, die in Summe den gewünschten Betrag ergeben oder es werden beim Aufruf die zu verwendenten Transaktionen als Parameter übergeben.
+Letzteres würde weniger Aufrufe benötigen und so Transaktionskosten (Gas) sparen.
+Auf diese Weise kann ein HD-Wallet fähiger Token erstellt werden, der auf einer Account-based Chain (also auch einer EVM-Chain) verwendet werden kann.

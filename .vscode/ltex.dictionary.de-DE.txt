@@ -9,3 +9,7 @@ Nodes
 Chain
 Account-based
 UTXO-based
+Konsensalgorithmus
+Sidechains
+State
+Sidechain

@@ -1,3 +1,9 @@
 \subsubsection{Transaction Relayers}
 \label{sec:definition-transaction-relayers}
 \todo[color=TODO]{EIP-712 / EIP-2612 / Relaying / Meta Transactions erklären}
+Um es Account zu ermöglichen Transaktionen zu tätigen, ohne ETH zu besitzen, besteht die Möglichkeit, dass ein Dritter die Transaktion für den Account tätigen und so auch bezahlen.\footcites[Vgl. hierzu, zum Folgenden und weiterführend][]{w24}[]{w26}
+Dieser Dritte wird Transaction Relayer genannt.
+Dabei wird die Transaktion vom Benutzer zwar signiert, dann aber nicht direkt ans Netzwer gesendet und so ausgeführt, sondern an den Dritten gesendet, der die Transaktion dann ausführt.
+\todo[color=REVIEW]{Evtl ausführlicher (Meta-Transaction erklären)}
+Es muss auf der Chain ein Smart Contract existieren, der die Transaktionen entgegennimmt, die Signatur prüft und dann die Transaktion durchführt.\footcite[Vgl.][]{w25}
+Allerding können nur speziell dafür angepasste Funktionen eines Smart Contracts auf diese Weise ausgeführt werden, da der eigentliche „Ausführende” nicht der Sender ist und deshalb anders geprüft werden muss (nicht über \textit{msg.sender} sondern über bspw. \textit{msgSender()}).\footcites[Vgl.][]{w27}[]{w24}

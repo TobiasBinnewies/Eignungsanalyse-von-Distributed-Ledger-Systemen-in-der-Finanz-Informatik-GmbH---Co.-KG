@@ -2,8 +2,10 @@
 % Anhang
 % --------------------------------------------------
 
-\newappendix{Anhang 1 - Interviewleitfaden für Technikverantwortlicher/ Entwickler}\label{Anhang 1 - Interviewleitfaden für Technikverantwortlicher/ Entwickler}
+\newappendix{Anhang 1 - Interviewleitfaden für das Interview mit Christian Krauthoff}
+\label{Anhang 1 - Interviewleitfaden für das Interview mit Christian Krauthoff}
 
+\todo[color=TODO]{Intervierwleitfaden schreiben}
 \begin{tabular}{|p{10cm}|p{4cm}|}
     \hline
     \textbf{Interviewfragen} & \textbf{Bezugskapitel} \\
@@ -16,28 +18,100 @@
 
 \newpage
 
-\newappendix{Anhang 2 - Gesprächsprotokoll 1}\label{appendix: Anhang 3}
+\newappendix{Anhang 2 - Interviewprotokoll 1: Christian Krauthoff}\label{appendix: Anhang 3}
 
-\textbf{Protokoll:} Gespräch mit X Y \\
-\textbf{Teilnehmer:} X Y - RolleX \\
-    \hspace*{24,5mm} Tobias Binnewies - Dual Student \\
-\textbf{Thema:} ThemaX \\
-\textbf{Dauer:} XY min
+\todo[color=REVIEW]{Daten überprüfen}
+\begin{tabular}{p{2.5 cm}p{11.8 cm}}
+\textbf{Protokoll:} & Gespräch mit Christian Krauthoff \\
+\textbf{Teilnehmer:} & Christian Krauthoff - Abteilungsleiter Auslandszahlungsverkehr \break Tobias Binnewies - Dualer Student \\
+\textbf{Thema:} & Produktionsdatenspeicherung / Transaktionskosten / Großrechner \\
+\textbf{Dauer:} & 30 min
+\end{tabular}
 \bigbreak
 \noindent\rule[1ex]{\textwidth}{1pt} %Linie
 \bigbreak
 
-Frage: Frage1
+Frage: 
+Wie wird sichergestellt, dass Produktionsdaten (bspw. Kontodaten) nicht manipuliert werden können?
+
 \bigbreak
-Antwort: Antwort1
+Antwort: 
+Als Mitarbeiter braucht man ein Produktionsrecht und ein recht sensitive Daten einsehen zu dürfen, um auf die Daten mit einem Auftragsgrund zugreifen zu können. Der Auftragsgrund besteht dann durch ein Ticket, also quasi eine „Beschwerde” durch ein Institut.
+Nur dann kann ein FI-Mitarbeiter auf Produktionsdaten zugreifen.
+Um Daten abzuändern muss noch ein weiteres Recht beantragt werden, das nur wenige Mitarbeiter haben.
+Außerdem kommt das Vieraugenprinzip zum Einsatz, sodass immer mindestens zwei Mitarbeiter mit diesem Recht das SQL-Statement einsehen müssen, bevor es ausgeführt wird.
+
+\noindent
+Source Code wird maschinell geprüft, also bspw. dass keine festen IBANs, Namen oder ähnliches im Code fest abgefragt werden.
+Außerdem wird immer ein Code Review von „Unabhängigen„ - also Entwicklern, die an diesem Projekt nicht beteiligt waren - durchgeführt, um so die Qualität des Codes zu gewährleisten.
+
 \bigbreak
 \bigbreak
 
-Frage: Frage2
-\bigbreak
-Antwort: Antwort2
+Frage:
+Wie werden Daten bei Änderung nachvollziehbar gespeichert?
+
 \bigbreak
 
+Antwort:
+Wenn Daten „gelöscht” werden oder auch geändert werden, werden diese nie wirklich gelöscht sondern nur deaktiviert.
+So gibt es bei jeder gespeicherten Zeile in der Datenbank ein Feld „Gültig bis”, welches erst einmal leer ist. 
+Ändert sich nun etwas an der Zeile, wird das Feld „Gültig bis” mit dem Datum der Änderung gefüllt und eine neue Zeile mit den neuen Daten wird angelegt.
+So ist eine Löschung oder Änderung jederzeit nachvollziehbar.
+
+\noindent
+In der DSGVO ist festgelegt, sind Datenlöschungfristen festgelegt.
+Kontodaten haben eine Löschfrist von 10 Jahren, d. h. diese müssen 10 Jahre lang gespeichert werden und können dann erst wirklich gelöscht werden.
+
+\bigbreak
+\bigbreak
+
+Frage:
+Wie hoch sind die Kosten pro Transaktion?
+
+\bigbreak
+Antwort: 
+Die Informationen dazu stehen im Produktkatalog. Außerdem gibt es SQLs, die einem die genauen Kosten für das jeweilige Insitut auswerfen.
+
+\noindent
+Die Kosten für die Finanz Informatik sind pro Transaktion schwer anzugeben, da es sich hierbei um Volumentverträge handelt. 
+Hierbei wird eine Lastspitze der Großrechners im gesamten Jahr festgelegt und demnach abgerechnet. 
+
+
+\bigbreak
+\bigbreak
+
+Frage:
+Gibt es Projekte um vom Großrechner wegzukommen?
+
+\bigbreak
+
+Antwort:
+Ja, man möchte klar vom Großrechner wegkommen - und auch vorallem von IBM abhängig zu sein.
+Es gibt das Projekt „COBOL to Java”, also von COBOL / IBM weg und so nur noch die kritischen Themen dort zu halten, also im Rahmen von Zeit und Massendatenverarbeitung und den Rest alles auslagern in Java.
+Allerdings laufen die Java-Jobs zum Teil auch auf dem Großrechner, das Zeil ist jedoch - sofern möglich - die Großrechnerjobs immer weiter zu reduzieren.
+
+\noindent
+Das Problem ist immer die Geschwindigkeit und Massendaten, da dies durch kein anderes System so gut abbildbar ist wie durch den Großrechner.
+Bspw. schafft der Großrechner, wenn ein Job mit ca. 1,4 Millionen Transaktionen anstartet ca. 20 Sekunden.
+Oder auch wenn z. B. die DKB (?) am Monatsende mit ihren ca. 1,8 Millionen Konten Zinsrechnung, Abschußschreibung oder auch Umbuchung durchführt, laufen mehrere Jobs parallel.
+Das ist mit anderen Systemen schwer abbildbar, bzw. auch schnwer einmal zu testen.
+
+\bigbreak
+\bigbreak
+
+Frage:
+Was sind Geschäftsprozesse?
+
+\bigbreak
+
+Antwort:
+Geschäftsprozesse sind quasi ein „Fahrplan”, dort steht drin, was bspw. von der Erfassung bis zur Buchung mit den Daten passiert, also ob z. B. ob aus 5€ noch 15€ werden, da es noch Gebühren gibt oder ist das nicht erlaubt.
+Es wird genau geregelt, welcher Prozess wann, wie und in welcher Reihenfolge abläuft.
+So kann genau nachgewiesen werden, was genau mit den Daten passiert ist.
+Es gibt dann „Datenflussdiagramme„ für einen genauen Prozess um bspw. bei Beschwerde genau nachvollziehen zu könnne, warum was genau passiert ist.
+Es ist technisch nicht möglich einen Prozess zu umgehen, da die Daten immer durch die Prozesse laufen.
+Außerdem können bpsw. keine Daten gelöscht oder abgeändert werden, wenn dies nicht im Geschäftsprozess vorgesehen ist.
 
 \newpage
 

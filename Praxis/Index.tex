@@ -5,7 +5,7 @@
 
 \todoin[color=NOTES]{
     Ist-Zustand: \break
-Quelle: Persönliches Gespräch mit Nils Pr... (OE-XXXX) \break
+Quelle: Persönliches Gespräch mit Nils Pudenz (OE-4293) \break
 Portal (Sparkassenmitarbeiter) \break
 Online-Banking (Sparkassenkunde) \break
 Cobol-Job \break
@@ -14,7 +14,7 @@ OSPE-Services \break
 $\downarrow$ \break
 DOING 1 - N \break
 $\downarrow$ \break
-Inhausclearing: DiBus (Quelle: Gespräch Christian Krauthoff (OE-XXXX)) \break
+Inhausclearing: DiBus (Quelle: Gespräch Christian Krauthoff (OE-4293)) \break
 Inland / SEPA: Clearing / TARGET / SWIFT \break
 Ausland: Clearing / SWIFT \break
 \break
@@ -33,9 +33,9 @@ Osplus produktkatalog \break
 \break
 \break
 Sicherheitsaspekte: \break
-- Code Review durch unabhängige Entwickler (also welche die nicht am Projekt mitgearbeitet haben), Quelle: Gespräch mit Paulina ... (OE-XXXX) \break
-- Automatische Codeprüfung, Quelle: Gespräch mit Paulina ... (OE-XXXX) \break
-- GPS (Geschäftsprozesse), die die Verwendung von Daten in einem bestimmten Kontext klar definieren, Quelle: Gespräch mit Paulina ... (OE-XXXX) \break
+- Code Review durch unabhängige Entwickler (also welche die nicht am Projekt mitgearbeitet haben), Quelle: Gespräch mit Paulina Rave (OE-4295) \break
+- Automatische Codeprüfung, Quelle: Gespräch mit Paulina Rave (OE-4295) \break
+- GPS (Geschäftsprozesse), die die Verwendung von Daten in einem bestimmten Kontext klar definieren, Quelle: Gespräch mit Paulina Rave (OE-4295) \break
 }
 
 \todoin[color=NOTES]{
@@ -46,8 +46,35 @@ Die Seiten werden fortlaufend im Rahmen eines OSPlus-Releases und der Weiterentw
 Untergeordnete Seiten:
 }
 
-\subsection{Ist-Zustand}
+\subsection{Ist-Zustand Zahlungsverkehr}
 \label{sec:ist-zustand}
-Aktuell läuft die Abwicklung des Kerngeschäfts der Sparkassen über einen Großrechner (Mainframe) von IBM ab.\footnote{
-    \ref[TEST]{i1:f1}
-}
+Aktuell läuft die Abwicklung des Kerngeschäfts der Sparkassen über einen Großrechner (Mainframe) von IBM ab.\footnote{Vgl. hierzu und zum Folgenden \pageref{i1:f4}.}
+Für dne Großrechner werden sogennante „Jobs” - also Kurzprogramme, die eine bestimmte Aufgabe erfüllen - geschrieben. Dafür wird die Programmiersprache COBOL verwendet, welche Hochperformant ist und so die Massendatenverarbeitung ermöglicht.
+Allerdings sind COBOL-Jobs an den Großrechner gebunden und immer weniger Entwickler sind in der Lage diese zu schreiben.
+Daher werden zusätzlich Java-Jobs geschrieben, die ebenfalls auf dem Großrechner laufen, aber auch auf anderen Systemen ausgeführt werden könnten.
+Es ist das Ziel, die Verwendung von COBOL-Jobs aber auch vom Großrechner selbst zu reduzieren und so auf andere Systeme zu migrieren.
+Neuentwicklung haben die klare Richtlinie in Java zu entwickeln und nur kritische Themen - im Sinne von Zeit und Datenmasse - auf dem Großrechner zu belassen.\footnote{Vgl. \pageref{i1:f4}; Persönliches Gespräch mit Nils Pudenz - Entwickler AZV \& ZV-Rekla (OE-4293).}
+Für weniger kritische Themen werden OSPE-Services verwendet, die auf einem anderen System laufen.
+Grundsätzlich laufen Prozesse des Kerngeschäfts wie folgt ab:\footnote{Vgl. \pageref{a1}.}
+\todo[color=REVIEW]{Itemize notwendig? Ja, bitte}
+\begin{itemize}
+    \item Ein Mitarbeiter oder ein Endkunde setzt einen Prozess im Frontend in Gang (bspw. Überweisung oder Abfrage eines Kontostands).
+    Dies kann über das Portal oder die Neoanwendung für Mitarbeiter oder das Online-Banking / die App für Endkunden geschehen.
+    \item Die Anfrage wird von einem OSPE-Service verarbeitet.
+    Entweder kann dieser die Anfrage direkt (in in Verbindung mit anderen OSPE-Services) bearbeiten oder er ruft einen Java- oder COBOL-Job auf.
+    \item Der Java-Job kann ebenfalls COBOL-Jobs aufrufen, andersherum ist dies nicht möglich.
+    \item Bei bestimmte Prozessen (bpsw. Transaktionen) müssen eine Anzahl an Prüfungen - die DOINGs - durchgeführt werden. 
+    (Z. B. ob die IBAN existiert, ob der Kontoinhaber der richtige ist, ob das Konto gedeckt ist oder auch ob der Empfänger auf einer Sperrliste steht.) 
+    \item Ist diese Prüfung erfolreich kann der Prozess fortgesetzt werden.
+    \item Sowohl die OSPE-Services als auch die Java- und COBOL-Jobs greifen auf die Datenbank zu, um die benötigten Daten zu erhalten bzw. zu speichern. 
+\end{itemize}
+
+\bigbreak
+\bigbreak
+
+\noindent
+Um Daten nachvollziebar zu speichern - also so, dass auch nach Änderung oder eignetlicher Löschung noch der vorherige Stand ermittelbar ist - werden Daten nie wirklich aktualisiert oder gelöscht, sondern es wird ein neuer Datensatz angelegt, der den aktuellen Stand der Daten enthält.
+Der alte Stand wird nur „deaktiviert”, also mit einem Ablaufdatum versehen, sodass dieser nicht mehr verwendet wird.\footnote{Vgl. hierzu und zum Folgenden \pageref{i1:f2}.}
+Erst nach einer in der DSGVO festgelegten Zeit - im Falle von Kontodaten sind dies 10 Jahre - kann dieser Datensatz dann wirklich gelöscht werden.
+
+\todo[color=REVIEW]{Evtl. noch GPS erklären?}

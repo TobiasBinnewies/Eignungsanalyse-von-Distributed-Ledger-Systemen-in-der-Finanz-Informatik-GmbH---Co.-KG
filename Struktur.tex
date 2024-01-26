@@ -278,7 +278,14 @@
 
 
     \newcommand{\appendices}[1]{\addcontentsline{apc}{appendices}{#1}}
-    \newcommand{\newappendix}[1]{\section*{#1}\appendices{#1}}
+
+    \newcounter{appendix}
+    \newcommand{\newappendix}[1]{
+      \phantomsection
+      \stepcounter{appendix}
+      \section*{Anhang \theappendix{} - #1}
+      \appendices{Anhang \theappendix{} - #1}
+    }
 
     \listofappendices
 
@@ -290,19 +297,11 @@
     %==================================================
     \section{Anhang}
     \titleformat*{\section}{\fontsize{12}{14}\selectfont\bfseries} % Schriftgröße und Zeilenabstand ändern
-    {
-        \setcounter{page}{1}
-        \setcounter{tocdepth}{1}
-            \renewcommand{\thepage}{A\arabic{page}}
-            \renewcommand\thesubsection{Anhang \arabic{subsection}:}
+    \setcounter{page}{1}
+    \setcounter{tocdepth}{1}
+    \renewcommand{\thepage}{A\arabic{page}}
 
-        
-
-        \input{Anhang.tex}
-       
-
-    \par}
-
+\input{Anhang.tex}
     
 
 \end{document}

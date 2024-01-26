@@ -1,4 +1,4 @@
-\subsection{Anonymität}
+\subsubsection{Anonymität}
 \todo[color=TODO]{Quelle einbauen: Q5, S. 231 ff.}
 In einem öffeltichen Blockchain-Netzwerk sind alle Transaktionen öffentlich einsehbar.
 Anonymität wird dadurch gewährleistet, dass die Identität eines Teilnehmers von der Walletaddress getrennt ist.\footcite[Vgl.][6]{q4}
@@ -7,13 +7,13 @@ Dieses Problem würde ebenfalls bestehen, wenn die Kontostände in einem öffent
 
 \input{Theorie/Definitionen/Account-vs-UTXO.tex}
 
-\subsubsection{HD-Wallets}
+\paragraph{HD-Wallets}
 Bei einem HD-Wallet werden beliebig viele Keys (sprich Adressen) aus einem Hauptschlüssel (Seed) generiert.\footcite[Vgl. hierzu und weiterführend][S. 8 ff\adddot]{q9}
 So kann ein Wallet verwendet werden, dabei aber für jede Transaktion eine neue Adresse verwendet werden und so eine hohe Anonymität gewährleistet werden.
 Diese Art von Wallet sind der heutige Standart für UTXO-based Chains.
 Allerdings können HD-Wallets nicht für Account-based Chains verwendet werden, da diese keine Keys verwenden, sondern die Anzahl an Coins pro Account speichern.
 
-\subsubsection{UTXO-based Token}
+\paragraph{UTXO-based Token}
 \todo[color=REVIEW]{
 Evtl. noch abwegen ziwschien UTXO und Account based wo mehrere Adressen zusammengefasst werden können    
 \break

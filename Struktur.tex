@@ -72,15 +72,20 @@
   \textnormal{\printfield{title}}, \iffieldundef{edition}{o. A.}{\printfield{edition}}, \printlist{publisher}\iflistundef{location}{}{, \printlist{location}}.\bigbreak}     
 %==================================================
 
-% \paragraph{titel} für 4. Level an Überschriften
-\makeatletter
-\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
-            {-2.5ex\@plus -1ex \@minus -.25ex}%
-            {1.25ex \@plus .25ex}%
-            {\normalfont\normalsize\bfseries}}
-\makeatother
-\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
-\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+% \paragraph and \subparagraph for forth and fifth level headings
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+\titleformat{\paragraph}
+    {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+    {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\titleformat{\subparagraph}
+    {\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
+\titlespacing*{\subparagraph}
+    {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 %==================================================
 %Einstellung Seitenränder
@@ -215,7 +220,7 @@
     
     \input{Theorie/Index.tex}
 
-    \input{Praxis/Index.tex}
+    \input{Zahlungsverkehr/Index.tex}
 
     \input{Ausblick/Index.tex}
     \newpage

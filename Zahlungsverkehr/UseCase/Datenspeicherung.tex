@@ -1,20 +1,20 @@
-\subsection{Datenspeicherung}
+\subsubsection{Datenspeicherung}
 Um den Kontostand eines Kunden widerzuspiegeln, gibt es folgende Möglichkeiten.
 
-\subsubsection{Layer 1 Währung}
+\paragraph{Layer 1 Währung}
 Bei der Darstellung des Kontostandes als Layer 1 Währung (z. B. ETH) müsste jeder Kunde ein Wallet erhalten / besitzen, dass den Wert des Kontos in einer Layer 1 Währung enthält.
 Das Problem dabei ist, dass diese nicht den Euro darstellt. 
 So müsste der Wert immer in eine andere Währung umgerechnet werden, was zu zusätzlichen Kosten führt. Außerdem ist der Wert einer Layer 1 Währung sehr volatil, was zu Problemen führen kann, wenn der Wert des Kontos nicht mit dem Wert der Layer 1 Währung übereinstimmt.
 Die Darstellungsart kommt also nicht in Frage.
 
-\subsubsection{ERC20 Token}
+\paragraph{ERC20 Token}
 \input{Theorie/Definitionen/ERC20-Token.tex}
 
-\paragraph{Stablecoin}
+\subparagraph{Stablecoin}
 Es gibt bestimmte ERC20 Token, die den Wert anderer Assets (unter anderem auch den Euro) abbilden. Diese werden Stablecoin genannt.\footcite[Vgl. hierzu und weiterführend][4]{q8}
 Das Problem daran - sowie auch bei der Layer 1 Währung - ist, dass diese einen tatsächlichen Wert haben, und so die Bank dieses Geld nicht für eigene Geschäfte verwenden kann.
 
-\paragraph{Neuer Token}
+\subparagraph{Neuer Token}
 \label{datenspeicherung:neuer-token}
 Es wäre also die Erstellung eines eigenen Tokens sinnvoll, um den Wert eines Kontos darzustellen, ohne dass dieser einen tatsächlichen Wert hat. So kann die Bank diesen Wert für eigene Geschäfte verwenden, ohne dass der Kunde dadurch einen Verlust erleidet. 
 Außerdem kann so gewährleistet werden, dass nur Kunden der Bank diesen Token verwenden können, da die Bank die einzige ist, die diesen Token ausgibt.

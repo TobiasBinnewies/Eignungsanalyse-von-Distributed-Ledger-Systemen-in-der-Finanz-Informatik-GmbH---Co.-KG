@@ -1,6 +1,3 @@
-\noindent
-\section{Praxis}
-
 % \input{Praxis/Bewertungskriterien.tex}
 
 \todoin[color=NOTES]{
@@ -46,20 +43,22 @@ Die Seiten werden fortlaufend im Rahmen eines OSPlus-Releases und der Weiterentw
 Untergeordnete Seiten:
 }
 
-\subsection{Ist-Zustand Zahlungsverkehr}
+\subsection{Ist-Zustand}
 \label{sec:ist-zustand}
-Aktuell läuft die Abwicklung des Kerngeschäfts der Sparkassen über einen Großrechner (Mainframe) von IBM ab.\footnote{Vgl. hierzu und zum Folgenden \pageref{i1:f4}.}
+Aktuell läuft die Abwicklung des Zahlungsverkehrs der Sparkassen über einen Großrechner (Mainframe) von IBM ab.\footnote{Vgl. hierzu und zum Folgenden \pageref{i1:f4}.}
 Für dne Großrechner werden sogennante „Jobs” - also Kurzprogramme, die eine bestimmte Aufgabe erfüllen - geschrieben. Dafür wird die Programmiersprache COBOL verwendet, welche Hochperformant ist und so die Massendatenverarbeitung ermöglicht.
 Allerdings sind COBOL-Jobs an den Großrechner gebunden und immer weniger Entwickler sind in der Lage diese zu schreiben.
 Daher werden zusätzlich Java-Jobs geschrieben, die ebenfalls auf dem Großrechner laufen, aber auch auf anderen Systemen ausgeführt werden könnten.
 Es ist das Ziel, die Verwendung von COBOL-Jobs aber auch vom Großrechner selbst zu reduzieren und so auf andere Systeme zu migrieren.
 Neuentwicklung haben die klare Richtlinie in Java zu entwickeln und nur kritische Themen - im Sinne von Zeit und Datenmasse - auf dem Großrechner zu belassen.\footnote{Vgl. \pageref{i1:f4}; Persönliches Gespräch mit Nils Pudenz - Entwickler AZV \& ZV-Rekla (OE-4293).}
 Für weniger kritische Themen werden OSPE-Services verwendet, die auf einem anderen System laufen.
-Grundsätzlich laufen Prozesse des Kerngeschäfts wie folgt ab:\footnote{Vgl. \pageref{a1}.}
+Grundsätzlich laufen Prozesse des Zahlungsverkehrs wie folgt ab:\footnote{Vgl. \pageref{a1}.}
 \todo[color=REVIEW]{Itemize notwendig? Ja, bitte}
 \begin{itemize}
     \item Ein Mitarbeiter oder ein Endkunde setzt einen Prozess im Frontend in Gang (bspw. Überweisung oder Abfrage eines Kontostands).
     Dies kann über das Portal oder die Neoanwendung für Mitarbeiter oder das Online-Banking / die App für Endkunden geschehen.
+
+    Ein Prozess kann ebenfalls durch einen COBOL-Job in Gang gesetzt werden (bpsw. bei Terminüberweisungen).
     \item Die Anfrage wird von einem OSPE-Service verarbeitet.
     Entweder kann dieser die Anfrage direkt (in in Verbindung mit anderen OSPE-Services) bearbeiten oder er ruft einen Java- oder COBOL-Job auf.
     \item Der Java-Job kann ebenfalls COBOL-Jobs aufrufen, andersherum ist dies nicht möglich.

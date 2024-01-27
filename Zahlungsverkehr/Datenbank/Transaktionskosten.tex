@@ -1,4 +1,4 @@
-\subsubsection{Transaktionskosten / Troughput}
+\subsubsection{Transaktionskosten und -durchsatz}
 \todo[color=REVIEW]{Anordnung überarbeiten}
 \todoin[color=NOTES]{
 2 Möglichkeiten: \break
@@ -14,7 +14,14 @@ Polygon / Layer 2 \break
 \input{Theorie/Definitionen/Layer2-Solution.tex}
 
 \todo[color=TODO]{Fazit zu Layer 2 Lösungen schreiben}
+\bigbreak
+\noindent
+Um mit dem hohen Datenvolumen der Sparkassen fertigzuwerden, müssen Layer 2 Lösungen verwendet werden. 
 
 \input{Theorie/Definitionen/Transaction-Relayers.tex}
 
 \todo[color=TODO]{Fazit zu Transaction Relayers schreiben}
+\bigbreak
+\noindent
+Transaction Relayers wären sinnvoll, wenn ein Kunde selbst über das Netzwerk bpsw. Überweisungen o. ä. durchführen kann.
+Da allerdings nur die FI selbst Transaktionen durchführt - ein Endkunde würde dann durch die Services der Sparkassen und so der FI das System verwenden - und diese selbst die Kosten für die Transaktionen tragen muss, ist es nicht notwendig Transaction Relayers zu verwenden.

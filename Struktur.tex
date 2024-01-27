@@ -13,7 +13,6 @@
 \usepackage{subfiles}                   %Unterkapitel
 \usepackage{paralist}
 \usepackage[hyphens]{url}               %Zeilenumbruch in URL
-\usepackage[hidelinks]{hyperref}        %hidelinks versteckt den roten Kasten
 \usepackage[driver=pdftex]{geometry}    %Seitenränder
 \usepackage[hang]{footmisc}             %Fußnote Strich unten
 \usepackage{graphicx}                   %Für Bilder
@@ -27,10 +26,12 @@
   style=authoryear, 
   urldate=long, 
   maxbibnames=99
-]{biblatex}                             %Literaturverzeichnis
+  ]{biblatex}                             %Literaturverzeichnis
 \usepackage[
-  disable
-]{todonotes}                            %Todos
+   disable
+  ]{todonotes}                            %Todos
+\usepackage[hidelinks]{hyperref}        %hidelinks versteckt den roten Kasten
+\usepackage{nameref}% loads gettitlestring
 
 %==================================================
 %Literaturverzeichnis
@@ -75,7 +76,7 @@
 % \paragraph and \subparagraph for forth and fifth level headings
 
 \setcounter{secnumdepth}{5}
-\setcounter{tocdepth}{5}
+\setcounter{tocdepth}{4}
 
 \titleformat{\paragraph}
     {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
@@ -86,6 +87,14 @@
     {\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{}
 \titlespacing*{\subparagraph}
     {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+
+
+    \newcommand{\footappendix}[2]{
+      \footnote{
+        #1 \hyperref[#2]{\nameref*{#2}, S. \pageref*{#2}}.
+      }
+    }
 
 %==================================================
 %Einstellung Seitenränder
@@ -284,12 +293,18 @@
 
     \newcommand{\appendices}[1]{\addcontentsline{apc}{appendices}{#1}}
 
+    % \GetTitleStringSetup{expand}
     \newcounter{appendix}
+
+    \titleformat{\subparagraph}
+    {\normalfont\normalsize\bfseries}{Anhang \arabic{appendix}{ - }}{0em}{}
+
     \newcommand{\newappendix}[1]{
       \phantomsection
       \stepcounter{appendix}
-      \section*{Anhang \theappendix{} - #1}
-      \appendices{Anhang \theappendix{} - #1}
+      % \refstepcounter{appendix}
+      \appendices{Anhang \arabic{appendix} - #1}
+      \subparagraph{#1}
     }
 
     \listofappendices
@@ -303,7 +318,6 @@
     \section{Anhang}
     \titleformat*{\section}{\fontsize{12}{14}\selectfont\bfseries} % Schriftgröße und Zeilenabstand ändern
     \setcounter{page}{1}
-    \setcounter{tocdepth}{1}
     \renewcommand{\thepage}{A\arabic{page}}
 
 \input{Anhang.tex}

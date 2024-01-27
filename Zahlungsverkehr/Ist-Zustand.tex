@@ -45,14 +45,14 @@ Untergeordnete Seiten:
 
 \subsection{Ist-Zustand}
 \label{sec:ist-zustand}
-Aktuell läuft die Abwicklung des Zahlungsverkehrs der Sparkassen über einen Großrechner (Mainframe) von IBM ab.\footnote{Vgl. hierzu und zum Folgenden \pageref{i1:f4}.}
+Aktuell läuft die Abwicklung des Zahlungsverkehrs der Sparkassen über einen Großrechner (Mainframe) von IBM ab.\footappendix{Vgl. hierzu und zum Folgenden}{i1:f4}
 Für dne Großrechner werden sogennante „Jobs” - also Kurzprogramme, die eine bestimmte Aufgabe erfüllen - geschrieben. Dafür wird die Programmiersprache COBOL verwendet, welche Hochperformant ist und so die Massendatenverarbeitung ermöglicht.
 Allerdings sind COBOL-Jobs an den Großrechner gebunden und immer weniger Entwickler sind in der Lage diese zu schreiben.
 Daher werden zusätzlich Java-Jobs geschrieben, die ebenfalls auf dem Großrechner laufen, aber auch auf anderen Systemen ausgeführt werden könnten.
 Es ist das Ziel, die Verwendung von COBOL-Jobs aber auch vom Großrechner selbst zu reduzieren und so auf andere Systeme zu migrieren.
-Neuentwicklung haben die klare Richtlinie in Java zu entwickeln und nur kritische Themen - im Sinne von Zeit und Datenmasse - auf dem Großrechner zu belassen.\footnote{Vgl. \pageref{i1:f4}; Persönliches Gespräch mit Nils Pudenz - Entwickler AZV \& ZV-Rekla (OE-4293).}
+Neuentwicklung haben die klare Richtlinie in Java zu entwickeln und nur kritische Themen - im Sinne von Zeit und Datenmasse - auf dem Großrechner zu belassen.\footappendix{Vgl. Persönliches Gespräch mit Nils Pudenz - Entwickler AZV \& ZV-Rekla (OE-4293);}{i1:f4}
 Für weniger kritische Themen werden OSPE-Services verwendet, die auf einem anderen System laufen.
-Grundsätzlich laufen Prozesse des Zahlungsverkehrs wie folgt ab:\footnote{Vgl. \pageref{a1}.}
+Grundsätzlich laufen Prozesse des Zahlungsverkehrs wie folgt ab:\footappendix{Vgl.}{a1}
 \todo[color=REVIEW]{Itemize notwendig? Ja, bitte}
 \begin{itemize}
     \item Ein Mitarbeiter oder ein Endkunde setzt einen Prozess im Frontend in Gang (bspw. Überweisung oder Abfrage eines Kontostands).

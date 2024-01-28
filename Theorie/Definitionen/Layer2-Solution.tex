@@ -1,13 +1,5 @@
 \paragraph{Layer 2 Lösungen}
 \label{sec:definition-layer-2-solutions}
-\todo[color=TODO]{Layer 2 Lösungen erklären}
-\todoin[color=NOTES]{
-    Zero Knowledge Rollups \break
-    Optimistic Rollups \break
-    Sidechains \break
-    Polygon \break
-
-}
 
 Da sowohl die Ethereum Blockchain als auch die meisten anderen Blockchains nur eine geringe Anzahl an Transaktionen pro Sekunde verarbeiten können und so die Transaktionskosten sehr hoch sind, werden Layer 2 Lösungen eingesetzt, um die Skalierbarkeit zu erhöhen und Transaktionskosten zu senken.\footcite[Vgl.][]{w17}
 Layer 2 ist ein grundsätzlicher Begriff für Lösungen, die „off-chain” - also außerhalb der eigentlichen Blockchain (Layer 1) - betrieben werden, dort die Transaktionen gebündelt werden und nur die Ergebnisse auf die Layer 1 Chain geschrieben werden.\footcite[Vgl.][]{w18}
@@ -24,7 +16,7 @@ Dabei gibt es verschiedene Ansätze, unter anderem die Folgenden:
 
     \item \textbf{State Channels:}
     State Channels ermöglicht es vielfache Transaktionen „off-chain” zu tätigen und dabei nur zwei Transaktionen auf die Layer 1 Chain zu schreiben - das Öffnen und Schließen des Channels.
-    Es gibt zwei Arten von Channels: Payment Channels und State Channels.\footcite[Vgl. hierzu, zum Folgenden und weiterführend][]{w19}
+    Es gibt zwei Arten von Channels: Payment Channels und State Channels.\footcite[Vgl. hierzu und zum Folgenden sowie weiterführend][]{w19}
 
     \noindent
     Payment Channels sind sicher, da sie den Konsensalgorithmus der Layer 1 Chain verwenden, können allerdings nur für spezifische Anwendungszwecke verwendet werden (bspw. Coin- oder Token-Transaktionen).
@@ -39,14 +31,12 @@ Dabei gibt es verschiedene Ansätze, unter anderem die Folgenden:
     Es gibt zwei Arten von Rollups: Optimistic Rollups und Zero Knowledge Rollups.
 
     \noindent
-    Optimistic Rollups gehen davon aus, dass Off-Chain-Transaktionen gültig sind und veröffentlichen keine Nachweise für die Gültigkeit der auf der Chain veröffentlichten Transaktionsbatches.\footcite[Vgl. hierzu, zum Folgenden und weiterführend][]{w22}
+    Optimistic Rollups gehen davon aus, dass Off-Chain-Transaktionen gültig sind und veröffentlichen keine Nachweise für die Gültigkeit der auf der Chain veröffentlichten Transaktionsbatches.\footcite[Vgl. hierzu und zum Folgenden sowie weiterführend][]{w22}
     Nachdem ein Rollup-Batch auf Ethereum eingereicht wurde, gibt es ein Zeitfenster (die sogenannte Challenge-Periode), in dem jeder die Ergebnisse einer Rollup-Transaktion durch Berechnung eines Betrugsnachweises anfechten kann („Fraud Proof”).
     Wenn der Betrugsnachweis erfolgreich ist, wird die Transaktion neu ausgeführt und der Zustand des Rollups entsprechend aktualisiert.
 
     \noindent
-    In ZK-Rollups wird ein Stapel (engl. „Batch”) von Transaktionen auf dem Ethereum-Netzwerk auf Korrektheit überprüft.\footcite[Vgl. hierzu, zum Folgenden und weiterführend][]{w23}
+    In ZK-Rollups wird ein Stapel (engl. „Batch”) von Transaktionen auf dem Ethereum-Netzwerk auf Korrektheit überprüft.\footcite[Vgl. hierzu und zum Folgenden sowie weiterführend][]{w23}
     Nach dieser Prüfung, wird der Stapel von Transaktionen als endgültig betrachtet, genau wie jede andere Ethereum-Transaktion. Dafür wird ein kryptographischer Gültigkeitsnachweise (allgemein als Zero-Knowledge-Nachweise bezeichnet) verwendet. 
     Bei jedem Stapel von Off-Chain-Transaktionen generiert der ZK-Rollup-Betreiber einen Gültigkeitsnachweis für diesen Stapel. Sobald der Nachweis generiert ist, wird er an Ethereum übermittelt, um den Roll-up-Stapel in der Layer 1 Chain einzubinden.
 \end{itemize}
-
-\todo[color=REVIEW]{Hier evtl noch weiter optimistic vs. zk rollups vergleichen}

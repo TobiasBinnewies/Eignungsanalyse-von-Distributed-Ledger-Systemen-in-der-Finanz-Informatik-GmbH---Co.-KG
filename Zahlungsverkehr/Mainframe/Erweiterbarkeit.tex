@@ -1,0 +1,30 @@
+\subsubsection{Erweiterbarkeit}
+\label{sec:Erweiterbarkeit}
+
+Sollten Finanzprodukte in Smart Contracts umgesetzt werden oder sich die Funktionsweise der Optimistic Rollups in Zukunft ändern, ist es wichtig, dass diese Funktionen erweiterbar / weiterentwickelbar sind.
+Die Grundidee einer Blockchain basiert allerdings darauf, dass einmal geschriebene Daten - und so auch Smart Contract - nicht mehr verändert werden können (sie sind „immutable”).\footcite[Vgl.][]{w30}
+Es gibt drei Möglichkeiten, wie Smart Contracts erweitert werden können:\footcite[Vgl. hierzu und zum Folgenden sowie weiterführend][]{w29}
+\begin{itemize}
+    \item \textbf{Contract Migration:}
+    Bei der Contract Migration löst ein neuer Contract den alten ab.
+    Alle Daten, die im alten Contract gespeichert wurden, müssen also in den neuen Contract übertragen.
+    Die Datamigration ist meist sehr aufwendig und mit hohen Gas-Kosten verbunden.
+
+    \item \textbf{Data Seperation:}
+    Bei der Data Seperation werden Daten und Logik in zwei verschiedene Contracts aufgeteilt.
+    So kann der „Logik-Contract” ersetzt werden, ohne dass die Daten migriert werden müssen.
+    Hier müssen aufwendige Sicherheitsmaßnahmen getroffen werden, um zu gewährleisten, dass nur der Logik-Contract die Daten verändern kann.
+
+    \item \textbf{Proxy:}
+    Bei der Verwendung eines Proxys wird ein zusätzlicher Contract verwendet, der als Schnittstelle zu dem eigentlichen Contract dient.
+    Es ist möglich, dass ein Contract die Funktionen eines anderen Contracts in seinem Kontext - also mit seinem Speicher - aufruft.
+    Der Proxy Contract hält also den Speichers, wärend der dahintergeschaltete Contract die Logik enthält.
+    So kann der Proxy Contract einfach ausgetauscht werden, ohne dass die Daten migriert werden müssen.
+
+    \noindent
+    Bei Proxys gibt es mehrere Architekturen, die sich in der Art und Weise, wie der Proxy mit dem dahintergeschalteten Contract interagiert, unterscheiden.
+    Häufig kommt zusätzlich ein Admin Contract zum Einsatz, der die Berechtigung hat, den Logik-Contract zu ändern.
+\end{itemize}
+
+\noindent
+Da mehrere Finanzprodukte in Smart Contract abgebildet werden könnte, bietet es sich an für jedes Produkt einen eigenen Contract zu verwenden und diese dann über einen Proxy anzusprechen.

@@ -52,7 +52,13 @@ Daher werden zusätzlich Java-Jobs geschrieben, die ebenfalls auf dem Großrechn
 Es ist das Ziel, die Verwendung von COBOL-Jobs aber auch vom Großrechner selbst zu reduzieren und so auf andere Systeme zu migrieren.
 Neuentwicklung haben die klare Richtlinie in Java zu entwickeln und nur kritische Themen - im Sinne von Zeit und Datenmasse - auf dem Großrechner zu belassen.\footappendix{Vgl. Persönliches Gespräch mit Nils Pudenz - Entwickler AZV \& ZV-Rekla (OE-4293);}{i1:f4}
 Für weniger kritische Themen werden OSPE-Services verwendet, die auf einem anderen System laufen.
-Grundsätzlich laufen Prozesse des Zahlungsverkehrs wie folgt ab:\footappendix{Vgl.}{a1}
+Grundsätzlich laufen Prozesse des Zahlungsverkehrs wie folgt ab:
+
+\begin{figure}[ht]
+    \centering\includegraphics[width=0.9\textwidth]{Abbildungen/OSPlus-Diagramm.png}
+    \caption{OSPlus-Diagramm}
+\end{figure}
+
 \todo[color=REVIEW]{Itemize notwendig? Ja, bitte}
 \begin{itemize}
     \item Ein Mitarbeiter oder ein Endkunde setzt einen Prozess im Frontend in Gang (bspw. Überweisung oder Abfrage eines Kontostands).

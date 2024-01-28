@@ -3,26 +3,12 @@
 \subsubsection{Öffentliche vs. private Chain}
 \label{sec:oeffentlich-vs-privates-netzwerk}
 
-\todoin[color=NOTES]{
-    Öffentliches vs. privates Netzwerk: \break
-    PRivates: \break
-    - Nur für bestimmte Teilnehmer (in dem Falle dann nur FI) \break
-    - wirds wirklich nur von einer Authority verwendet können die Daten geändert werden \break
-    - "eigene" Regeln (bspw. kein Gas) \break
-    \break
-    Öffentliches: \break
-    - Anonymität schwierig zu gewährleisten \break
-    - Transaktionskosten \break
-    - Daten können nicht geändert werden \break
-}
-
 Bei der Verwendung einer Blockchain gibt es die Möglichkeit, einer öffentlichen Chain „beizutreten“ oder dafür eine private Chain zu betreiben.\footcite[Vgl.][]{w10}
 Eine öffentliche Chain ist für alle Teilnehmer offen und kann von jedem verwendet werden.\footcite[Vgl. hierzu und zum Folgenden][]{w11}
 Eine privatee Chain hingegen ist nur für ausgewählte Teilnehmer zugänglich und wird i.d.R. von einer oder mehreren Organisationen / Unternehmen betrieben.
 Die Auswahl der Art der Chain kann an den Punkten Sicherheit / Unveränderlichkeit, Leistung, Kosten, Berechtigungen und Datenschutz / Anonymität erfolgen:
 \begin{itemize}
     \item \textbf{Sicherheit / Unveränderlichkeit:} 
-    \todo[color=REVIEW]{Folgendes eher in Definition oder späterer Analyse?}
     Die Sicherheit und Unveränderlichkeit einer Blockchain wird durch ihren Konsensalgorithmus bestimmt. 
     Eine öffentliche Chain wird durch die Interaktion von Tausenden unabhängigen Nodes gesichert, die von Einzelpersonen und Organisationen auf der ganzen Welt betrieben werden. 
     Private Chains haben typischerweise eine kleine Anzahl von Nodes, die von einer oder wenigen Organisationen kontrolliert werden. 
@@ -38,13 +24,12 @@ Die Auswahl der Art der Chain kann an den Punkten Sicherheit / Unveränderlichke
     Abhilfe können Transaction Relayers (s. \ref{sec:definition-transaction-relayers}) sein, sodass ein Endkunde diese Gebühr nicht selbst tragen muss.
 
     Einige Analysen haben gezeigt, dass die Gesamtkosten für den Betrieb einer Anwendung auf einer öffentlichen Chain niedriger sein können als beim Betrieb einer privaten Chain.\footcite[Vgl.][14]{q6}
-    \todo[color=REVIEW]{Die Quelle genauer erläutern?}
 
     \item \textbf{Berechtigungen:}
     Bei privaten Chains können nur autorisierte Teilnehmer Nodes einrichten und Transaktionen durchführen.
     Bei öffentlichen Chains kann jeder Node einrichten und Transaktionen durchführen.
     So kann ebenfalls jeder auf jeden Contract zugreifen, also dessen gespeicherte Daten auslesen und Funktionen aufrufen.
-    Daher müssen erstellte Contracts so implementiert werden, dass sie nur von den gewünschten Teilnehmern verwendet werden können (s. \ref{sec:definition-sicherheitsrisiken}).
+    Daher müssen erstellte Contracts so implementiert werden, dass sie nur von den gewünschten Teilnehmern verwendet werden können.
 
     \item \textbf{Datenschutz / Anonymität:}
     Der Zugang zu Daten, die auf privaten Chains festgehalten wurden, kann frei vom Betreiber kontrolliert werden. 
@@ -58,14 +43,3 @@ Die Auswahl der Art der Chain kann an den Punkten Sicherheit / Unveränderlichke
 Da sich der Scope dieser Arbeit in der FI aufhält und so das Betreiben einer privaten Chain nicht mehr dezentral, sondern zentral - weil sie dann nur von der FI betrieben werden würde - wird im weiteren Verlauf nur auf die Verwendung einer öffentlichen Chain eingegangen (s. weiterführend \ref{sec:ausblick}).
 Grundsätzlich hätte das Betreiben einer privaten Chain viele Vorteile, da so die Transaktionskosten gespart werden könnten und die Daten nicht öffentlich einsehbar wären.
 Allerdings würde sich so das System kaum von dem heutigen unterscheiden.
-
-\todo[color=REVIEW]{Evtl. entfernen? --> dann auch Referenz entfernen}
-\input{Theorie/Definitionen/Sicherheitsrisiken.tex}
-
-\todoin[color=TODO]{
-Fazit / Empfehlung welche Chain verwendet werden soll \break
---> Öffentlich, da sonst nicht dezentral und so unsicher (Änderung der Daten möglich / also quasi gleiches System wie jetzt)\break
-
-Grundsätzlich viele Vorteile bei privater Chain (evtl. dann im Kontext, wenn mehrere Banken dies benutzen)
-
-}

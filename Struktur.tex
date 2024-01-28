@@ -33,10 +33,12 @@
 \usepackage[hidelinks]{hyperref}        %hidelinks versteckt den roten Kasten
 \usepackage{nameref}% loads gettitlestring
 \usepackage{array}
+\usepackage[labelfont={color=gray,small},textfont={color=gray,small}]{caption}
 
 %==================================================
 %Literaturverzeichnis
 %==================================================
+
 \addbibresource{Quellen.bib}
 
 \DeclareDelimFormat{multinamedelim}{\addcomma\space}
@@ -97,6 +99,7 @@
       }
     }
 
+
 %==================================================
 %Einstellung Seitenränder
 %==================================================
@@ -128,8 +131,6 @@
 
 %Variable zum speichern der Seite
 \newcounter{savepage}
-
-
 
 \begin{document}
 
@@ -225,6 +226,9 @@
 
     %Hier steht der Inalt
 
+
+    \renewcommand{\figurename}{Abb.}
+
     %Beispiel: \input{Grundlagen eines Netzwerks.tex}
     \input{Einleitung.tex}
     
@@ -232,7 +236,7 @@
 
     \input{Zahlungsverkehr/Index.tex}
 
-    \input{Ausblick/Index.tex}
+    \input{Schluss/Index.tex}
     \newpage
 
     % \input{Grundlagen Netzwerk.tex}

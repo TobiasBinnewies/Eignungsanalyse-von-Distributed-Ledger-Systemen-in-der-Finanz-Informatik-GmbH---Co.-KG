@@ -1,33 +1,32 @@
 \subsubsection{Datenspeicherung}
-Um den Kontostand eines Kunden widerzuspiegeln, gibt es folgende Möglichkeiten.
+Alle auf der Chain gespeicherten DAten sind öffentlich zugänglich.
+So können sensible Daten, die sich nicht häufig ändern - wie bspw. Namen oder Kontonummern - verschlüsselt oder weiterhin zentral gespeichert werden.
+Außerdem muss die Verbindung der Kontoen zur Walletadresse so gespeichert werden. 
+So können sich andere Daten hinter der Walletadress verbergen und nicht direkt mit dem eigentlichen Kontobesitzer in Verbindung gebracht werden (s. weiterführend \ref{sec:Anonymität}).
+Um den Kontostand eines Kunden widerzuspiegeln, gibt es die Möglichkeit diesen als Layer 1 Währung oder als Token darzustellen.
 
-\paragraph{Layer 1 Währung}
+\noindent
 Bei der Darstellung des Kontostandes als Layer 1 Währung (z. B. ETH) müsste jeder Kunde ein Wallet erhalten / besitzen, dass den Wert des Kontos in einer Layer 1 Währung enthält.
 Das Problem dabei ist, dass diese nicht den Euro darstellt. 
 So müsste der Wert immer in eine andere Währung umgerechnet werden, was zu zusätzlichen Kosten führt. Außerdem ist der Wert einer Layer 1 Währung sehr volatil, was zu Problemen führen kann, wenn der Wert des Kontos nicht mit dem Wert der Layer 1 Währung übereinstimmt.
 Die Darstellungsart kommt also nicht in Frage.
 
 \paragraph{ERC20 Token}
-\input{Theorie/Definitionen/ERC20-Token.tex}
+Es gibt diverse Standarts für Smart Contracts, die bestimmte Funktionen und Eigenschaften definieren.
+Einer dieser Standarts ist der ERC20 Token Standard, der die Schnittstellen eines Smart Contracts definiert, der als Token verwendet werden soll.\footcite[Vgl. hierzu und zum Folgenden][]{w7}
+Ein Token kann dabei eine beliebige Repräsentation eines Vermögenswertes sein.
+In diesem Smart Contract wird die Anzahl der Token gespeichert, die eine bestimme Adresse (also Benutzer-Wallet oder Smart Contract) besitzt.
+Außerdem werden Funktionen definiert, um u. a. Token von einer Adresse zu einer anderen zu versenden, die Anzahl der Token einer Adresse abzufragen und anderen Adressen die Erlaubnis zu erteilen, Token von der eigenen Adresse zu versenden.\footcites[Vgl.][]{w8}[]{w7}
 
 \bigbreak
-
 \noindent
 Es gibt bestimmte ERC20 Token, die den Wert anderer Assets (unter anderem auch den Euro) abbilden. Diese werden Stablecoin genannt.\footcite[Vgl. hierzu und weiterführend][4]{q8}
 Das Problem daran - sowie auch bei der Layer 1 Währung - ist, dass diese einen tatsächlichen Wert haben, und so die Bank dieses Geld nicht für eigene Geschäfte verwenden kann.
 
 \bigbreak
-
 \phantomsection
 \label{datenspeicherung:neuer-token}
 \noindent
 Es wäre also die Erstellung eines eigenen Tokens sinnvoll, um den Wert eines Kontos darzustellen, ohne dass dieser einen tatsächlichen Wert hat. So kann die Bank diesen Wert für eigene Geschäfte verwenden, ohne dass der Kunde dadurch einen Verlust erleidet. 
 Außerdem kann so gewährleistet werden, dass nur Kunden der Bank diesen Token verwenden können, da die Bank die einzige ist, die diesen Token ausgibt.
 Außerdem muss der erstellte Token nicht zwingend die genauen Schnittstellen eines ERC20 Tokens, sondern lediglich die Anforderungen der Bank erfüllen.
-
-\todo[color=TODO]{
-    Schwierigkeit der Datenlöschung (im Sinne DSGVO)
-    - Möglickeit durch Löschung des Indexes
-
-    ... Index und sensible Daten können entweder verschlüsselt oder zentral gespeichert werden
-}

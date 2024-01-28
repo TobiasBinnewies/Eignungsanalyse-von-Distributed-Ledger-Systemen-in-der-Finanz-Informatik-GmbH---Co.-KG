@@ -1,6 +1,5 @@
 \subsubsection{Datenverfügbarkeit}
 \label{sec:Datenverfügbarkeit}
-\todoin[color=NOTES]{
-    Datenverfügbarkeit: \break
-    - Bei Events in Datenbank schreiben um nicht Chain durchsuchen zu müssen \break
-}
+Um bei komplexen oder größen Anfragen nicht die gesamte Blockchain durchsuchen zu müssen bzw. bestimmmte Abfragen überhaupt möglich zu machen, werden die Daten zusätzlich un einer Datenbank indexiert und gespeichert.\footcites[Vgl. hierzu und im Folgenden][]{w32}[]{w33}
+Sobald eine Transaktion auf der Chain ausgeführt wird, die für die Datenbank relevant ist, wird ein Event ausgelöst, der die Daten in die Datenbank schreibt bzw. bestehende Daten aktualisiert.
+Diese Datenbank kann zentral oder ebenfalls dezentralisiert sein.

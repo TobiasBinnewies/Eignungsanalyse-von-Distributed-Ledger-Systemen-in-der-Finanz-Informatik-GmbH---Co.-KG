@@ -1,15 +1,3 @@
-
-\todoin[color=NOTES]{
-    - Optimitic Rollups als Ablöse für Großrechner: \break
-    - Einsatz auf bspw. Cloud Systemen \break
-        --> Vorteile es bleibt klar, auf welchen Systemen die Daten liegen \break
-        --> Es kann so verhältnismäßig einfach auf andere Anbieter gewechselt werden \break
-
-    Es gäbe dennoch die Möglichkeit - je nach konkreter Implementierung - bestimmte Sicherheitsmechanismen einzubauen, um bspw. gegen Geldwäsche oder fehlerhaft Buchungen vorzugehen. \todo[color=TODO]{Ausführlicher \& Besipiele / konkrete Idee der Implementierung}
-    Außerdem ist ein AuditLog automatisch vorhanden, da alle Transaktionen in der Blockchain gespeichert werden.
-    Aufbauend darauf können Smart Contracts verwendet werden, um bestimmte Finanzprodukte (z.B. Sparverträge, Kredite, ...) oder auch Multisign (per Multisign Contracts) abzubilden und so zu automatisieren. \todo[color=TODO]{Ausführlicher \& Besipiele / konkrete Idee der Implementierung}
-}
-
 \subsection{DLS als Mainframersatz}
 Um den Mainframe wirklich ablösen zu können, reicht es nicht aus lediglich die Datenbank zu ersetzen, es muss auch die Verarbeitung und Prüfung der Daten übernommen werden.
 Kurzum müssen also die COBOL- und Java-Jobs sowie die DOINGs, die akutell auf dem Mainframe laufen, ersetzt werden.
@@ -33,7 +21,7 @@ Darunter zählen z. B. automatische Zinsvergabe am Monats- oder Jahresabschluss 
 
 \subsubsection{Optimistic Rollups in Verbindung mit Cloud Computing}
 Eine mögliche Alternative den Mainframe abzulösen, ist die Verwendung von Cloud Computing.
-Cloud Computing definiert sich nach dem National Institute of Standards and Technology (NIST) durch die folgenden fünf Eigenschaften:\footcite[Vgl. hierzu und zum Folgenden][5]{q11}
+Cloud Computing wird nach nach dem National Institute of Standards and Technology durch die folgenden fünf Eigenschaften definiert:\footcite[Vgl. hierzu und zum Folgenden][5]{q11}
 \begin{itemize}
     \item \textbf{On-Demand Self-Service:} 
     Der Nutzer kann die benötigten Ressourcen (bspw. Rechenleistung, Speicherplatz, ...) selbstständig und ohne meschliche Interaktion mit dem Anbieter bereitstellen.
@@ -61,3 +49,5 @@ So können die Optimistic Rollups auf einem Cloud System ausgeführt werden, die
 So sind die tranzparent und nach eigenen Vorstellungen gespeichert, aber die Verarbeitung der Daten kann auf einem Cloud System erfolgen.
 Darüber hinaus können die Daten nicht nur vom verwendeten Anbieter selbst aus eingesehen werden - da sie sich im öffentlcihen Netzwerk befinden - und eine Migration ist so einfacher möglich.
 Man ist also nicht stark an einen Anbieter gebunden.
+
+\input{Zahlungsverkehr/Mainframe/Erweiterbarkeit.tex}

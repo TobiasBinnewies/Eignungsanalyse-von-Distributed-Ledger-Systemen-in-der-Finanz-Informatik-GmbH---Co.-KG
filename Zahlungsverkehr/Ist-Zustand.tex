@@ -46,11 +46,12 @@ Untergeordnete Seiten:
 \subsection{Ist-Zustand}
 \label{sec:ist-zustand}
 Aktuell läuft die Abwicklung des Zahlungsverkehrs der Sparkassen über einen Großrechner (Mainframe) von IBM ab.\footappendix{Vgl. hierzu und zum Folgenden}{i1:f4}
-Für dne Großrechner werden sogennante „Jobs” - also Kurzprogramme, die eine bestimmte Aufgabe erfüllen - geschrieben. Dafür wird die Programmiersprache COBOL verwendet, welche Hochperformant ist und so die Massendatenverarbeitung ermöglicht.
+Für den Großrechner werden sogennante „Jobs” - also Kurzprogramme, die eine bestimmte Aufgabe erfüllen - geschrieben. Dafür wird die Programmiersprache COBOL verwendet, welche Hochperformant ist und so die Massendatenverarbeitung ermöglicht.
 Allerdings sind COBOL-Jobs an den Großrechner gebunden und immer weniger Entwickler sind in der Lage diese zu schreiben.
 Daher werden zusätzlich Java-Jobs geschrieben, die ebenfalls auf dem Großrechner laufen, aber auch auf anderen Systemen ausgeführt werden könnten.
 Es ist das Ziel, die Verwendung von COBOL-Jobs aber auch vom Großrechner selbst zu reduzieren und so auf andere Systeme zu migrieren.
 Neuentwicklung haben die klare Richtlinie in Java zu entwickeln und nur kritische Themen - im Sinne von Zeit und Datenmasse - auf dem Großrechner zu belassen.\footappendix{Vgl. Persönliches Gespräch mit Nils Pudenz - Entwickler AZV \& ZV-Rekla (OE-4293);}{i1:f4}
+Es können teilweise 2 Millionen Transaktionen in ca. 20 Sekunden durchgeführt werden oder mehrere Jobs parallel laufen.
 Für weniger kritische Themen werden OSPE-Services verwendet, die auf einem anderen System laufen.
 Grundsätzlich laufen Prozesse des Zahlungsverkehrs wie folgt ab:
 
@@ -74,7 +75,8 @@ Grundsätzlich laufen Prozesse des Zahlungsverkehrs wie folgt ab:
     \item Sowohl die OSPE-Services als auch die Java- und COBOL-Jobs greifen auf die Datenbank zu, um die benötigten Daten zu erhalten bzw. zu speichern. 
 \end{itemize}
 
-\todo[color=TODO]{Zahlen zu Transaktionen, Konten, ...}
+Kostentechnisch ist es schwer die Kosten pro Transaktion zu bestimmen, da es sich hierbei um Volumentverträge handelt.
+Den Sparkassen werden 1,00€ bis 1,50€ pro Tausend Zahlungsein- oder -ausgängen berechnet.\footnote{Vgl. interne Preisliste OSPlus.}
 
 \bigbreak
 \bigbreak
@@ -83,5 +85,7 @@ Grundsätzlich laufen Prozesse des Zahlungsverkehrs wie folgt ab:
 Um Daten nachvollziebar zu speichern - also so, dass auch nach Änderung oder eignetlicher Löschung noch der vorherige Stand ermittelbar ist - werden Daten nie wirklich aktualisiert oder gelöscht, sondern es wird ein neuer Datensatz angelegt, der den aktuellen Stand der Daten enthält.
 Der alte Stand wird nur „deaktiviert”, also mit einem Ablaufdatum versehen, sodass dieser nicht mehr verwendet wird.\footnote{Vgl. hierzu und zum Folgenden \pageref{i1:f2}.}
 Erst nach einer in der DSGVO festgelegten Zeit - im Falle von Kontodaten sind dies 10 Jahre - kann dieser Datensatz dann wirklich gelöscht werden.
+
+
 
 \todo[color=REVIEW]{Evtl. noch GPS erklären?}

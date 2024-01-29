@@ -44,7 +44,9 @@
 \DeclareDelimFormat{multinamedelim}{\addcomma\space}
 \DeclareDelimFormat{finalnamedelim}{\addcomma\space}
 \DeclareFieldFormat{title}{#1}
-\DeclareFieldFormat{url}{#1}
+% \DeclareFieldFormat{url}{#1}
+\DeclareFieldFormat{url}{\url{#1}}
+\urlstyle{rm}
 \DefineBibliographyStrings{german}{%
   andothers = {et\addabbrvspace al\adddot},
 }
@@ -268,6 +270,7 @@
     \defbibheading{bibnumbered}[Quellenverzeichnis]{
         \section{#1}
     }
+    % \setlength\emergencystretch{5em}
     \printbibliography[heading=bibnumbered]
 
     \newpage

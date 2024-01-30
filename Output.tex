@@ -320,20 +320,21 @@ Laatzener Straße 5, 30539 Hannover
 
 \section{Einleitung}
 
-TEST
 In dieser Arbeit wird auf die Eignung bzw. auf Use Cases von Distributed Ledger Systemen in der Finanz Informatik eingegangen.
-Speziell wird dabei der Zahlungsverkehr betrachtet, dieser ist das Kerngeschäft der Sparkassen und so ein wichtiger Teil der FI.
+Speziell wird dabei der Zahlungsverkehr betrachtet. 
+Dieser ist das Kerngeschäft der Sparkassen und so ein wichtiger Teil der FI.
 Aktuell wird für diesen ein Großrechner verwendet.
-Allerdings gibt es schon seit vielen Jahren das Ziel diesen abzuschaffen und durch eine andere Technologie zu ersetzten.
+Allerdings gibt es schon seit vielen Jahren das Ziel, diesen abzuschaffen und durch eine andere Technologie zu ersetzten.
 Daher könnte ein DLS eine Alternative darstellen.
 
 \noindent
-Die Arbeit befindet sich im Scope der FI, es wird also nicht der gesamte Zahlungsverkehr betrachtet, sondern nur die konkrete Implementierung des Zahlungsverkehrs in der FI.
+Die Arbeit befindet sich im Scope der FI. 
+Es wird also nicht der gesamte Zahlungsverkehr betrachtet, sondern nur die konkrete Implementierung des Zahlungsverkehrs in der FI.
 
 \noindent
 Zunächst werden DLS im allgemeinen betrachtet und erklärt, um ein Grundverständnis für diese Technologie zu schaffen.
 Dann folgt eine Betrachtung des Ist-Zusands des Zahlungsverkehrs, um die Anforderungen an diesen zu ermitteln.
-Anschließend werden Möglichkeiten der Verwendung von DLS im Zahlungsverkehr betrachtet.
+Nachfolgend werden Möglichkeiten der Verwendung von DLS im Zahlungsverkehr betrachtet.
 Abschließend folgt eine Schlussfolgerung und ein Ausblick auf weitere mögliche Verwendungsmöglichkeiten von DLS.    
 \noindent
 
@@ -346,7 +347,7 @@ Abschließend folgt eine Schlussfolgerung und ein Ausblick auf weitere mögliche
 \label{sec:definition-distributed-ledger}
 Ein Distributed Ledger ist eine Datenbank, die im Konsens geteilt und über ein Netzwerk synchronisiert wird, das sich über mehrere Standorte, Institutionen oder Länder erstreckt.\footcite[Vgl. hierzu und zum Folgenden][]{w1,w2} 
 Es ermöglicht, dass Transaktionen und Aufzeichnungen öffentlich und überprüfbar sind, und da es dezentralisiert ist, gibt es keinen einzelnen Ausfallpunkt. 
-Jeder Teilnehmer im Netzwerk hat Zugang zu den Aufzeichnungen, die über dieses Netzwerk geteilt werden, und kann eine identische Kopie der Daten haben. Änderungen oder Ergänzungen am DL werden nahezu in Echtzeit in allen Kopien widergespiegelt, was die Transparenz und Sicherheit erhöht.
+Jeder Teilnehmer im Netzwerk hat Zugang zu den Aufzeichnungen, die über dieses Netzwerk geteilt werden und kann eine identische Kopie der Daten haben. Änderungen oder Ergänzungen am DL werden nahezu in Echtzeit in allen Kopien widergespiegelt, was die Transparenz und Sicherheit erhöht.
 \bigbreak
 \noindent
 Ein Distributed Ledger System ist ein System, das einen Distributed Ledger verwendet, um Transaktionen zwischen Teilnehmern zu verwalten. Am häufigsten wird die Blockchain-Technologie als DL verwendet.\footcite[Vgl.][]{w3}
@@ -367,37 +368,38 @@ Der Body enthält die eigentlichen Daten, die gespeichert werden sollen. Im Fall
 \label{sec:definition-kryptowaehrung}
 Ein DLS kann viele Anwendungsmöglichkeiten haben. Am wohl bekanntesten ist die Verwendung als Kryptowährung, wie bspw. Bitcoin.\footcite[Vgl. hierzu und zum Folgenden][1]{q4} 
 Hierbei werden die Transaktionen zwischen den Teilnehmern des Netzwerks durchgeführt, die in einer Blockchain festgehalten werden. 
-So können Transaktionen Peer-to-Peer durchgeführt werden, also ohne dass eine zentrale Instanz diese überprüfen muss, da die Korrektheit der Transaktionen von allen Teilnehmern geprüft werden.
+Da die Korrektheit der Transaktionen von allen Teilnehmern geprüft werden, können Transaktionen Peer-to-Peer durchgeführt werden, also ohne dass eine zentrale Instanz diese überprüfen muss.
 Es muss also kein Vertrauen in eine zentrale Instanz gesetzt werden.
 \subsection{Ethereum Virtual Maschine Chain}
 \label{sec:definition-evm-chain}
-EVM-Chains heben das Konzept DLS auf eine neue Ebene, indem sie es ermöglichen, nicht nur Transaktionen abzuwicklern, sondern dazu noch vorprogramierten Code (Smart Contracts) auszuführen und so viele neue Anwendungsmöglichkeiten erschaffen.\footcite[Vgl. hierzu und zum Folgenden][]{w5}
-Eine EVM-Chain ist also eine Blockchain-Netzwerk, das die Ethereum Virtual Machine (EVM) verwendet, um Smart Contracts auszuführen.
+EVM-Chains heben das Konzept DLS auf eine neue Ebene, indem sie es ermöglichen, nicht nur Transaktionen abzuwickeln, sondern dazu noch vorprogrammierten Code (meintest Du: vorprogrammierte Codes?)  (Smart Contracts) auszuführen und dadurch viele neue Anwendungsmöglichkeiten erschaffen.\footcite[Vgl. hierzu und zum Folgenden][]{w5}
+Eine EVM-Chain ist also ein Blockchain-Netzwerk, das die Ethereum Virtual Machine (EVM) verwendet, um Smart Contracts auszuführen.
 Ethereum selbst ist eine EVM-Chain, die die Kryptowährung Ether (ETH) verwendet. Allerdings gibt es noch weitere Chains, die ebenfalls kompatibel mit der EVM sind, wie bspw. Binance Smart Chain (BSC) oder Polygon (MATIC)\footcite[Vgl.][]{w6}.
 So kann für jede dieser Chains der gleiche Code - sowie Tools für dessen Entwicklung - verwendet werden, um Smart Contracts zu erstellen, die dann auf der jeweiligen Chain ausgeführt werden können.
 \subsection{Smart Contracts}
 \label{sec:definition-smart-contracts}
 Smart Contracts (im Sinne von Ethereum) sind Programme, die auf der Ethereum-Blockchain ausgeführt werden.\footcite[Vgl. hierzu und zum Folgenden][]{w4} 
-Sie bestehen aus einer Sammlung von Code (ihre Funktionen) und Daten (ihr Zustand), die - ebenso wie ein Benutzer-Wallet - an einer bestimmten Adresse auf der Ethereum-Blockchain (oder einer anderen EVM-Chain - S. \ref{sec:definition-evm-chain}) residieren.
+Sie bestehen aus einer Sammlung von Code(s?) (ihre Funktionen) und Daten (ihr Zustand), die - ebenso wie ein Benutzer-Wallet - an einer bestimmten Adresse auf der Ethereum-Blockchain (oder einer anderen EVM-Chain - S. \ref{sec:definition-evm-chain}) residieren.
 Smart Contracts sind eine Art von Ethereum-Konto, was bedeutet, dass sie ein Guthaben haben und Ziel von Transaktionen sein können. 
 Sie werden jedoch nicht von einem Benutzer kontrolliert, sondern sind im Netzwerk bereitgestellt und laufen wie programmiert. 
 Benutzerkonten können dann mit einem Smart Contract interagieren, indem sie Transaktionen einreichen, die eine auf dem Smart Contract definierte Funktion ausführen. 
-Außerdem können Regeln / Bedingungen definiert werden, nach den Code automatisch durchgeführt wird.
-Standardmäßig können Smart Contracts nicht gelöscht werden, und Interaktionen mit ihnen sind irreversibel.
+Außerdem können Regeln / Bedingungen definiert werden, nach den Code* automatisch durchgeführt wird (werden?).
+Standardmäßig können Smart Contracts nicht gelöscht werden und Interaktionen mit ihnen sind irreversibel.
 \subsection{Nodes}
 \label{sec:definition-nodes}
-Teilnehmer des Netzwerks, die über die gesamte Blockchain verfügen und die Transaktionen und Blöcke validieren werden Nodes genannt.\footcites[Vgl. hierzu und zum Folgenden][]{w12}[]{w13} 
+Teilnehmer des Netzwerks, die über die gesamte Blockchain verfügen und die Transaktionen und Blöcke validieren, werden Nodes genannt.\footcites[Vgl. hierzu und zum Folgenden][]{w12}[]{w13} 
 Diese Nodes formen das dezentralisierte Netzwerk, das die Blockchain betreibt.
 Diese sind es auch, die den Code der Smart Contracts und die Transaktionen ausführen.
 Außerdem validieren sie die Transaktionen und Blöcke, die von anderen Nodes erstellt wurden, und erstellen neue Blöcke, die sie dann an das Netzwerk senden.
 Dazu verwenden sie einen Konsensalgorithmus, der bestimmt, welche Blöcke gültig sind (s. \ref{sec:definition-konsensalgorithmus}). 
-Sowohl für das Ausführen der Smart Contracts als auch für das Validieren der Blöcke erhalten die Nodes eine Belohnung in Form von ETH (oder einer anderen Kryptowährung, je nach Chain), diese Belohnung wird Gas genannt.
+Sowohl für das Ausführen der Smart Contracts als auch für das Validieren der Blöcke erhalten die Nodes eine Belohnung in Form von ETH (oder einer anderen Kryptowährung, je nach Chain). 
+Diese Belohnung wird Gas genannt.
 \subsection{Gas Fee}
 \label{sec:definition-gas-fee}
 Gas Fee ist die Gebühr, die für die Ausführung von Smart Contracts bezahlt werden muss.\footcite[Vgl. hierzu und zum Folgenden][]{w31} 
-Sie wird in der Währung der jeweiligen Chain bezahlt (bspw. ETH) bezahlt und ist abhängig von der Rechenkomlexität der konkreten Operationen die bei einer Transaktionen ausgeüfhrt werden („Base Fee”).
+Sie wird in der Währung der jeweiligen Chain (bspw. ETH) bezahlt und ist abhängig von der Rechenkomlexität der konkreten Operationen, die bei einer Transaktionen ausgeführt werden („Base Fee”).
 Hinzu kommt eine „Priority Fee”, um die Transaktion attraktiver für Validatoren zu machen und so schneller ausgeführt zu werden.
-So ändert sich optimale die „Priority Fee” je nach Auslastung des Netzwerks. 
+So ändert sich optimal die „Priority Fee” je nach Auslastung des Netzwerks. 
 \subsection{Konsensalgorithmus}
 \label{sec:definition-konsensalgorithmus}
 Um sicherzustellen, dass bestehende Blöcke nicht verändert werden können und der Inhalt neuer Blöcke valide ist, wird ein Konsensalgorithmus verwendet.\footcite[Vgl.][S. 2 f\adddot]{q4}
@@ -405,8 +407,9 @@ Die bekanntesten Algorithmen sind:
 \begin{itemize}
     \item \textbf{Proof of Work (PoW):}
     Miner (Nodes) konkurrieren miteinerander, um ein mathematisches Problem zu lösen.\footcite[Vgl. hierzu und zum Folgenden][3]{q4}
-    Dem ersten, dem dies gelingt, erhält die Blockbelohnung und kann den nächsten Block erstellen.
-    Um einen Block zu erstellen wird also Zeit benötigt, ein Angreifer müsste also eine höheren Rechenleistung als die Hälfte des Netzwerks besitzen, um die Blockchain zu manipulieren.
+    Der Erste, dem dies gelingt, erhält die Blockbelohnung und kann den nächsten Block erstellen.
+    Um einen Block zu erstellen, wird also Zeit benötigt. 
+    Ein Angreifer müsste also eine höhere Rechenleistung als die Hälfte des Netzwerks besitzen, um die Blockchain zu manipulieren.
 
     \item \textbf{Proof of Stake (PoS):}
     Es wird zufällig eine Node ausgewählt, die den nächsten Block erstellen darf und so die Belohnung erhält.\footcite[Vgl. hierzu und zum Folgenden][2]{q7}
@@ -489,12 +492,12 @@ Untergeordnete Seiten:
 
 \subsection{Ist-Zustand}
 \label{sec:ist-zustand}
-Aktuell läuft die Abwicklung des Zahlungsverkehrs der Sparkassen über einen Großrechner (Mainframe) von IBM ab.\footappendix{Vgl. hierzu und zum Folgenden}{i1:f4}
-Für den Großrechner werden sogennante „Jobs” - also Kurzprogramme, die eine bestimmte Aufgabe erfüllen - geschrieben. Dafür wird die Programmiersprache COBOL verwendet, welche Hochperformant ist und so die Massendatenverarbeitung ermöglicht.
-Allerdings sind COBOL-Jobs an den Großrechner gebunden und immer weniger Entwickler sind in der Lage diese zu schreiben.
+Aktuell läuft die Abwicklung des Zahlungsverkehrs der Sparkassen über einen Großrechner (Mainframe) von IBM.\footappendix{Vgl. hierzu und zum Folgenden}{i1:f4}
+Für den Großrechner werden sogenannte „Jobs” - also Kurzprogramme, die eine bestimmte Aufgabe erfüllen - geschrieben. Dafür wird die Programmiersprache COBOL verwendet, welche Hochperformant (m. E hoch perfomant) ist und so die Massendatenverarbeitung ermöglicht.
+Allerdings sind COBOL-Jobs an den Großrechner gebunden und immer weniger Entwickler sind in der Lage, diese zu schreiben.
 Daher werden zusätzlich Java-Jobs geschrieben, die ebenfalls auf dem Großrechner laufen, aber auch auf anderen Systemen ausgeführt werden könnten.
-Es ist das Ziel, die Verwendung von COBOL-Jobs aber auch vom Großrechner selbst zu reduzieren und so auf andere Systeme zu migrieren.
-Neuentwicklung haben die klare Richtlinie in Java zu entwickeln und nur kritische Themen - im Sinne von Zeit und Datenmasse - auf dem Großrechner zu belassen.\footappendix{Vgl. Persönliches Gespräch mit Nils Pudenz - Entwickler AZV \& ZV-Rekla (OE-4293);}{i1:f4}
+Es ist das Ziel, die Verwendung von COBOL-Jobs (aber auch --> streichen?) vom Großrechner selbst zu reduzieren und so auf andere Systeme zu migrieren.
+Für Neuentwicklungen besteht die klare Richtlinie, diese über Java zu entwickeln und nur kritische Themen - im Sinne von Zeit und Datenmasse - auf dem Großrechner zu belassen.\footappendix{Vgl. Persönliches Gespräch mit Nils Pudenz - Entwickler AZV \& ZV-Rekla (OE-4293);}{i1:f4}
 Es können teilweise 2 Millionen Transaktionen in ca. 20 Sekunden durchgeführt werden oder mehrere Jobs parallel laufen.
 Für weniger kritische Themen werden OSPE-Services verwendet, die auf einem anderen System laufen.
 Grundsätzlich laufen Prozesse des Zahlungsverkehrs wie folgt ab:
@@ -507,26 +510,26 @@ Grundsätzlich laufen Prozesse des Zahlungsverkehrs wie folgt ab:
 \todo[color=REVIEW]{Itemize notwendig? Ja, bitte}
 \begin{itemize}
     \item Ein Mitarbeiter oder ein Endkunde setzt einen Prozess im Frontend in Gang (bspw. Überweisung oder Abfrage eines Kontostands).
-    Dies kann über das Portal oder die Neoanwendung für Mitarbeiter oder das Online-Banking / die App für Endkunden geschehen.
+    Dies kann über das Portal oder die Neo-Anwendung für Mitarbeiter oder das Online-Banking / die App für Endkunden geschehen.
 
     Ein Prozess kann ebenfalls durch einen COBOL-Job in Gang gesetzt werden (bpsw. bei Terminüberweisungen).
     \item Die Anfrage wird von einem OSPE-Service verarbeitet.
     Entweder kann dieser die Anfrage direkt (in in Verbindung mit anderen OSPE-Services) bearbeiten oder er ruft einen Java- oder COBOL-Job auf.
     \item Der Java-Job kann ebenfalls COBOL-Jobs aufrufen, andersherum ist dies nicht möglich.
-    \item Bei bestimmte Prozessen (bpsw. Transaktionen) müssen eine Anzahl an Prüfungen - die DOINGs - durchgeführt werden. 
-    (Z. B. ob die IBAN existiert, ob der Kontoinhaber der richtige ist, ob das Konto gedeckt ist oder auch ob der Empfänger auf einer Sperrliste steht.) 
-    \item Ist diese Prüfung erfolreich kann der Prozess fortgesetzt werden.
+    \item Bei bestimmten Prozessen (bpsw. Transaktionen) müssen eine Anzahl an Prüfungen - die DOINGs - durchgeführt werden. 
+    (Z. B., ob die IBAN existiert, ob der Kontoinhaber der richtige ist, ob das Konto gedeckt ist oder auch, ob der Empfänger auf einer Sperrliste steht.) 
+    \item Ist diese Prüfung erfolreich, kann der Prozess fortgesetzt werden.
     \item Sowohl die OSPE-Services als auch die Java- und COBOL-Jobs greifen auf die Datenbank zu, um die benötigten Daten zu erhalten bzw. zu speichern. 
 \end{itemize}
 
-Kostentechnisch ist es schwer die Kosten pro Transaktion zu bestimmen, da es sich hierbei um Volumentverträge handelt.
-Den Sparkassen werden 1,00€ bis 1,50€ pro Tausend Zahlungsein- oder -ausgängen berechnet.\footnote{Vgl. interne Preisliste OSPlus.}
+Kostentechnisch ist es schwer, die Kosten pro Transaktion zu bestimmen, da es sich hierbei um Volumentverträge handelt.
+Den Sparkassen werden 1,00 € bis 1,50 € pro tausend Zahlungsein- oder -ausgängen berechnet.\footnote{Vgl. interne Preisliste OSPlus.}
 
 \bigbreak
 \bigbreak
 
 \noindent
-Um Daten nachvollziebar zu speichern - also so, dass auch nach Änderung oder eignetlicher Löschung noch der vorherige Stand ermittelbar ist - werden Daten nie wirklich aktualisiert oder gelöscht, sondern es wird ein neuer Datensatz angelegt, der den aktuellen Stand der Daten enthält.
+Um Daten nachvollziebar zu speichern - also so, dass auch nach Änderung oder (eigentlicher) Löschung noch der vorherige Stand ermittelbar ist -, werden Daten nie wirklich aktualisiert oder gelöscht, sondern es wird ein neuer Datensatz angelegt, der den aktuellen Stand der Daten enthält.
 Der alte Stand wird nur „deaktiviert”, also mit einem Ablaufdatum versehen, sodass dieser nicht mehr verwendet wird.\footnote{Vgl. hierzu und zum Folgenden \pageref{i1:f2}.}
 Erst nach einer in der DSGVO festgelegten Zeit - im Falle von Kontodaten sind dies 10 Jahre - kann dieser Datensatz dann wirklich gelöscht werden.
 
@@ -554,11 +557,11 @@ Probleme: \break
 }
 
 Ein Use Case dieser Technologie im Berech Zahlungsverkehr ist die Verwendung als reine Datenbank.
-Eine Blockchain erfüllt automatisch durch ihren Architektur die Fähigkeit, Daten nachvollziehbar zu speichern. 
+Eine Blockchain erfüllt automatisch durch ihre Architektur die Fähigkeit, Daten nachvollziehbar zu speichern. 
 So können Transaktionen - also in diesem Fall Einträge in diese Datenbank - nicht rückgängig, nicht verändert und so nicht manipuliert werden. 
 
 \noindent
-Um ein DLS als Datenbank zu verwenden, gibt es einige Herausforderungen die im Folgenden erläutert werden.
+Um ein DLS als Datenbank zu verwenden, gibt es einige Herausforderungen, die im Folgenden erläutert werden.
 Außerdem stellt sich die Frage, ob eine öffentliche oder private Blockchain verwendet werden sollte.
 %...
 \noindent
@@ -568,23 +571,23 @@ Außerdem stellt sich die Frage, ob eine öffentliche oder private Blockchain ve
 
 Bei der Verwendung einer Blockchain gibt es die Möglichkeit, einer öffentlichen Chain „beizutreten“ oder dafür eine private Chain zu betreiben.\footcite[Vgl.][]{w10}
 Eine öffentliche Chain ist für alle Teilnehmer offen und kann von jedem verwendet werden.\footcite[Vgl. hierzu und zum Folgenden][]{w11}
-Eine privatee Chain hingegen ist nur für ausgewählte Teilnehmer zugänglich und wird i.d.R. von einer oder mehreren Organisationen / Unternehmen betrieben.
+Eine privatee Chain hingegen ist nur für ausgewählte Teilnehmer zugänglich und wird i. d. R. von einer oder mehreren Organisationen / Unternehmen betrieben.
 Die Auswahl der Art der Chain kann an den Punkten Sicherheit / Unveränderlichkeit, Leistung, Kosten, Berechtigungen und Datenschutz / Anonymität erfolgen:
 \begin{itemize}
     \item \textbf{Sicherheit / Unveränderlichkeit:} 
     Die Sicherheit und Unveränderlichkeit einer Blockchain wird durch ihren Konsensalgorithmus bestimmt. 
     Eine öffentliche Chain wird durch die Interaktion von Tausenden unabhängigen Nodes gesichert, die von Einzelpersonen und Organisationen auf der ganzen Welt betrieben werden. 
     Private Chains haben typischerweise eine kleine Anzahl von Nodes, die von einer oder wenigen Organisationen kontrolliert werden. 
-    Diese Nodes können streng kontrolliert werden, aber nur wenige müssen kompromittiert werden, um die Chain umzuschreiben oder betrügerische Transaktionen durchzuführen.
+    Diese Nodes können streng kontrolliert, aber nur wenige müssen kompromittiert werden, um die Chain umzuschreiben oder betrügerische Transaktionen durchzuführen.
 
     \item \textbf{Leistung:} 
-    Bei privaten Chains können Hochleistungsnodes mit besondererer Hardware sowie ein anderer Konsensalgorithmus verwendet werden, um einen höheren Tansaktionsdurchsatz auf der Basisschicht (Layer 1) erreichen.
+    Bei privaten Chains können Hochleistungsnodes mit besonderer Hardware sowie ein anderer Konsensalgorithmus verwendet werden, um einen höheren Tansaktionsdurchsatz auf der Basisschicht (Layer 1) zu erreichen.
     Bei einer öffentlichen Chain kann ein hoher Durchsatz mit Hilfe von Layer 2 Skalierungslösungen erreicht werden.
 
     \item  \textbf{Kosten:}
-    Die Kosten für den Betrieb einer privaten Chain spiegeln sich hauptsächlich in der Arbeit wider, die Chain einzurichten und zu verwalten, und den Servern zu betreiben, auf denen sie läuft. 
+    Die Kosten für den Betrieb einer privaten Chain spiegeln sich hauptsächlich in der Arbeit wider, die Chain einzurichten und zu verwalten und die Server zu betreiben, auf denen sie läuft. 
     Während es keine Kosten gibt, um sich mit dem Ethereum Mainnet zu verbinden, muss die Gas Fee (s. \ref{sec:definition-gas-fee}) für jede Transaktion in Ether bezahlt werden.
-    Abhilfe können Transaction Relayers (s. \ref{sec:definition-transaction-relayers}) sein, sodass ein Endkunde diese Gebühr nicht selbst tragen muss.
+    Abhilfe können Transaction Relayers (s. \ref{sec:definition-transaction-relayers}) schaffen, sodass ein Endkunde diese Gebühr nicht selbst tragen muss.
 
     Einige Analysen haben gezeigt, dass die Gesamtkosten für den Betrieb einer Anwendung auf einer öffentlichen Chain niedriger sein können als beim Betrieb einer privaten Chain.\footcite[Vgl.][14]{q6}
 
@@ -597,31 +600,31 @@ Die Auswahl der Art der Chain kann an den Punkten Sicherheit / Unveränderlichke
     \item \textbf{Datenschutz / Anonymität:}
     Der Zugang zu Daten, die auf privaten Chains festgehalten wurden, kann frei vom Betreiber kontrolliert werden. 
     Alle Daten, die auf einer öffentlichen Chain geschrieben wurden, sind für jeden einsehbar, so dass sensible Informationen off-chain gespeichert und übertragen  oder verschlüsselt werden sollten. 
-    Es bestehen Designpattern, die dies erleichtern, sowie Layer 2 Lösungen, die Daten abgetrennt und von Layer 1 fernhalten können (s. \ref{sec:definition-layer-2-solutions}).
+    Es bestehen Designpattern, die dies erleichtern, sowie Layer 2 Lösungen, die Daten abtrennen und von Layer 1 fernhalten können (s. \ref{sec:definition-layer-2-solutions}).
 
     Ebenso sind alle Transaktionen auf einer öffentlichen Chain öffentlich einsehbar, sodass die Anonymität der Teilnehmer nicht gewährleistet werden kann (s. \ref{sec:definition-account-based-vs-utxo-based-chain}).
 \end{itemize}
 
 \noindent
-Da sich der Scope dieser Arbeit in der FI aufhält und so das Betreiben einer privaten Chain nicht mehr dezentral, sondern zentral - weil sie dann nur von der FI betrieben werden würde - wird im weiteren Verlauf nur auf die Verwendung einer öffentlichen Chain eingegangen (s. weiterführend \ref{sec:ausblick}).
+Da sich der Scope dieser Arbeit in der FI aufhält und so das Betreiben einer privaten Chain nicht mehr dezentral, sondern zentral - weil sie dann nur von der FI betrieben werden würde - (im ersten Satzteil fehlt irgendwie etwas)wird im weiteren Verlauf nur auf die Verwendung einer öffentlichen Chain eingegangen (s. weiterführend \ref{sec:ausblick}).
 Grundsätzlich hätte das Betreiben einer privaten Chain viele Vorteile, da so die Transaktionskosten gespart werden könnten und die Daten nicht öffentlich einsehbar wären.
 Allerdings würde sich so das System kaum von dem heutigen unterscheiden.
 \subsubsection{Datenspeicherung}
-Alle auf der Chain gespeicherten DAten sind öffentlich zugänglich.
+Alle auf der Chain gespeicherten Daten sind öffentlich zugänglich.
 So können sensible Daten, die sich nicht häufig ändern - wie bspw. Namen oder Kontonummern - verschlüsselt oder weiterhin zentral gespeichert werden.
-Außerdem muss die Verbindung der Kontoen zur Walletadresse so gespeichert werden. 
-So können sich andere Daten hinter der Walletadress verbergen und nicht direkt mit dem eigentlichen Kontobesitzer in Verbindung gebracht werden (s. weiterführend \ref{sec:Anonymität}).
-Um den Kontostand eines Kunden widerzuspiegeln, gibt es die Möglichkeit diesen als Layer 1 Währung oder als Token darzustellen.
+Außerdem muss die Verbindung der Konten zur Walletadresse (so) gespeichert werden. 
+So können sich andere Daten hinter der Walletadresse verbergen und nicht direkt mit dem eigentlichen Kontobesitzer in Verbindung gebracht werden (s. weiterführend \ref{sec:Anonymität}).
+Um den Kontostand eines Kunden widerzuspiegeln, gibt es die Möglichkeit, diesen als Layer 1 Währung oder als Token darzustellen.
 
 \noindent
-Bei der Darstellung des Kontostandes als Layer 1 Währung (z. B. ETH) müsste jeder Kunde ein Wallet erhalten / besitzen, dass den Wert des Kontos in einer Layer 1 Währung enthält.
+Bei der Darstellung des Kontostandes als Layer 1 Währung (z. B. ETH) müsste jeder Kunde ein Wallet erhalten / besitzen, das den Wert des Kontos in einer Layer 1 Währung enthält.
 Das Problem dabei ist, dass diese nicht den Euro darstellt. 
 So müsste der Wert immer in eine andere Währung umgerechnet werden, was zu zusätzlichen Kosten führt. Außerdem ist der Wert einer Layer 1 Währung sehr volatil, was zu Problemen führen kann, wenn der Wert des Kontos nicht mit dem Wert der Layer 1 Währung übereinstimmt.
-Die Darstellungsart kommt also nicht in Frage.
+Diese Darstellungsart kommt also nicht in Frage.
 
 \paragraph{ERC20 Token}
-Es gibt diverse Standarts für Smart Contracts, die bestimmte Funktionen und Eigenschaften definieren.
-Einer dieser Standarts ist der ERC20 Token Standard, der die Schnittstellen eines Smart Contracts definiert, der als Token verwendet werden soll.\footcite[Vgl. hierzu und zum Folgenden][]{w7}
+Es gibt diverse Standards für Smart Contracts, die bestimmte Funktionen und Eigenschaften definieren.
+Einer dieser Standards ist der ERC20 Token Standard. Dieser definiert die Schnittstellen eines Smart Contracts, der als Token verwendet werden soll.\footcite[Vgl. hierzu und zum Folgenden][]{w7}
 Ein Token kann dabei eine beliebige Repräsentation eines Vermögenswertes sein.
 In diesem Smart Contract wird die Anzahl der Token gespeichert, die eine bestimme Adresse (also Benutzer-Wallet oder Smart Contract) besitzt.
 Außerdem werden Funktionen definiert, um u. a. Token von einer Adresse zu einer anderen zu versenden, die Anzahl der Token einer Adresse abzufragen und anderen Adressen die Erlaubnis zu erteilen, Token von der eigenen Adresse zu versenden.\footcites[Vgl.][]{w8}[]{w7}
@@ -629,25 +632,25 @@ Außerdem werden Funktionen definiert, um u. a. Token von einer Adresse zu einer
 \bigbreak
 \noindent
 Es gibt bestimmte ERC20 Token, die den Wert anderer Assets (unter anderem auch den Euro) abbilden. Diese werden Stablecoin genannt.\footcite[Vgl. hierzu und weiterführend][4]{q8}
-Das Problem daran - sowie auch bei der Layer 1 Währung - ist, dass diese einen tatsächlichen Wert haben, und so die Bank dieses Geld nicht für eigene Geschäfte verwenden kann.
+Das Problem daran - sowie auch bei der Layer 1 Währung - ist, dass diese einen tatsächlichen Wert haben und so die Bank dieses Geld nicht für eigene Geschäfte verwenden kann.
 
 \bigbreak
 \phantomsection
 \label{datenspeicherung:neuer-token}
 \noindent
-Es wäre also die Erstellung eines eigenen Tokens sinnvoll, um den Wert eines Kontos darzustellen, ohne dass dieser einen tatsächlichen Wert hat. So kann die Bank diesen Wert für eigene Geschäfte verwenden, ohne dass der Kunde dadurch einen Verlust erleidet. 
+Es wäre also sinnvoll, einen eigenen Token zu erstellen, um den Wert eines Kontos darzustellen, ohne dass dieser einen tatsächlichen Wert hat. So kann die Bank diesen Wert für eigene Geschäfte verwenden, ohne dass der Kunde dadurch einen Verlust erleidet. 
 Außerdem kann so gewährleistet werden, dass nur Kunden der Bank diesen Token verwenden können, da die Bank die einzige ist, die diesen Token ausgibt.
 Außerdem muss der erstellte Token nicht zwingend die genauen Schnittstellen eines ERC20 Tokens, sondern lediglich die Anforderungen der Bank erfüllen.
 \subsubsection{Datenverfügbarkeit}
 \label{sec:Datenverfügbarkeit}
-Um bei komplexen oder größen Anfragen nicht die gesamte Blockchain durchsuchen zu müssen bzw. bestimmmte Abfragen überhaupt möglich zu machen, werden die Daten zusätzlich un einer Datenbank indexiert und gespeichert.\footcites[Vgl. hierzu und im Folgenden][]{w32}[]{w33}
+Um bei komplexen oder größeren Anfragen nicht die gesamte Blockchain durchsuchen zu müssen bzw. bestimmmte Abfragen überhaupt möglich zu machen, werden die Daten zusätzlich in einer Datenbank indexiert und gespeichert.\footcites[Vgl. hierzu und im Folgenden][]{w32}[]{w33}
 Sobald eine Transaktion auf der Chain ausgeführt wird, die für die Datenbank relevant ist, wird ein Event ausgelöst, der die Daten in die Datenbank schreibt bzw. bestehende Daten aktualisiert.
 Diese Datenbank kann zentral oder ebenfalls dezentralisiert sein.
 \subsubsection{Anonymität}
 \label{sec:Anonymität}
-In einem öffeltichen Blockchain-Netzwerk sind alle Transaktionen öffentlich einsehbar.
-Anonymität wird dadurch gewährleistet, dass die Identität eines Teilnehmers von der Walletaddress getrennt ist.\footcite[Vgl.][6]{q4}
-Allerdings können mehrere Transaktionen eines Wallets miteinander in Verbindung gebracht werden, und so die Anonymität eines Teilnehmers gefährden. So wird - zumindest bei Bitcoin - dazu geraten jede Address nur genau zweimal zu verwenden. Einmal um Bitcoin zu empfangen und einmal um dieses wieder zu versenden.\footcite[Vgl.][]{w15}
+In einem öffentlichen Blockchain-Netzwerk sind alle Transaktionen öffentlich einsehbar.
+Anonymität wird dadurch gewährleistet, dass die Identität eines Teilnehmers von der Walletadresse getrennt ist.\footcite[Vgl.][6]{q4}
+Allerdings können mehrere Transaktionen eines Wallets miteinander in Verbindung gebracht werden und so die Anonymität eines Teilnehmers gefährden. So wird - zumindest bei Bitcoin - dazu geraten, jede Adresse nur genau zweimal zu verwenden. Einmal, um Bitcoin zu empfangen und einmal, um diese wieder zu versenden.\footcite[Vgl.][]{w15}
 Dieses Problem würde ebenfalls bestehen, wenn die Kontostände in einem öffentlichen Netzwerk abgebildet werden würden.
 
 \paragraph{Account-based vs. UTXO-based Chain}
@@ -660,36 +663,37 @@ So können auch zwei offene Transaktionen unterschiedlicher Adressen zusammengef
 \bigbreak
 \noindent
 Bei einer Account-based Chain (bspw. EVM-Chains) werden die Anzahl an Coins pro Account / Adresse gespeichert.\footcite[Vgl. hierzu und zum Folgenden][]{w16} 
-So wird bei einer Transaktion die Anzahl an Coins von einem Account auf einen anderen Account übertragen, sprich die Anzahl an Coins wird von einem Account abgezogen und dem anderen Account hinzugefügt.
+So wird bei einer Transaktion die Anzahl an Coins von einem Account auf einen anderen Account übertragen, sprich, die Anzahl an Coins wird von einem Account abgezogen und dem anderen Account hinzugefügt.
 Die Art von Chain wird vor allem bei Smart Contract fokussierten Blockchains verwendet.
-Im in diesem Modell Coins mehrerer Adressen zusammenzufassen, sind mehrere Transaktionen notwendig.
+Um in diesem Modell Coins mehrerer Adressen zusammenzufassen, sind mehrere Transaktionen notwendig.
 
 \paragraph{HD-Wallets}
 Bei einem HD-Wallet werden beliebig viele Keys (sprich Adressen) aus einem Hauptschlüssel (Seed) generiert.\footcite[Vgl. hierzu und weiterführend][S. 8 ff\adddot]{q9}
-So kann ein Wallet verwendet werden, dabei aber für jede Transaktion eine neue Adresse verwendet werden und so eine hohe Anonymität gewährleistet werden.\footcite[Vgl.][231]{q5}
-Diese Art von Wallet sind der heutige Standart für UTXO-based Chains.
-Allerdings können HD-Wallets nicht für Account-based Chains verwendet werden, da diese keine Keys verwenden, sondern die Anzahl an Coins pro Account speichern.
+So kann ein Wallet verwendet werden, dabei aber für jede Transaktion eine neue Adresse verwendet und so eine hohe Anonymität gewährleistet werden.\footcite[Vgl.][231]{q5}
+Diese Art von Wallet sind der heutige Standard für UTXO-based Chains.
+Allerdings können HD-Wallets nicht für Account-based Chains genutzt werden, da diese keine Keys verwenden, sondern die Anzahl an Coins pro Account speichern.
 
 \paragraph{UTXO-based Token}
-Aufbauend auf der Idee einen neuen Token zu kreieren (s. \ref{datenspeicherung:neuer-token}) könnte dieser auch als UTXO-basierter Token implementiert werden.
-So werden nicht wie üblich bei einem ERC20 Token der Coinstand pro Adresse gespeichert, sondern die offenden Transaktionen pro Adresse.
+Aufbauend auf der Idee, einen neuen Token zu kreieren (s. \ref{datenspeicherung:neuer-token}) , könnte dieser auch als UTXO-basierter Token implementiert werden.
+So werden nicht wie üblich bei einem ERC20 Token der Coinstand pro Adresse gespeichert, sondern die offenen Transaktionen pro Adresse.
 Bei einem Transfer können dann beliebig viele offene Transaktionen als In- und Output verwendet werden.
-Dabei könnte die Methode so implementiert werden, dass der Contract selbst die Transaktionen zusammensucht, die in Summe den gewünschten Betrag ergeben oder es werden beim Aufruf die zu verwendenten Transaktionen als Parameter übergeben.
+Dabei könnte die Methode so implementiert werden, dass der Contract selbst die Transaktionen zusammensucht, die in Summe den gewünschten Betrag ergeben oder es werden beim Aufruf die zu verwendenden Transaktionen als Parameter übergeben.
 Letzteres würde weniger Aufrufe benötigen und so Transaktionskosten (Gas) sparen.
 Auf diese Weise kann ein HD-Wallet fähiger Token erstellt werden, der auf einer Account-based Chain (also auch einer EVM-Chain) verwendet werden kann.
 \subsubsection{Transaktionskosten und -durchsatz}
-Ethereum kann nur eine geringe Anzahl an Transaktionen pro Sekunde (ca. 20TPS bis 30TPS)  verarbeiten\footcite[Vgl.][]{w36}, daher liegen die Transaktionskosten je nach Netzwerkauslastung zwischen ca. \$2 bis \$20\footcite[Vgl.][]{w35}.
+Ethereum kann nur eine geringe Anzahl an Transaktionen pro Sekunde (ca. 20TPS bis 30TPS)  verarbeiten\footcite[Vgl.][]{w36}. 
+Daher liegen die Transaktionskosten je nach Netzwerkauslastung zwischen ca. \$2 bis \$20\footcite[Vgl.][]{w35}.
 Um die Skalierbarkeit zu erhöhen und Transaktionskosten zu senken, werden Layer 2 Lösungen eingesetzt.\footcite[Vgl.][]{w17}
 
 \paragraph{Layer 2 Lösungen}
 \label{sec:definition-layer-2-solutions}
 
-Layer 2 ist ein grundsätzlicher Begriff für Lösungen, die „off-chain” - also außerhalb der eigentlichen Blockchain (Layer 1) - betrieben werden, dort die Transaktionen gebündelt werden und nur die Ergebnisse auf die Layer 1 Chain geschrieben werden.\footcite[Vgl.][]{w18}
+Layer 2 ist ein grundsätzlicher Begriff für Lösungen, die „off-chain” - also außerhalb der eigentlichen Blockchain (Layer 1) - betrieben werden, dort die Transaktionen gebündelt und nur die Ergebnisse auf die Layer 1 Chain geschrieben werden.\footcite[Vgl.][]{w18}
 Dabei gibt es verschiedene Ansätze, unter anderem die Folgenden:
 \begin{itemize}
     \item \textbf{Sidechains:} 
     Eine Sidechain ist eine eigene Blockchain, die mit der Layer 1 Chain verbunden ist und so parallel zu dieser läuft. 
-    Diese Chain hat ihren eigenen Regeln zum Thema Konsensalgorithmus und Blöcken.\footcite[Vgl. hierzu und weiterführend][]{w20}
+    Diese Chain hat ihre eigenen Regeln zum Thema Konsensalgorithmus und Blöcken.\footcite[Vgl. hierzu und weiterführend][]{w20}
 
     \noindent
     Da hier eine eigene Blockchain verwendet wird, ist diese Lösung sehr flexibel und kann für viele verschiedene Anwendungsfälle verwendet werden.
@@ -697,7 +701,7 @@ Dabei gibt es verschiedene Ansätze, unter anderem die Folgenden:
 
 
     \item \textbf{State Channels:}
-    State Channels ermöglicht es vielfache Transaktionen „off-chain” zu tätigen und dabei nur zwei Transaktionen auf die Layer 1 Chain zu schreiben - das Öffnen und Schließen des Channels.
+    State Channels ermöglicht es, vielfache Transaktionen „off-chain” zu tätigen und dabei nur zwei Transaktionen auf die Layer 1 Chain zu schreiben - das Öffnen und Schließen des Channels.
     Es gibt zwei Arten von Channels: Payment Channels und State Channels.\footcite[Vgl. hierzu und zum Folgenden sowie weiterführend][]{w19}
 
     \noindent
@@ -708,7 +712,8 @@ Dabei gibt es verschiedene Ansätze, unter anderem die Folgenden:
 
 
     \item \textbf{Rollups:}
-    Rollups führen die Transaktionen ebenfalls „off-chain” aus, die Ergebnisse werden dann in einem Layer 1 Block gesammelt und so in die Layer 1 Chain geschrieben.\footcite[Vgl. hierzu und zum Folgenden][]{w18} 
+    Rollups führen die Transaktionen ebenfalls „off-chain” aus.
+    Die Ergebnisse werden dann in einem Layer 1 Block gesammelt und so in die Layer 1 Chain geschrieben.\footcite[Vgl. hierzu und zum Folgenden][]{w18} 
     So werden Rollups mit der Layer 1 Chain gesichert.
     Es gibt zwei Arten von Rollups: Optimistic Rollups und Zero Knowledge Rollups.
 
@@ -719,53 +724,54 @@ Dabei gibt es verschiedene Ansätze, unter anderem die Folgenden:
 
     \noindent
     In ZK-Rollups wird ein Stapel (engl. „Batch”) von Transaktionen auf dem Ethereum-Netzwerk auf Korrektheit überprüft.\footcite[Vgl. hierzu und zum Folgenden sowie weiterführend][]{w23}
-    Nach dieser Prüfung, wird der Stapel von Transaktionen als endgültig betrachtet, genau wie jede andere Ethereum-Transaktion. Dafür wird ein kryptographischer Gültigkeitsnachweise (allgemein als Zero-Knowledge-Nachweise bezeichnet) verwendet. 
+    Nach dieser Prüfung wird der Stapel von Transaktionen als endgültig betrachtet, genau wie jede andere Ethereum-Transaktion. Dafür wird ein kryptographischer Gültigkeitsnachweise (allgemein als Zero-Knowledge-Nachweise bezeichnet) verwendet. 
     Bei jedem Stapel von Off-Chain-Transaktionen generiert der ZK-Rollup-Betreiber einen Gültigkeitsnachweis für diesen Stapel. Sobald der Nachweis generiert ist, wird er an Ethereum übermittelt, um den Roll-up-Stapel in der Layer 1 Chain einzubinden.
 \end{itemize}
 \bigbreak
 \noindent
-Um mit dem hohen Datenvolumen der Sparkassen fertigzuwerden, müssen Layer 2 Lösungen verwendet werden. 
+Um das hohe Datenvolumen der Sparkassen zu bewältigen, müssen Layer 2 Lösungen verwendet werden. 
 Wobei auch hier fraglich ist, ob diese der Masse an Transaktionen standhalten können (es wird mit ca. 100.000 TPS gerechnet).\footcite[Vgl.][]{w34}
 Preislich soll eine Transaktion weitaus weniger als \$0,1 kosten.\footcite[Vgl.][]{w37}
 
 
 \paragraph{Transaction Relayers}
 \label{sec:definition-transaction-relayers}
-Um es Account zu ermöglichen Transaktionen zu tätigen, ohne ETH zu besitzen, besteht die Möglichkeit, dass ein Dritter die Transaktion für den Account tätigen und so auch bezahlen.\footcites[Vgl. hierzu und zum Folgenden sowie weiterführend][]{w24}[]{w26}
+Um es dem Account zu ermöglichen, Transaktionen zu tätigen ohne ETH zu besitzen, besteht die Möglichkeit, dass ein Dritter die Transaktion für den Account tätigt und so auch bezahlt.\footcites[Vgl. hierzu und zum Folgenden sowie weiterführend][]{w24}[]{w26}
 Dieser Dritte wird Transaction Relayer genannt.
-Dabei wird die Transaktion vom Benutzer zwar signiert, dann aber nicht direkt ans Netzwer gesendet und so ausgeführt, sondern an den Dritten gesendet, der die Transaktion dann ausführt.
+Dabei wird die Transaktion vom Benutzer zwar signiert, dann aber nicht direkt ans Netzwerk gesendet und ausgeführt, sondern an den Dritten gesendet, der die Transaktion dann ausführt.
 Es muss auf der Chain ein Smart Contract existieren, der die Transaktionen entgegennimmt, die Signatur prüft und dann die Transaktion durchführt.\footcite[Vgl.][]{w25}
 Allerding können nur speziell dafür angepasste Funktionen eines Smart Contracts auf diese Weise ausgeführt werden, da der eigentliche „Ausführende” nicht der Sender ist und deshalb anders geprüft werden muss (nicht über \textit{msg.sender} sondern über bspw. \textit{msgSender()}).\footcites[Vgl.][]{w27}[]{w24}
 \bigbreak
 \noindent
-Transaction Relayers wären sinnvoll, wenn ein Kunde selbst über das Netzwerk bpsw. Überweisungen o. ä. durchführen kann.
-Da allerdings nur die FI selbst Transaktionen durchführt - ein Endkunde würde dann durch die Services der Sparkassen und so der FI das System verwenden - und diese selbst die Kosten für die Transaktionen tragen muss, ist es nicht notwendig Transaction Relayers zu verwenden.\subsection{DLS als Mainframersatz}
-Um den Mainframe wirklich ablösen zu können, reicht es nicht aus lediglich die Datenbank zu ersetzen, es muss auch die Verarbeitung und Prüfung der Daten übernommen werden.
+Transaction Relayers wären sinnvoll, wenn ein Kunde selbst bpsw. Überweisungen o. ä. über das Netzwerk durchführen kann.
+Da allerdings nur die FI selbst Transaktionen durchführt - ein Endkunde würde dann durch die Services der Sparkassen und so der FI das System verwenden (der Einschub ist etwas unverständlich) - und diese selbst die Kosten für die Transaktionen tragen muss, ist es nicht notwendig, Transaction Relayers zu verwenden.\subsection{DLS als Mainframersatz}
+Um den Mainframe wirklich ablösen zu können, reicht es nicht aus, lediglich die Datenbank zu ersetzen. 
+Es muss auch die Verarbeitung und Prüfung der Daten übernommen werden.
 Kurzum müssen also die COBOL- und Java-Jobs sowie die DOINGs, die akutell auf dem Mainframe laufen, ersetzt werden.
 
 \noindent
-Eine Möglichkeit wäre es all diese Jobs durch Smart Contracts zu ersetzen.
-Allerdings wäre so alle Verarbeitungen und Prüfungen öffentlich einsehbar, was sensible Daten (wie bspw. Name oder IBAN) offenlegen würde.
+Eine Möglichkeit wäre es, all diese Jobs durch Smart Contracts zu ersetzen.
+Allerdings wären so alle Verarbeitungen und Prüfungen öffentlich einsehbar, was sensible Daten (wie bspw. Name oder IBAN) offenlegen würde.
 Außerdem wäre dies durch die Transaktionskosten sehr teuer.
 
 \noindent
-Da durch das hohe Datenaufkommen der Sparkassen die Verarbeitung der Daten sehr performant sein muss, ist es nicht ebenfalls möglich, die Verarbeitung der Daten auf der Blockchain selbst durchzuführen.
+Da durch das hohe Datenaufkommen der Sparkassen die Verarbeitung der Daten sehr performant sein muss, ist es ebenfalls nicht möglich, die Verarbeitung der Daten auf der Blockchain selbst durchzuführen.
 Wie bereits beschrieben muss also eine Layer 2 Lösung verwendet werden (s. \ref{sec:definition-layer-2-solutions}).
 Da die FI die einzige Instanz ist, die Transaktionen durchführt und so keine gesonderte Prüfung der Transaktionen notwendig ist, bietet sich hier ein (modifiziertes) Optimistic Rollup an. 
-(Die Challange-Periode ist nicht von Nöten, es wird also immer der durch das Rollups kreierte Batch verwendet.)
+(Die Challange-Periode ist nicht erforderlich, es wird also immer der durch das Rollups kreierte Batch verwendet.)
 Die FI wickelt also den Zahlungsverkehr weiterhin auf eigenen Systemen ab und übersendet nur die Ergebnisse an die Layer 1 Chain.
-So werden die Prüfungen und Verarbeitungen der Daten auch nicht öffentlcih ausgeführt und sind so nicht einsehbar.
+So werden die Prüfungen und Verarbeitungen der Daten auch nicht öffentlcih ausgeführt und sind nicht einsehbar.
 
 \noindent
-Bestimmte Finanzprodukte lassen sich dennoch gut durch Smart Contracts abbilden und so automatisieren.
-Darunter zählen z. B. automatische Zinsvergabe am Monats- oder Jahresabschluss oder auch Termin- oder Daueraufträge.
+Bestimmte Finanzprodukte lassen sich dennoch gut durch Smart Contracts abbilden und automatisieren.
+Darunter zählen z. B. automatische Zinsvergaben am Monats- oder Jahresabschluss oder auch Termin- oder Daueraufträge.
 
 \subsubsection{Optimistic Rollups in Verbindung mit Cloud Computing}
-Eine mögliche Alternative den Mainframe abzulösen, ist die Verwendung von Cloud Computing.
-Cloud Computing wird nach nach dem National Institute of Standards and Technology durch die folgenden fünf Eigenschaften definiert:\footcite[Vgl. hierzu und zum Folgenden][5]{q11}
+Eine mögliche Alternative, den Mainframe abzulösen, ist die Verwendung von Cloud Computing.
+Cloud Computing wird nach dem National Institute of Standards and Technology durch die folgenden fünf Eigenschaften definiert:\footcite[Vgl. hierzu und zum Folgenden][5]{q11}
 \begin{itemize}
     \item \textbf{On-Demand Self-Service:} 
-    Der Nutzer kann die benötigten Ressourcen (bspw. Rechenleistung, Speicherplatz, ...) selbstständig und ohne meschliche Interaktion mit dem Anbieter bereitstellen.
+    Der Nutzer kann die benötigten Ressourcen (bspw. Rechenleistung, Speicherplatz, ...) selbstständig und ohne menschliche Interaktion mit dem Anbieter bereitstellen.
     \item \textbf{Broad Network Access:}
     Die Ressourcen sind über das Netzwerk verfügbar und können von verschiedenen Plattformen (bspw. Desktop, Laptop, Smartphone, ...) abgerufen werden.
     \item \textbf{Resource Pooling:}
@@ -773,22 +779,22 @@ Cloud Computing wird nach nach dem National Institute of Standards and Technolog
     \item \textbf{Rapid Elasticity:}
     Die Ressourcen können schnell und dynamisch an die Bedürfnisse des Nutzers angepasst werden.
     \item \textbf{Measured Service:}
-    Die Nutzung der Ressourcen wird quntitativ und qualitativ überwacht, so dass eine nutzungsabhängige Abrechnung sowie eine Validierung der Dienstqulität möglich ist.
+    Die Nutzung der Ressourcen wird quantitativ und qualitativ überwacht, so dass eine nutzungsabhängige Abrechnung sowie eine Validierung der Dienstqualität möglich ist.
 \end{itemize}
 
 \noindent
 Der größte Vorteil für die FI wäre hier die gute Skalierbarkeit der Ressourcen und die nutzungsabhängige Abrechnung.
 \bigbreak
 \noindent
-Ein größer Nachteil dieser Technologie ist die Datensicherheit, da sich diese in der Hand des Anbieters befinden und so nicht kontrolliert werden kann.\footcite[Vgl. hierzu und zum Folgenden][99]{q10}
+Ein größer Nachteil dieser Technologie ist die Datensicherheit, da sich diese in der Hand des Anbieters befindet und so nicht kontrolliert werden kann.\footcite[Vgl. hierzu und zum Folgenden][99]{q10}
 Es besteht generell keine Kontrolle über die Art und Weise der Speicherung.
 So ist ein Wechsel des Anbieters sehr aufwendig, da die Daten möglicherweise nicht einfach migriert werden können.\footcite[Vgl.][]{w28}
 
 \noindent
 Hier können DLS Abhilfe schaffen.
-So können die Optimistic Rollups auf einem Cloud System ausgeführt werden, die Daten aber dennoch in der Blockchain gespeichert werden.
-So sind die tranzparent und nach eigenen Vorstellungen gespeichert, aber die Verarbeitung der Daten kann auf einem Cloud System erfolgen.
-Darüber hinaus können die Daten nicht nur vom verwendeten Anbieter selbst aus eingesehen werden - da sie sich im öffentlcihen Netzwerk befinden - und eine Migration ist so einfacher möglich.
+So können die Optimistic Rollups auf einem Cloud System ausgeführt, die Daten aber dennoch in der Blockchain gespeichert werden.
+So sind sie tranzparent und nach eigenen Vorstellungen gespeichert, aber die Verarbeitung der Daten kann auf einem Cloud System erfolgen.
+Darüber hinaus können die Daten nicht nur vom verwendeten Anbieter selbst aus eingesehen werden - da sie sich im öffentlcihen Netzwerk befinden - auch eine Migration ist so einfacher möglich.
 Man ist also nicht stark an einen Anbieter gebunden.
 
 \subsubsection{Erweiterbarkeit}
@@ -800,7 +806,7 @@ Es gibt drei Möglichkeiten, wie Smart Contracts erweitert werden können:\footc
 \begin{itemize}
     \item \textbf{Contract Migration:}
     Bei der Contract Migration löst ein neuer Contract den alten ab.
-    Alle Daten, die im alten Contract gespeichert wurden, müssen also in den neuen Contract übertragen.
+    Alle Daten, die im alten Contract gespeichert wurden, müssen also in den neuen Contract übertragen werden.
     Die Datamigration ist meist sehr aufwendig und mit hohen Gas-Kosten verbunden.
 
     \item \textbf{Data Seperation:}
@@ -811,7 +817,7 @@ Es gibt drei Möglichkeiten, wie Smart Contracts erweitert werden können:\footc
     \item \textbf{Proxy:}
     Bei der Verwendung eines Proxys wird ein zusätzlicher Contract verwendet, der als Schnittstelle zu dem eigentlichen Contract dient.
     Es ist möglich, dass ein Contract die Funktionen eines anderen Contracts in seinem Kontext - also mit seinem Speicher - aufruft.
-    Der Proxy Contract hält also den Speichers, wärend der dahintergeschaltete Contract die Logik enthält.
+    Der Proxy Contract hält also den Speicher, während der dahintergeschaltete Contract die Logik enthält.
     So kann der Proxy Contract einfach ausgetauscht werden, ohne dass die Daten migriert werden müssen.
 
     \noindent
@@ -820,33 +826,33 @@ Es gibt drei Möglichkeiten, wie Smart Contracts erweitert werden können:\footc
 \end{itemize}
 
 \noindent
-Da mehrere Finanzprodukte in Smart Contract abgebildet werden könnte, bietet es sich an für jedes Produkt einen eigenen Contract zu verwenden und diese dann über einen Proxy anzusprechen.
+Da mehrere Finanzprodukte in Smart Contract abgebildet werden könnten, bietet es sich an, für jedes Produkt einen eigenen Contract zu verwenden und diese dann über einen Proxy anzusprechen.
 \noindent
 
 \section{Schlussfolgerung}
 \label{sec:Fazit}
 
 Die Verwendung von DLS also reine Datenbank verfehlt den Zweck, den Großrechner abzulösen. 
-Hinzu kommt, dass die Verwendung als Datenbank auch keine sonderlich gute Alternative ist, da dies mit einem sehr hohem Aufwand und Komplexität verbunden ist und die Verwendung teuerer und langsamer ist.
+Hinzu kommt, dass die Verwendung als Datenbank auch keine sonderlich gute Alternative ist, da dies mit einem sehr hohem Aufwand und Komplexität verbunden ist und die Verwendung teurer und langsamer ist.
 Außerdem besteht auch kein Problem mit der aktuellen Art und Weise wie Daten gespeichert werden, dass mit DLS gelöst werden würde.
 
 \noindent
 Die Verwendung von Optimistic Rollups als Ersatz für den Großrechner ist schon eher eine Alternative, allerdings auch sehr komplex.
 Die Verwendung von DLS in Verbindung mit Cloud Computing könnte allerdings eines der größten Probleme, die mit Cloud Computing bestehen - die Datensicherheit -, lösen.
 Allerdings ist es fraglich, ob diese Technologie die Performance des Großrechners erreichen kann.
-Dafür müsste diese Idee prototypisch umgesetzt und getestet werden, was aufgrund der hohen Komplexität und der benötigten Testdatenumfangs mit einem sehr hohen Aufwand verbunden wäre.
+Dafür müsste diese Idee prototypisch umgesetzt und getestet werden, was aufgrund der hohen Komplexität und des benötigten Testdatenumfangs mit einem sehr hohen Aufwand verbunden wäre.
 %Es bestehen hohe Zweifel, ob andere Technologien den Großrechner ersetzen können.\footappendix{Vgl.}{i1:f4}
 
 \noindent
-Daher ist die Verwendung von DLS für den Zahlungsverkehr der Sparkassen eher wenig geeignet, wenn nur in Verwendung mit Cloud Systemen.\noindent
+Daher ist die Verwendung von DLS für den Zahlungsverkehr der Sparkassen eher wenig geeignet. Wenn, dann nur in Verwendung mit Cloud Systemen.\noindent
 
 \section{Ausblick}
 \label{sec:ausblick}
 
-Die grundlegende Idee eines DLS ist es, dessen Teilnehmer zu vernetzten, ohne zentrale Instanzen zu verwenden und so kein Vertrauen in diese setzen zu müssen (s. \ref{sec:definition-kryptowaehrung}).
+Die grundlegende Idee eines DLS ist es, dessen Teilnehmer zu vernetzen, ohne zentrale Instanzen zu verwenden und so kein Vertrauen in diese setzen zu müssen (s. \ref{sec:definition-kryptowaehrung}).
 Da in dieser Arbeit die Verwendung von DLS lediglich im Scope einer einzelnen Instanz - der FI - betrachtet wurde, und daher keine Vernetzung stattfindet, fällt dieser Vorteil vollständig weg.
 Eine weitaus sinnvollere Verwendung im Berech Zahlungsverkehr wäre die Vernetzung mehrerer Banken, um so bpsw. Transaktionen auszuführen.
-Dafür kann so auch ein privates Netzwerk geschaffen werden, da dies dann auch dezentral wäre und so die Vorteile eines DLS genutzt werden können.
+Dafür kann auch ein privates Netzwerk geschaffen werden, da dies dann auch dezentral wäre und so die Vorteile eines DLS genutzt werden können.
 Die Bundesbank hat hierzu einen Bericht geschrieben, in dem sie sich positiv für diese Technologie im Auslandszahlungsvekehr äußert, um diesen so zu vereinfachen und zu beschleunigen. \footcite[Vgl.][44]{q12}    \newpage
 
     % \input{Grundlagen Netzwerk.tex}

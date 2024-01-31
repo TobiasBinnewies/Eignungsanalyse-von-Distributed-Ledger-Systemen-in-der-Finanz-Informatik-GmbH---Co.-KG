@@ -1,12 +1,12 @@
 \paragraph{Layer 2 Lösungen}
 \label{sec:definition-layer-2-solutions}
 
-Layer 2 ist ein grundsätzlicher Begriff für Lösungen, die „off-chain” - also außerhalb der eigentlichen Blockchain (Layer 1) - betrieben werden, dort die Transaktionen gebündelt werden und nur die Ergebnisse auf die Layer 1 Chain geschrieben werden.\footcite[Vgl.][]{w18}
+Layer 2 ist ein grundsätzlicher Begriff für Lösungen, die „off-chain” - also außerhalb der eigentlichen Blockchain (Layer 1) - betrieben werden, dort die Transaktionen gebündelt und nur die Ergebnisse auf die Layer 1 Chain geschrieben werden.\footcite[Vgl.][]{w18}
 Dabei gibt es verschiedene Ansätze, unter anderem die Folgenden:
 \begin{itemize}
     \item \textbf{Sidechains:} 
     Eine Sidechain ist eine eigene Blockchain, die mit der Layer 1 Chain verbunden ist und so parallel zu dieser läuft. 
-    Diese Chain hat ihren eigenen Regeln zum Thema Konsensalgorithmus und Blöcken.\footcite[Vgl. hierzu und weiterführend][]{w20}
+    Diese Chain hat ihre eigenen Regeln zum Thema Konsensalgorithmus und Blöcken.\footcite[Vgl. hierzu und weiterführend][]{w20}
 
     \noindent
     Da hier eine eigene Blockchain verwendet wird, ist diese Lösung sehr flexibel und kann für viele verschiedene Anwendungsfälle verwendet werden.
@@ -14,7 +14,7 @@ Dabei gibt es verschiedene Ansätze, unter anderem die Folgenden:
 
 
     \item \textbf{State Channels:}
-    State Channels ermöglicht es vielfache Transaktionen „off-chain” zu tätigen und dabei nur zwei Transaktionen auf die Layer 1 Chain zu schreiben - das Öffnen und Schließen des Channels.
+    State Channels ermöglicht es, vielfache Transaktionen „off-chain” zu tätigen und dabei nur zwei Transaktionen auf die Layer 1 Chain zu schreiben - das Öffnen und Schließen des Channels.
     Es gibt zwei Arten von Channels: Payment Channels und State Channels.\footcite[Vgl. hierzu und zum Folgenden sowie weiterführend][]{w19}
 
     \noindent
@@ -25,7 +25,8 @@ Dabei gibt es verschiedene Ansätze, unter anderem die Folgenden:
 
 
     \item \textbf{Rollups:}
-    Rollups führen die Transaktionen ebenfalls „off-chain” aus, die Ergebnisse werden dann in einem Layer 1 Block gesammelt und so in die Layer 1 Chain geschrieben.\footcite[Vgl. hierzu und zum Folgenden][]{w18} 
+    Rollups führen die Transaktionen ebenfalls „off-chain” aus.
+    Die Ergebnisse werden dann in einem Layer 1 Block gesammelt und so in die Layer 1 Chain geschrieben.\footcite[Vgl. hierzu und zum Folgenden][]{w18} 
     So werden Rollups mit der Layer 1 Chain gesichert.
     Es gibt zwei Arten von Rollups: Optimistic Rollups und Zero Knowledge Rollups.
 
@@ -36,6 +37,6 @@ Dabei gibt es verschiedene Ansätze, unter anderem die Folgenden:
 
     \noindent
     In ZK-Rollups wird ein Stapel (engl. „Batch”) von Transaktionen auf dem Ethereum-Netzwerk auf Korrektheit überprüft.\footcite[Vgl. hierzu und zum Folgenden sowie weiterführend][]{w23}
-    Nach dieser Prüfung, wird der Stapel von Transaktionen als endgültig betrachtet, genau wie jede andere Ethereum-Transaktion. Dafür wird ein kryptographischer Gültigkeitsnachweise (allgemein als Zero-Knowledge-Nachweise bezeichnet) verwendet. 
+    Nach dieser Prüfung wird der Stapel von Transaktionen als endgültig betrachtet, genau wie jede andere Ethereum-Transaktion. Dafür wird ein kryptographischer Gültigkeitsnachweise (allgemein als Zero-Knowledge-Nachweise bezeichnet) verwendet. 
     Bei jedem Stapel von Off-Chain-Transaktionen generiert der ZK-Rollup-Betreiber einen Gültigkeitsnachweis für diesen Stapel. Sobald der Nachweis generiert ist, wird er an Ethereum übermittelt, um den Roll-up-Stapel in der Layer 1 Chain einzubinden.
 \end{itemize}

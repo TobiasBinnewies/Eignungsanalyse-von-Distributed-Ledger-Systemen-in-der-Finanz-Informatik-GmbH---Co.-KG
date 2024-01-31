@@ -45,12 +45,12 @@ Untergeordnete Seiten:
 
 \subsection{Ist-Zustand}
 \label{sec:ist-zustand}
-Aktuell läuft die Abwicklung des Zahlungsverkehrs der Sparkassen über einen Großrechner (Mainframe) von IBM ab.\footappendix{Vgl. hierzu und zum Folgenden}{i1:f4}
-Für den Großrechner werden sogennante „Jobs” - also Kurzprogramme, die eine bestimmte Aufgabe erfüllen - geschrieben. Dafür wird die Programmiersprache COBOL verwendet, welche Hochperformant ist und so die Massendatenverarbeitung ermöglicht.
-Allerdings sind COBOL-Jobs an den Großrechner gebunden und immer weniger Entwickler sind in der Lage diese zu schreiben.
+Aktuell läuft die Abwicklung des Zahlungsverkehrs der Sparkassen über einen Großrechner (Mainframe) von IBM.\footappendix{Vgl. hierzu und zum Folgenden}{i1:f4}
+Für den Großrechner werden sogenannte „Jobs” - also Kurzprogramme, die eine bestimmte Aufgabe erfüllen - geschrieben. Dafür wird die Programmiersprache COBOL verwendet, welche hoch performant ist und so die Massendatenverarbeitung ermöglicht.
+Allerdings sind COBOL-Jobs an den Großrechner gebunden und immer weniger Entwickler sind in der Lage, diese zu schreiben.
 Daher werden zusätzlich Java-Jobs geschrieben, die ebenfalls auf dem Großrechner laufen, aber auch auf anderen Systemen ausgeführt werden könnten.
-Es ist das Ziel, die Verwendung von COBOL-Jobs aber auch vom Großrechner selbst zu reduzieren und so auf andere Systeme zu migrieren.
-Neuentwicklung haben die klare Richtlinie in Java zu entwickeln und nur kritische Themen - im Sinne von Zeit und Datenmasse - auf dem Großrechner zu belassen.\footappendix{Vgl. Persönliches Gespräch mit Nils Pudenz - Entwickler AZV \& ZV-Rekla (OE-4293);}{i1:f4}
+Es ist das Ziel, vor allem die Verwendung von COBOL-Jobs - aber auch die Verwendung vom Großrechner im Allgemeinen - zu reduzieren und so auf andere Systeme zu migrieren.
+Neuentwicklung haben die klare Richtlinie in Java implementiert zu werden und nur kritische Themen - im Sinne von Zeit und Datenmasse - auf dem Großrechner zu belassen.\footappendix{Vgl. Persönliches Gespräch mit Nils Pudenz - Entwickler AZV \& ZV-Rekla (OE-4293);}{i1:f4}
 Es können teilweise 2 Millionen Transaktionen in ca. 20 Sekunden durchgeführt werden oder mehrere Jobs parallel laufen.
 Für weniger kritische Themen werden OSPE-Services verwendet, die auf einem anderen System laufen.
 Grundsätzlich laufen Prozesse des Zahlungsverkehrs wie folgt ab:
@@ -63,26 +63,26 @@ Grundsätzlich laufen Prozesse des Zahlungsverkehrs wie folgt ab:
 \todo[color=REVIEW]{Itemize notwendig? Ja, bitte}
 \begin{itemize}
     \item Ein Mitarbeiter oder ein Endkunde setzt einen Prozess im Frontend in Gang (bspw. Überweisung oder Abfrage eines Kontostands).
-    Dies kann über das Portal oder die Neoanwendung für Mitarbeiter oder das Online-Banking / die App für Endkunden geschehen.
+    Dies kann über das Portal oder die Neo-Anwendung für Mitarbeiter oder das Online-Banking / die App für Endkunden geschehen.
 
     Ein Prozess kann ebenfalls durch einen COBOL-Job in Gang gesetzt werden (bpsw. bei Terminüberweisungen).
     \item Die Anfrage wird von einem OSPE-Service verarbeitet.
     Entweder kann dieser die Anfrage direkt (in in Verbindung mit anderen OSPE-Services) bearbeiten oder er ruft einen Java- oder COBOL-Job auf.
     \item Der Java-Job kann ebenfalls COBOL-Jobs aufrufen, andersherum ist dies nicht möglich.
-    \item Bei bestimmte Prozessen (bpsw. Transaktionen) müssen eine Anzahl an Prüfungen - die DOINGs - durchgeführt werden. 
-    (Z. B. ob die IBAN existiert, ob der Kontoinhaber der richtige ist, ob das Konto gedeckt ist oder auch ob der Empfänger auf einer Sperrliste steht.) 
-    \item Ist diese Prüfung erfolreich kann der Prozess fortgesetzt werden.
+    \item Bei bestimmten Prozessen (bpsw. Transaktionen) müssen eine Anzahl an Prüfungen - die DOINGs - durchgeführt werden. 
+    (Z. B., ob die IBAN existiert, ob der Kontoinhaber der richtige ist, ob das Konto gedeckt ist oder auch, ob der Empfänger auf einer Sperrliste steht.) 
+    \item Ist diese Prüfung erfolreich, kann der Prozess fortgesetzt werden.
     \item Sowohl die OSPE-Services als auch die Java- und COBOL-Jobs greifen auf die Datenbank zu, um die benötigten Daten zu erhalten bzw. zu speichern. 
 \end{itemize}
 
-Kostentechnisch ist es schwer die Kosten pro Transaktion zu bestimmen, da es sich hierbei um Volumentverträge handelt.
-Den Sparkassen werden 1,00€ bis 1,50€ pro Tausend Zahlungsein- oder -ausgängen berechnet.\footnote{Vgl. interne Preisliste OSPlus.}
+Kostentechnisch ist es schwer, die Kosten pro Transaktion zu bestimmen, da es sich hierbei um Volumentverträge handelt.
+Den Sparkassen werden 1,00 € bis 1,50 € pro tausend Zahlungsein- oder -ausgängen berechnet.\footnote{Vgl. interne Preisliste OSPlus.}
 
 \bigbreak
 \bigbreak
 
 \noindent
-Um Daten nachvollziebar zu speichern - also so, dass auch nach Änderung oder eignetlicher Löschung noch der vorherige Stand ermittelbar ist - werden Daten nie wirklich aktualisiert oder gelöscht, sondern es wird ein neuer Datensatz angelegt, der den aktuellen Stand der Daten enthält.
+Um Daten nachvollziebar zu speichern - also so, dass auch nach Änderung oder eigentlicher Löschung noch der vorherige Stand ermittelbar ist -, werden Daten nie wirklich aktualisiert oder gelöscht, sondern es wird ein neuer Datensatz angelegt, der den aktuellen Stand der Daten enthält.
 Der alte Stand wird nur „deaktiviert”, also mit einem Ablaufdatum versehen, sodass dieser nicht mehr verwendet wird.\footnote{Vgl. hierzu und zum Folgenden \pageref{i1:f2}.}
 Erst nach einer in der DSGVO festgelegten Zeit - im Falle von Kontodaten sind dies 10 Jahre - kann dieser Datensatz dann wirklich gelöscht werden.
 

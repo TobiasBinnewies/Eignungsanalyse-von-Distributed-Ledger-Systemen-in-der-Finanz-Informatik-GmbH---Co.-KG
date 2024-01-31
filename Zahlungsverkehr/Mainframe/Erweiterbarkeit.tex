@@ -7,7 +7,7 @@ Es gibt drei Möglichkeiten, wie Smart Contracts erweitert werden können:\footc
 \begin{itemize}
     \item \textbf{Contract Migration:}
     Bei der Contract Migration löst ein neuer Contract den alten ab.
-    Alle Daten, die im alten Contract gespeichert wurden, müssen also in den neuen Contract übertragen.
+    Alle Daten, die im alten Contract gespeichert wurden, müssen also in den neuen Contract übertragen werden.
     Die Datamigration ist meist sehr aufwendig und mit hohen Gas-Kosten verbunden.
 
     \item \textbf{Data Seperation:}
@@ -18,7 +18,7 @@ Es gibt drei Möglichkeiten, wie Smart Contracts erweitert werden können:\footc
     \item \textbf{Proxy:}
     Bei der Verwendung eines Proxys wird ein zusätzlicher Contract verwendet, der als Schnittstelle zu dem eigentlichen Contract dient.
     Es ist möglich, dass ein Contract die Funktionen eines anderen Contracts in seinem Kontext - also mit seinem Speicher - aufruft.
-    Der Proxy Contract hält also den Speichers, wärend der dahintergeschaltete Contract die Logik enthält.
+    Der Proxy Contract hält also den Speicher, während der dahintergeschaltete Contract die Logik enthält.
     So kann der Proxy Contract einfach ausgetauscht werden, ohne dass die Daten migriert werden müssen.
 
     \noindent
@@ -27,4 +27,4 @@ Es gibt drei Möglichkeiten, wie Smart Contracts erweitert werden können:\footc
 \end{itemize}
 
 \noindent
-Da mehrere Finanzprodukte in Smart Contract abgebildet werden könnte, bietet es sich an für jedes Produkt einen eigenen Contract zu verwenden und diese dann über einen Proxy anzusprechen.
+Da mehrere Finanzprodukte in Smart Contract abgebildet werden könnten, bietet es sich an für jedes Produkt einen eigenen Contract zu verwenden und diese dann über einen gemeinsamen Proxy anzusprechen.

@@ -1,22 +1,23 @@
 \subsubsection{Anonymität}
 \label{sec:Anonymität}
-In einem öffeltichen Blockchain-Netzwerk sind alle Transaktionen öffentlich einsehbar.
-Anonymität wird dadurch gewährleistet, dass die Identität eines Teilnehmers von der Walletaddress getrennt ist.\footcite[Vgl.][6]{q4}
-Allerdings können mehrere Transaktionen eines Wallets miteinander in Verbindung gebracht werden, und so die Anonymität eines Teilnehmers gefährden. So wird - zumindest bei Bitcoin - dazu geraten jede Address nur genau zweimal zu verwenden. Einmal um Bitcoin zu empfangen und einmal um dieses wieder zu versenden.\footcite[Vgl.][]{w15}
+In einem öffentlichen Blockchain-Netzwerk sind alle Transaktionen öffentlich einsehbar.
+Anonymität wird dadurch gewährleistet, dass die Identität eines Teilnehmers von der Walletadresse getrennt ist.\footcite[Vgl.][6]{q4}
+Allerdings können mehrere Transaktionen eines Wallets miteinander in Verbindung gebracht werden, und so die Anonymität eines Teilnehmers gefährden. 
+So wird - zumindest bei Bitcoin - dazu geraten, jede Adresse nur genau zweimal zu verwenden. Einmal, um Bitcoin zu empfangen und einmal, um dieses wieder zu versenden.\footcite[Vgl.][]{w15}
 Dieses Problem würde ebenfalls bestehen, wenn die Kontostände in einem öffentlichen Netzwerk abgebildet werden würden.
 
 \input{Theorie/Definitionen/Account-vs-UTXO.tex}
 
 \paragraph{HD-Wallets}
 Bei einem HD-Wallet werden beliebig viele Keys (sprich Adressen) aus einem Hauptschlüssel (Seed) generiert.\footcite[Vgl. hierzu und weiterführend][S. 8 ff\adddot]{q9}
-So kann ein Wallet verwendet werden, dabei aber für jede Transaktion eine neue Adresse verwendet werden und so eine hohe Anonymität gewährleistet werden.\footcite[Vgl.][231]{q5}
-Diese Art von Wallet sind der heutige Standart für UTXO-based Chains.
-Allerdings können HD-Wallets nicht für Account-based Chains verwendet werden, da diese keine Keys verwenden, sondern die Anzahl an Coins pro Account speichern.
+So kann ein Wallet verwendet werden, dabei aber für jede Transaktion eine neue Adresse verwendet und so eine hohe Anonymität gewährleistet werden.\footcite[Vgl.][231]{q5}
+Diese Art von Wallet sind der heutige Standard für UTXO-based Chains.
+Allerdings können HD-Wallets nicht für Account-based Chains genutzt werden, da diese keine Keys verwenden, sondern die Anzahl an Coins pro Account speichern.
 
 \paragraph{UTXO-based Token}
 Aufbauend auf der Idee einen neuen Token zu kreieren (s. \ref{datenspeicherung:neuer-token}) könnte dieser auch als UTXO-basierter Token implementiert werden.
-So werden nicht wie üblich bei einem ERC20 Token der Coinstand pro Adresse gespeichert, sondern die offenden Transaktionen pro Adresse.
+So werden nicht wie üblich bei einem ERC20 Token der Coinstand pro Adresse gespeichert, sondern die offenen Transaktionen pro Adresse.
 Bei einem Transfer können dann beliebig viele offene Transaktionen als In- und Output verwendet werden.
-Dabei könnte die Methode so implementiert werden, dass der Contract selbst die Transaktionen zusammensucht, die in Summe den gewünschten Betrag ergeben oder es werden beim Aufruf die zu verwendenten Transaktionen als Parameter übergeben.
+Dabei könnte die Methode so implementiert werden, dass der Contract selbst die Transaktionen zusammensucht, die in Summe den gewünschten Betrag ergeben oder es werden beim Aufruf die zu verwendenden Transaktionen als Parameter übergeben.
 Letzteres würde weniger Aufrufe benötigen und so Transaktionskosten (Gas) sparen.
 Auf diese Weise kann ein HD-Wallet fähiger Token erstellt werden, der auf einer Account-based Chain (also auch einer EVM-Chain) verwendet werden kann.

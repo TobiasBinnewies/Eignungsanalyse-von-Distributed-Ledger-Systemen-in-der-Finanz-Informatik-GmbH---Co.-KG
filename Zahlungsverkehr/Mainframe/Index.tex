@@ -1,30 +1,31 @@
 \subsection{DLS als Mainframersatz}
-Um den Mainframe wirklich ablösen zu können, reicht es nicht aus lediglich die Datenbank zu ersetzen, es muss auch die Verarbeitung und Prüfung der Daten übernommen werden.
+Um den Mainframe wirklich ablösen zu können, reicht es nicht aus lediglich die Datenbank zu ersetzen.
+Es muss auch die Verarbeitung und Prüfung der Daten übernommen werden.
 Kurzum müssen also die COBOL- und Java-Jobs sowie die DOINGs, die akutell auf dem Mainframe laufen, ersetzt werden.
 
 \noindent
-Eine Möglichkeit wäre es all diese Jobs durch Smart Contracts zu ersetzen.
-Allerdings wäre so alle Verarbeitungen und Prüfungen öffentlich einsehbar, was sensible Daten (wie bspw. Name oder IBAN) offenlegen würde.
+Eine Möglichkeit wäre es, all diese Jobs durch Smart Contracts zu ersetzen.
+Allerdings wären so alle Verarbeitungen und Prüfungen öffentlich einsehbar, was sensible Daten (wie bspw. Name oder IBAN) offenlegen würde.
 Außerdem wäre dies durch die Transaktionskosten sehr teuer.
 
 \noindent
-Da durch das hohe Datenaufkommen der Sparkassen die Verarbeitung der Daten sehr performant sein muss, ist es nicht ebenfalls möglich, die Verarbeitung der Daten auf der Blockchain selbst durchzuführen.
+Da durch das hohe Datenaufkommen der Sparkassen die Verarbeitung der Daten sehr performant sein muss, ist es ebenfalls nicht möglich, die Verarbeitung der Daten auf der Blockchain selbst durchzuführen.
 Wie bereits beschrieben muss also eine Layer 2 Lösung verwendet werden (s. \ref{sec:definition-layer-2-solutions}).
 Da die FI die einzige Instanz ist, die Transaktionen durchführt und so keine gesonderte Prüfung der Transaktionen notwendig ist, bietet sich hier ein (modifiziertes) Optimistic Rollup an. 
-(Die Challange-Periode ist nicht von Nöten, es wird also immer der durch das Rollups kreierte Batch verwendet.)
+(Die Challange-Periode ist nicht erforderlich, es wird also immer der durch das Rollups kreierte Batch verwendet.)
 Die FI wickelt also den Zahlungsverkehr weiterhin auf eigenen Systemen ab und übersendet nur die Ergebnisse an die Layer 1 Chain.
-So werden die Prüfungen und Verarbeitungen der Daten auch nicht öffentlcih ausgeführt und sind so nicht einsehbar.
+So werden die Prüfungen und Verarbeitungen der Daten auch nicht öffentlich ausgeführt und sind nicht einsehbar.
 
 \noindent
 Bestimmte Finanzprodukte lassen sich dennoch gut durch Smart Contracts abbilden und so automatisieren.
-Darunter zählen z. B. automatische Zinsvergabe am Monats- oder Jahresabschluss oder auch Termin- oder Daueraufträge.
+Darunter zählen z. B. automatische Zinsvergaben am Monats- oder Jahresabschluss oder auch Termin- oder Daueraufträge.
 
 \subsubsection{Optimistic Rollups in Verbindung mit Cloud Computing}
 Eine mögliche Alternative den Mainframe abzulösen, ist die Verwendung von Cloud Computing.
-Cloud Computing wird nach nach dem National Institute of Standards and Technology durch die folgenden fünf Eigenschaften definiert:\footcite[Vgl. hierzu und zum Folgenden][5]{q11}
+Cloud Computing wird nach dem National Institute of Standards and Technology durch die folgenden fünf Eigenschaften definiert:\footcite[Vgl. hierzu und zum Folgenden][5]{q11}
 \begin{itemize}
     \item \textbf{On-Demand Self-Service:} 
-    Der Nutzer kann die benötigten Ressourcen (bspw. Rechenleistung, Speicherplatz, ...) selbstständig und ohne meschliche Interaktion mit dem Anbieter bereitstellen.
+    Der Nutzer kann die benötigten Ressourcen (bspw. Rechenleistung, Speicherplatz, ...) selbstständig und ohne menschliche Interaktion mit dem Anbieter bereitstellen.
     \item \textbf{Broad Network Access:}
     Die Ressourcen sind über das Netzwerk verfügbar und können von verschiedenen Plattformen (bspw. Desktop, Laptop, Smartphone, ...) abgerufen werden.
     \item \textbf{Resource Pooling:}
@@ -32,21 +33,21 @@ Cloud Computing wird nach nach dem National Institute of Standards and Technolog
     \item \textbf{Rapid Elasticity:}
     Die Ressourcen können schnell und dynamisch an die Bedürfnisse des Nutzers angepasst werden.
     \item \textbf{Measured Service:}
-    Die Nutzung der Ressourcen wird quntitativ und qualitativ überwacht, so dass eine nutzungsabhängige Abrechnung sowie eine Validierung der Dienstqulität möglich ist.
+    Die Nutzung der Ressourcen wird quantitativ und qualitativ überwacht, so dass eine nutzungsabhängige Abrechnung sowie eine Validierung der Dienstqualität möglich ist.
 \end{itemize}
 
 \noindent
 Der größte Vorteil für die FI wäre hier die gute Skalierbarkeit der Ressourcen und die nutzungsabhängige Abrechnung.
 \bigbreak
 \noindent
-Ein größer Nachteil dieser Technologie ist die Datensicherheit, da sich diese in der Hand des Anbieters befinden und so nicht kontrolliert werden kann.\footcite[Vgl. hierzu und zum Folgenden][99]{q10}
+Ein größer Nachteil dieser Technologie ist die Datensicherheit, da sich diese in der Hand des Anbieters befindet und so nicht kontrolliert werden kann.\footcite[Vgl. hierzu und zum Folgenden][99]{q10}
 Es besteht generell keine Kontrolle über die Art und Weise der Speicherung.
 So ist ein Wechsel des Anbieters sehr aufwendig, da die Daten möglicherweise nicht einfach migriert werden können.\footcite[Vgl.][]{w28}
 
 \noindent
 Hier können DLS Abhilfe schaffen.
-So können die Optimistic Rollups auf einem Cloud System ausgeführt werden, die Daten aber dennoch in der Blockchain gespeichert werden.
-So sind die tranzparent und nach eigenen Vorstellungen gespeichert, aber die Verarbeitung der Daten kann auf einem Cloud System erfolgen.
+So können die Optimistic Rollups auf einem Cloud System ausgeführt, die Daten aber dennoch in der Blockchain gespeichert werden.
+So sind sie tranzparent und nach eigenen Vorstellungen gespeichert, aber die Verarbeitung der Daten kann auf einem Cloud System erfolgen.
 Darüber hinaus können die Daten nicht nur vom verwendeten Anbieter selbst aus eingesehen werden - da sie sich im öffentlcihen Netzwerk befinden - und eine Migration ist so einfacher möglich.
 Man ist also nicht stark an einen Anbieter gebunden.
 

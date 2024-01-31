@@ -167,8 +167,9 @@
         %Kapitel und Seitennummerierung wird auf Römisch 1 gesetzt
         \setcounter{page}{1}
         \renewcommand{\thesection}{\Roman{section}}
-            \pagenumbering{Roman}
+        \pagenumbering{Roman}
 
+    % \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
     %Übershrift: Inhaltsverzeichnis
     \section{Inhaltsverzeichnis}        
 
@@ -222,14 +223,22 @@
 
     {
         % KapitelNummerierung auf 0 setzen und mit arabischen Zahlen belegen
-        \setcounter{section}{0}
+        % \setcounter{section}{0}
         \setcounter{page}{1}
             \pagenumbering{arabic}
 
     %Hier steht der Inalt
+    \newcounter{mainsection}
+    \renewcommand{\thesection}{\arabic{mainsection}}
 
+    \let\oldsection\section % Erstellen Sie eine Kopie des ursprünglichen \section Befehls
 
-    \renewcommand{\figurename}{Abb.}
+    \renewcommand{\section}[1]{ % Überschreiben Sie den \section Befehl
+      \stepcounter{mainsection} % Inkrementieren Sie den Zähler
+      \oldsection{#1} % Rufen Sie den ursprünglichen \section Befehl auf
+    }
+
+    % \addtocontents{toc}{\protect\setcounter{tocdepth}{4}}
 
     %Beispiel: \input{Grundlagen eines Netzwerks.tex}
     \input{Einleitung.tex}

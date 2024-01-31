@@ -169,7 +169,7 @@
         \renewcommand{\thesection}{\Roman{section}}
         \pagenumbering{Roman}
 
-    % \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
     %Übershrift: Inhaltsverzeichnis
     \section{Inhaltsverzeichnis}        
 
@@ -238,7 +238,7 @@
       \oldsection{#1} % Rufen Sie den ursprünglichen \section Befehl auf
     }
 
-    % \addtocontents{toc}{\protect\setcounter{tocdepth}{4}}
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{4}}
 
     %Beispiel: \input{Grundlagen eines Netzwerks.tex}
     \input{Einleitung.tex}
@@ -288,6 +288,7 @@
     %==================================================
     %Anhangsverzeichnis 
     %==================================================
+    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
 
     %Seitennummerierung mit römischen Zahlen
     \pagenumbering{Roman}
